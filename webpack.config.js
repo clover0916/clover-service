@@ -1,14 +1,7 @@
 module.exports = [{
-  entry: './app.scss',
+  entry: ['./app.scss', './app.js'],
   output: {
-    // This is necessary for webpack to compile
-    // But we never use style-bundle.js
-    filename: 'style-bundle.js',
-  },
-  devServer: {
-    host: '0.0.0.0',
-    port: 80,
-    disableHostCheck: true
+    filename: 'bundle.js',
   },
   module: {
     rules: [
@@ -19,20 +12,26 @@ module.exports = [{
             loader: 'file-loader',
             options: {
               name: 'bundle.css',
-            }
+            },
           },
           { loader: 'extract-loader' },
           { loader: 'css-loader' },
           {
             loader: 'sass-loader',
             options: {
-              includePaths: ['./node_modules'],
-              implementation: require('dart-sass'),
-              fiber: require('fibers'),
+              includePaths: ['./node_modules']
             }
           }
         ]
+      },
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        query: {
+          presets: ['es2015'],
+          plugins: ['transform-object-assign']
+        },
       }
     ]
-  }
+  },
 }];
