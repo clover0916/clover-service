@@ -21,17 +21,15 @@ function getStyleUse(bundleFilename) {
 
 module.exports = [
   {
-    devServer: {
-      host: '0.0.0.0',
-      port: 80,
-      disableHostCheck: true
-    }
-  },
-  {
     entry: './login.scss',
     output: {
       // This is necessary for webpack to compile, but we never reference this js file.
       filename: 'style-bundle-login.js',
+    },
+    devServer: {
+      host: '0.0.0.0',
+      port: 80,
+      disableHostCheck: true
     },
     module: {
       rules: [{
@@ -46,6 +44,11 @@ module.exports = [
       // This is necessary for webpack to compile, but we never reference this js file.
       filename: 'style-bundle-home.js',
     },
+    devServer: {
+      host: '0.0.0.0',
+      port: 80,
+      disableHostCheck: true
+    },
     module: {
       rules: [{
         test: /home.scss$/,
@@ -57,6 +60,11 @@ module.exports = [
     entry: "./login.js",
     output: {
       filename: "bundle-login.js"
+    },
+    devServer: {
+      host: '0.0.0.0',
+      port: 80,
+      disableHostCheck: true
     },
     module: {
       loaders: [{
@@ -70,6 +78,16 @@ module.exports = [
     entry: "./home.js",
     output: {
       filename: "bundle-home.js"
+    },
+    devServer: {
+      host: '0.0.0.0',
+      port: 80,
+      disableHostCheck: true
+    },
+    devServer: {
+      host: '0.0.0.0',
+      port: 80,
+      disableHostCheck: true
     },
     module: {
       loaders: [{
