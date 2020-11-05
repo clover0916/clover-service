@@ -7,6 +7,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@material/button": "^6.0.0",
+    "@material/button": "^6.0.0"
   }
 }
