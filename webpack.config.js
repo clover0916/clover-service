@@ -26,18 +26,10 @@ module.exports = [{
           {
             loader: 'sass-loader',
             options: {
-              sassOptions: {
-                includePaths: ['./node_modules'],
-                implementation: require('dart-sass'),
-                fiber: require('fibers'),
-              },
-              // Prefer Dart Sass
-              //implementation: require('sass'),
-          
-              // See https://github.com/webpack-contrib/sass-loader/issues/804
-              //webpackImporter: false,
-            }
-          },
+              includePaths: ['./node_modules'],
+              implementation: require('dart-sass'),
+              fiber: require('fibers'),
+          }
         ]
       }
     ]
