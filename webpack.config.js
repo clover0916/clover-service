@@ -19,7 +19,7 @@ module.exports = [{
             loader: 'file-loader',
             options: {
               name: 'bundle.css',
-            },
+            }
           },
           { loader: 'extract-loader' },
           { loader: 'css-loader' },
@@ -29,9 +29,10 @@ module.exports = [{
               includePaths: ['./node_modules'],
               implementation: require('dart-sass'),
               fiber: require('fibers'),
+            }
           }
         ]
       }
     ]
-  },
+  }
 }];
