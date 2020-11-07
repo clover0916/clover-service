@@ -170,6 +170,12 @@
   <script src="./assets/js/bootstrap.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
   <script src="dist/bundle.js" async></script>
   <script>
+    const drawer = mdc.drawer.MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
+    const topAppBar = mdc.topAppBar.MDCTopAppBar.attachTo(document.querySelector('.mdc-top-app-bar'));
+    topAppBar.listen('MDCTopAppBar:nav', () => {
+      drawer.open = !drawer.open;
+    });
+    const liner = mdc.linearProgress.MDCLinearProgress.attachTo(document.querySelector('.mdc-linear-progress'));
     mdc.topAppBar.MDCTopAppBar.attachTo(document.querySelector('.mdc-top-app-bar'));
     [].map.call(document.querySelectorAll('.mdc-button, .mdc-icon-button, .mdc-card__primary-action, .mdc-list-item'), function(el) {
       return mdc.ripple.MDCRipple.attachTo(el);
