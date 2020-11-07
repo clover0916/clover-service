@@ -29,8 +29,8 @@ document.body.addEventListener('MDCDrawer:closed', () => {
   mainContentEl.querySelector('input, button').focus();
 });
 
-const topAppBar = MDCTopAppBar.attachTo(document.getElementById('app-bar'));
-topAppBar.setScrollTarget(document.getElementById('main-content'));
-topAppBar.listen('MDCTopAppBar:nav', () => {
+const topAppBars = MDCTopAppBar.attachTo(document.getElementById('app-bar'));
+topAppBars.setScrollTarget(document.getElementById('main-content'));
+topAppBars.listen('MDCTopAppBar:nav', () => {
   drawer.open = !drawer.open;
 });
