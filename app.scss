@@ -4,9 +4,9 @@
 // $mdc-theme-primary: midnightblue;
 
 // Import the styles for each MDC Web component
-@import "@material/typography/mdc-typography";
 @use '@material/button/mdc-button';
 @use '@material/button';
+@import "@material/typography/mdc-typography";
 
 .foo-button {
   @include button.container-fill-color(darksalmon);
