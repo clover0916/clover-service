@@ -1,6 +1,6 @@
-import {MDCRipple} from '@material/ripple/index';
+import { MDCRipple } from '@material/ripple';
 
-const ripple = new MDCRipple(document.querySelector('.mdc-button'));
+const buttonRipple = new MDCRipple(document.querySelector('.mdc-button'));
 
 import {MDCTopAppBar} from '@material/top-app-bar';
 
