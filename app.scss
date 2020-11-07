@@ -5,10 +5,11 @@
 
 // Import the styles for each MDC Web component
 @use '@material/button/mdc-button';
-@import "@material/typography/mdc-typography";
+@use '@material/button';
+@use "@material/typography/mdc-typography";
 
 .foo-button {
-  @include mdc-button.container-fill-color(darksalmon);
+  @include button.container-fill-color(darksalmon);
 }
 
 // Check out the MDC Web documentation for how to use MDC Sass mixins:
