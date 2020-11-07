@@ -1,55 +1,194 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Material Starter Kit</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- import the Material stylesheet -->
-    <link rel="stylesheet" href="dist/bundle.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  </head>
-  <body class="mdc-typography">
-    <aside class="mdc-drawer mdc-drawer--modal">
-      <div class="mdc-drawer__content">
-        <nav class="mdc-list">
-          <a class="mdc-list-item mdc-list-item--activated" href="#" aria-current="page" tabindex="0">
-            <span class="mdc-list-item__ripple"></span>
-            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">inbox</i>
-            <span class="mdc-list-item__text">Inbox</span>
-          </a>
-          <a class="mdc-list-item" href="#">
-            <span class="mdc-list-item__ripple"></span>
-            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">send</i>
-            <span class="mdc-list-item__text">Outgoing</span>
-          </a>
-          <a class="mdc-list-item" href="#">
-            <span class="mdc-list-item__ripple"></span>
-            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">drafts</i>
-            <span class="mdc-list-item__text">Drafts</span>
-          </a>
-        </nav>
-      </div>
-    </aside>
-    <div class="mdc-drawer-app-content">
-      <header class="mdc-top-app-bar app-bar" id="app-bar">
-        <div class="mdc-top-app-bar__row">
-          <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-            <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button">menu</button>
-            <span class="mdc-top-app-bar__title">Dismissible Drawer</span>
-          </section>
-        </div>
-      </header>
-      <main class="main-content" id="main-content">
-        <div class="mdc-top-app-bar--fixed-adjust">
-          <h1 class="mdc-typography--headline3">Hello, Material Starter Kit!</h1>
-          <button class="foo-button mdc-button mdc-button--raised">
-            <div class="mdc-button__ripple"></div>
-            <span class="mdc-button__label">Hello World</span>
-          </button>
-        </div>
-      </main>
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <script data-ad-client="ca-pub-5159462034601313" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap CSS -->
+  <title>Clover - ホーム</title>
+  <link rel="icon" type="image/png" href="./assets/icon/favicon.png">
+  <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,400,500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <style>
+    html {
+      --mdc-typography-font-family: "Roboto", "Noto Sans JP", sans-serif;
+    }
+
+    .mdc-button.mdc-button--raised {
+      background-color: #00A013;
+    }
+
+    .mdc-top-app-bar {
+      background-color: #000BA0
+    }
+  </style>
+</head>
+
+<body class="mdc-typography">
+  <aside class="mdc-drawer mdc-drawer--modal">
+    <div class="mdc-drawer__header">
+      <h3 class="mdc-drawer__title">Clover</h3>
+      <h6 class="mdc-drawer__subtitle">ページ一覧</h6>
     </div>
-    <!-- import the Material javascript file -->
-    <script src="dist/bundle.js" async></script>
-  </body>
+    <div class="mdc-drawer__content">
+      <nav class="mdc-list">
+        <h6 class="mdc-list-group__subheader">メイン</h6>
+        <a class="mdc-list-item mdc-list-item--activated" href="#" aria-current="page" tabindex="0">
+          <span class="mdc-list-item__ripple"></span>
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">home</i>
+          <span class="mdc-list-item__text">ホーム</span>
+        </a>
+        <a class="mdc-list-item" href="./discord/clover-bot.html" id="OnLinear" tabindex="0">
+          <span class="mdc-list-item__ripple"></span>
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">adb</i>
+          <span class="mdc-list-item__text">Clover_Bot</span>
+        </a>
+        <a class="mdc-list-item" href="./discord/how-to-use.html" id="OnLinear" tabindex="0">
+          <span class="mdc-list-item__ripple"></span>
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">help</i>
+          <span class="mdc-list-item__text">使い方</span>
+        </a>
+        <a class="mdc-list-item" href="./discord/commands.html" id="OnLinear" tabindex="0">
+          <span class="mdc-list-item__ripple"></span>
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">list</i>
+          <span class="mdc-list-item__text">コマンドリスト</span>
+        </a>
+        <a class="mdc-list-item" href="./faq.html" id="OnLinear" tabindex="0">
+          <span class="mdc-list-item__ripple"></span>
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">support</i>
+          <span class="mdc-list-item__text">FAQ</span>
+        </a>
+        <hr class="mdc-list-divider">
+        <h6 class="mdc-list-group__subheader">その他</h6>
+        <a class="mdc-list-item" href="#" id="OnLinear" tabindex="0">
+          <span class="mdc-list-item__ripple"></span>
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">people</i>
+          <span class="mdc-list-item__text">私達について</span>
+        </a>
+        <a class="mdc-list-item" href="https://www.youtube.com/channel/UCZ4vC-AqFbOkPom85i5CxRg" tabindex="0">
+          <span class="mdc-list-item__ripple"></span>
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">link</i>
+          <span class="mdc-list-item__text">Youtube</span>
+        </a>
+        <a class="mdc-list-item" href="https://twitter.com/Clover_0916" tabindex="0">
+          <span class="mdc-list-item__ripple"></span>
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">link</i>
+          <span class="mdc-list-item__text">Twitter</span>
+        </a>
+      </nav>
+    </div>
+  </aside>
+  <div class="mdc-drawer-scrim"></div>
+  <div class="mdc-drawer-app-content">
+    <header class="mdc-top-app-bar mdc-top-app-bar--short">
+      <div class="mdc-top-app-bar__row">
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+          <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" aria-label="Open navigation menu">menu</button>
+          <span class="mdc-top-app-bar__title">Clover</span>
+        </section>
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+          <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Search">search</button>
+        </section>
+      </div>
+      <div role="progressbar" class="mdc-linear-progress mdc-linear-progress--indeterminate mdc-linear-progress--closed" aria-label="Example Progress Bar" aria-valuemin="0" aria-valuemax="1" aria-valuenow="0">
+        <div class="mdc-linear-progress__buffer">
+          <div class="mdc-linear-progress__buffer-bar"></div>
+          <div class="mdc-linear-progress__buffer-dots"></div>
+        </div>
+        <div class="mdc-linear-progress__bar mdc-linear-progress__primary-bar">
+          <span class="mdc-linear-progress__bar-inner"></span>
+        </div>
+        <div class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar">
+          <span class="mdc-linear-progress__bar-inner"></span>
+        </div>
+      </div>
+    </header>
+    <main class="mdc-top-app-bar--fixed-adjust">
+      <div class="jumbotron">
+        <h3>ホームページへようこそ！！</h3>
+        <p class="lead">ここはClover_Midoriが提供するサービスのホームページです</p>
+      </div>
+      <div class="mdc-layout-grid">
+        <h4>サービス一覧</h4>
+        <div class="border-top" style="padding:10px;">
+          <div class="mdc-layout-grid__inner">
+            <div class="mdc-layout-grid__cell">
+              <div class="mdc-card text-center">
+                <div class="card-body">
+                  <h5 class="card-title">Clover_Bot <span class="badge badge-pill badge-success">New</span></h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Discord Bot</h6>
+                  <p class="card-text">様々なAPI等を使った高機能なBotです</p>
+                  <button class="mdc-button mdc-button--raised" onclick="location.href='https://discord.com/api/oauth2/authorize?client_id=726804663059480653&permissions=2147483639&scope=bot'">
+                    <div class="mdc-button__ripple"></div>
+                    <span class="mdc-button__label">Botを導入</span>
+                  </button>
+                  <button class="mdc-button mdc-button--raised" onclick="location.href='./discord/how-to-use.html'">
+                    <div class="mdc-button__ripple"></div>
+                    <span class="mdc-button__label">使い方</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h4>サポート</h4>
+        <div class="border-top" style="padding:10px;">
+          <div class="mdc-layout-grid__inner">
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
+              <div class="mdc-card text-center">
+                <iframe class="card-img-top" src="https://discord.com/widget?id=719167545000722472&theme=dark" width="500" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+                <div class="card-body">
+                  <h5 class="card-title">Clover_Bot サポートサーバー</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Discord Server</h6>
+                  <p class="card-text"></p>
+                  <button class="mdc-button mdc-button--raised" onclick="location.href='https://discord.gg/UpRRdGr'">
+                    <div class="mdc-button__ripple"></div>
+                    <span class="mdc-button__label">サポートサーバーに行く</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav class="navbar navbar-light bg-light">
+        <ul class="navbar-nav mr-auto">
+          <span class="navbar-text">
+            このサイトをご覧いただきありがとうございます
+          </span>
+        </ul>
+        <span class="navbar-text">
+          Created by Clover_Midori
+        </span>
+      </nav>
+    </main>
+  </div>
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="./assets/js/bootstrap.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  <script>
+    const drawer = mdc.drawer.MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
+    const topAppBar = mdc.topAppBar.MDCTopAppBar.attachTo(document.querySelector('.mdc-top-app-bar'));
+    topAppBar.listen('MDCTopAppBar:nav', () => {
+      drawer.open = !drawer.open;
+    });
+    const liner = mdc.linearProgress.MDCLinearProgress.attachTo(document.querySelector('.mdc-linear-progress'));
+    mdc.topAppBar.MDCTopAppBar.attachTo(document.querySelector('.mdc-top-app-bar'));
+    [].map.call(document.querySelectorAll('.mdc-button, .mdc-icon-button, .mdc-card__primary-action, .mdc-list-item'), function(el) {
+      return mdc.ripple.MDCRipple.attachTo(el);
+    });
+
+    document.getElementById("OnLinear").onclick = function() {
+      liner.open()
+    }
+  </script>
+</body>
+
 </html>
