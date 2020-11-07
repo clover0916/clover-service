@@ -10,11 +10,13 @@
 @use "@material/icon-button";
 @use "@material/top-app-bar/mdc-top-app-bar";
 
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+JP);
+
+$mdc-typography-font-family: unquote("Roboto, Noto Sans JP, sans-serif");
+
 @include icon-button.core-styles;
 
-.foo-button {
-  @include button.container-fill-color(darksalmon);
-}
 
 // Check out the MDC Web documentation for how to use MDC Sass mixins:
 // https://github.com/material-components/material-components-web
