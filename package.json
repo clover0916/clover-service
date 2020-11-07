@@ -27,7 +27,9 @@
     "@material/ripple": "^8.0.0",
     "@material/typography": "^8.0.0",
     "@material/top-app-bar": "^8.0.0",
-    "@material/icon-button": "^8.0.0"
+    "@material/icon-button": "^8.0.0",
+    "@material/drawer": "^8.0.0",
+    "@material/list": "^8.0.0"
   },
   "engines": {
     "node": "10.x"
