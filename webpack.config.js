@@ -27,9 +27,11 @@ module.exports = [{
           {
             loader: 'sass-loader',
             options: {
-              implementation: require('sass'),
               webpackImporter: false,
-              includePaths: ['./node_modules']
+              sassOptions: {
+                includePaths: ['./node_modules']
+              },
+              implementation: require('sass'),
             }
           }
         ]
