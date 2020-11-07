@@ -23,9 +23,11 @@
     "webpack-dev-server": "^3.10.1"
   },
   "dependencies": {
-    "@material/button": "^5.1.0",
-    "@material/ripple": "^5.1.0",
-    "@material/typography": "^5.1.0"
+    "@material/button": "^8.0.0",
+    "@material/ripple": "^8.0.0",
+    "@material/typography": "^8.0.0",
+    "@material/top-app-bar": "^8.0.0",
+    "@material/icon-button": "^8.0.0"
   },
   "engines": {
     "node": "10.x"
