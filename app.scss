@@ -12,7 +12,6 @@
 @use "@material/drawer";
 @use "@material/list";
 
-@import "bootstrap/scss/bootstrap";
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 
 @include drawer.core-styles;
