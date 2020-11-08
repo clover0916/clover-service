@@ -11,7 +11,9 @@
 @use "@material/top-app-bar/mdc-top-app-bar";
 @use "@material/drawer";
 @use "@material/list";
-@use "bootstrap/scss";
+
+@import "bootstrap/scss/bootstrap";
+
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans+JP");
 
