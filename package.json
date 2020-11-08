@@ -30,7 +30,8 @@
     "@material/list": "^8.0.0",
     "@material/ripple": "^8.0.0",
     "@material/top-app-bar": "^8.0.0",
-    "@material/typography": "^8.0.0"
+    "@material/typography": "^8.0.0",
+    "@material/card": "^8.0.0"
   },
   "engines": {
     "node": "10.x"

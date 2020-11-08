@@ -11,6 +11,7 @@
 @use "@material/top-app-bar/mdc-top-app-bar";
 @use "@material/drawer";
 @use "@material/list";
+@use "@material/card";
 
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 
@@ -19,7 +20,7 @@
 @include drawer.modal-core-styles;
 @include list.core-styles;
 @include icon-button.core-styles;
-
+@include card.core-styles;
 
 // Check out the MDC Web documentation for how to use MDC Sass mixins:
 // https://github.com/material-components/material-components-web
