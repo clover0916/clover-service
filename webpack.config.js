@@ -9,8 +9,7 @@ module.exports = [{
   devServer: {
     port: 80,
     host: '0.0.0.0',
-    contentBase: "dist",
-    open: true
+    open: true,
   },
   module: {
     rules: [
