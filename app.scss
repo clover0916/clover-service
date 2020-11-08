@@ -22,6 +22,11 @@
 @include card.core-styles;
 @include icon-button.core-styles;
 
+.mdc-card {
+  height: 350px;
+  width: 350px;
+}
+
 // Check out the MDC Web documentation for how to use MDC Sass mixins:
 // https://github.com/material-components/material-components-web
 // .foo-button {
