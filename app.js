@@ -1,7 +1,3 @@
-import $ from 'jquery';
-import 'bootstrap/dist/js/bootstrap.js';
-import 'bootstrap/dist/css/bootstrap.css';
-
 import { MDCRipple } from '@material/ripple';
 
 const buttonRipple = new MDCRipple(document.querySelector('.mdc-button'));
