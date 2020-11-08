@@ -15,7 +15,7 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans+JP");
 
-$mdc-typography-font-family: unquote("Roboto, Noto Sans JP, sans-serif");
+$mdc-typography-font-family: unquote("Noto Sans JP, Roboto, sans-serif");
 
 @include drawer.core-styles;
 @include drawer.dismissible-core-styles;
