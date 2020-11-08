@@ -14,7 +14,7 @@ module.exports = [{
   module: {
     rules: [
       {
-        test: /\.(css|scss|sass)/,
+        test: /\.scss$/,
         use: [
           {
             loader: 'file-loader',
