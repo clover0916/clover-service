@@ -5,6 +5,14 @@ module.exports = [{
   output: {
     filename: 'bundle.js',
   },
+  mode: "development",
+  devServer: {
+    port: 80,
+    host: '0.0.0.0',
+    contentBase: "dist",
+    open: true,
+    disable-host-check: true,
+  },
   module: {
     rules: [
       {
