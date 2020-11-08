@@ -3,7 +3,8 @@
 // Define theme variables before importing any MDC Web component styles
 // $mdc-theme-primary: midnightblue;
 
-// Import the styles for each MDC Web component
+// Import the styles for each MDC Web feComponentTransfer
+@use "@material/card";
 @use '@material/button/mdc-button';
 @use '@material/button';
 @use "@material/typography/mdc-typography";
@@ -11,7 +12,6 @@
 @use "@material/top-app-bar/mdc-top-app-bar";
 @use "@material/drawer";
 @use "@material/list";
-@use "@material/card";
 
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 
@@ -19,8 +19,8 @@
 @include drawer.dismissible-core-styles;
 @include drawer.modal-core-styles;
 @include list.core-styles;
-@include icon-button.core-styles;
 @include card.core-styles;
+@include icon-button.core-styles;
 
 // Check out the MDC Web documentation for how to use MDC Sass mixins:
 // https://github.com/material-components/material-components-web
