@@ -13,7 +13,7 @@
 @use "@material/drawer";
 @use "@material/list";
 
-@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500");
 
 @include drawer.core-styles;
 @include drawer.dismissible-core-styles;
@@ -24,7 +24,7 @@
 
 .mdc-card {
   height: 350px;
-  width: 350px;
+  width: 100%;
 }
 
 // Check out the MDC Web documentation for how to use MDC Sass mixins:
