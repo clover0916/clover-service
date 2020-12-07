@@ -21,8 +21,11 @@
 @include icon-button.core-styles;
 
 .mdc-card {
+  height: 350px;
   width: 100%;
 }
+
+$mdc-typography-font-family: "Roboto", "Noto Sans JP", sans-serif;
 
 // Check out the MDC Web documentation for how to use MDC Sass mixins:
 // https://github.com/material-components/material-components-web
