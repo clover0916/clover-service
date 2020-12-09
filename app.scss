@@ -4,7 +4,6 @@
 // $mdc-theme-primary: midnightblue;
 
 // Import the styles for each MDC Web feComponentTransfer
-$mdc-typography-font-family: "Roboto", "Noto Sans JP", sans-serif;
 
 @use "@material/card";
 @use '@material/button/mdc-button';
@@ -21,6 +20,8 @@ $mdc-typography-font-family: "Roboto", "Noto Sans JP", sans-serif;
 @include list.core-styles;
 @include card.core-styles;
 @include icon-button.core-styles;
+
+$mdc-typography-font-family: "Roboto", "Noto Sans JP", sans-serif;
 
 .mdc-card {
   height: 350px;
