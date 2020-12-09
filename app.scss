@@ -14,14 +14,14 @@
 @use "@material/drawer";
 @use "@material/list";
 
+$mdc-typography-font-family: unquote("Roboto, Noto Sans JP, sans-serif");
+
 @include drawer.core-styles;
 @include drawer.dismissible-core-styles;
 @include drawer.modal-core-styles;
 @include list.core-styles;
 @include card.core-styles;
 @include icon-button.core-styles;
-
-$mdc-typography-font-family: "Roboto", "Noto Sans JP", sans-serif;
 
 .mdc-card {
   height: 350px;
