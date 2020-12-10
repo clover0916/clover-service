@@ -5,18 +5,17 @@
 
 // Import the styles for each MDC Web feComponentTransfer
 
+
 @use "@material/card";
 @use '@material/button/mdc-button';
 @use '@material/button';
-@use "@material/typography/mdc-typography" with (
-  @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500);
-  @import url(https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,400,500);
-  $font-family: unquote("Roboto, Noto Sans JP, sans-serif")
-);
 @use "@material/icon-button";
 @use "@material/top-app-bar/mdc-top-app-bar";
 @use "@material/drawer";
 @use "@material/list";
+
+@import "@material/typography/mdc-typography";
+
 
 @include drawer.core-styles;
 @include drawer.dismissible-core-styles;
