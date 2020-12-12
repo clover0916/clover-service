@@ -4,6 +4,7 @@
   $on-primary: #442b2d,
   $on-secondary: #442b2d,
 );
+@use "@material/typography/mdc-typography";
 @use '@material/button/mdc-button';
 @use '@material/button';
 @use "@material/icon-button";
@@ -22,6 +23,10 @@
   padding: 0px;
 }
 
+html {
+  --mdc-typography-font-family: "Roboto", "Noto Sans JP", sans-serif;
+}
+
 body {
   background: linear-gradient(25deg, #F13F79, #FFC778);
 }
@@ -33,5 +38,5 @@ body {
 
 .home {
   text-align: center;
-  padding: 200px;
+  padding: 150px;
 }
