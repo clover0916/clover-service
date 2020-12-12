@@ -17,9 +17,9 @@
 @include list.core-styles;
 @include icon-button.core-styles;
 
-body {
-  width: 100vh;
-  height: 100vh;
+* {
+  margin: 0px;
+  padding: 0px;
 }
 
 .main-content {
