@@ -39,160 +39,45 @@
   </style>
 </head>
 
-<body class="mdc-typography back-image">
+  <body>
   <aside class="mdc-drawer mdc-drawer--dismissible">
-    <div class="mdc-drawer__header">
-      <h3 class="mdc-drawer__title">Clover</h3>
-      <h6 class="mdc-drawer__subtitle">ページ一覧</h6>
-    </div>
     <div class="mdc-drawer__content">
-      <nav class="mdc-list">
-        <h6 class="mdc-list-group__subheader">メイン</h6>
-        <a class="mdc-list-item mdc-list-item--activated" href="#" aria-current="page" tabindex="0">
+      <div class="mdc-list">
+        <a class="mdc-list-item mdc-list-item--activated" href="#" aria-current="page">
           <span class="mdc-list-item__ripple"></span>
-          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">home</i>
-          <span class="mdc-list-item__text">ホーム</span>
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">inbox</i>
+          <span class="mdc-list-item__text">Inbox</span>
         </a>
-        <a class="mdc-list-item" href="./discord/clover-bot.html" id="OnLinear" tabindex="0">
+        <a class="mdc-list-item" href="#">
           <span class="mdc-list-item__ripple"></span>
-          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">adb</i>
-          <span class="mdc-list-item__text">Clover_Bot</span>
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">send</i>
+          <span class="mdc-list-item__text">Outgoing</span>
         </a>
-        <a class="mdc-list-item" href="./discord/how-to-use.html" id="OnLinear" tabindex="0">
+        <a class="mdc-list-item" href="#">
           <span class="mdc-list-item__ripple"></span>
-          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">help</i>
-          <span class="mdc-list-item__text">使い方</span>
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">drafts</i>
+          <span class="mdc-list-item__text">Drafts</span>
         </a>
-        <a class="mdc-list-item" href="./discord/commands.html" id="OnLinear" tabindex="0">
-          <span class="mdc-list-item__ripple"></span>
-          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">list</i>
-          <span class="mdc-list-item__text">コマンドリスト</span>
-        </a>
-        <a class="mdc-list-item" href="./faq.html" id="OnLinear" tabindex="0">
-          <span class="mdc-list-item__ripple"></span>
-          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">support</i>
-          <span class="mdc-list-item__text">FAQ</span>
-        </a>
-        <hr class="mdc-list-divider">
-        <h6 class="mdc-list-group__subheader">その他</h6>
-        <a class="mdc-list-item" href="#" id="OnLinear" tabindex="0">
-          <span class="mdc-list-item__ripple"></span>
-          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">people</i>
-          <span class="mdc-list-item__text">私達について</span>
-        </a>
-        <a class="mdc-list-item" href="https://www.youtube.com/channel/UCZ4vC-AqFbOkPom85i5CxRg" tabindex="0">
-          <span class="mdc-list-item__ripple"></span>
-          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">link</i>
-          <span class="mdc-list-item__text">Youtube</span>
-        </a>
-        <a class="mdc-list-item" href="https://twitter.com/Clover_0916" tabindex="0">
-          <span class="mdc-list-item__ripple"></span>
-          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">link</i>
-          <span class="mdc-list-item__text">Twitter</span>
-        </a>
-      </nav>
+      </div>
     </div>
   </aside>
-  <div class="mdc-drawer-scrim"></div>
-  <div class="mdc-drawer-app-content back-ground">
+
+  <div class="mdc-drawer-app-content">
     <header class="mdc-top-app-bar app-bar" id="app-bar">
       <div class="mdc-top-app-bar__row">
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-          <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" aria-label="Open navigation menu">menu</button>
-          <span class="mdc-top-app-bar__title">Clover</span>
+          <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button">menu</button>
+          <span class="mdc-top-app-bar__title">Dismissible Drawer</span>
         </section>
-        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-          <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Search">search</button>
-        </section>
-      </div>
-      <div role="progressbar" class="mdc-linear-progress mdc-linear-progress--indeterminate mdc-linear-progress--closed" aria-label="Example Progress Bar" aria-valuemin="0" aria-valuemax="1" aria-valuenow="0">
-        <div class="mdc-linear-progress__buffer">
-          <div class="mdc-linear-progress__buffer-bar"></div>
-          <div class="mdc-linear-progress__buffer-dots"></div>
-        </div>
-        <div class="mdc-linear-progress__bar mdc-linear-progress__primary-bar">
-          <span class="mdc-linear-progress__bar-inner"></span>
-        </div>
-        <div class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar">
-          <span class="mdc-linear-progress__bar-inner"></span>
-        </div>
       </div>
     </header>
-    <div>
-        <h1>ホームページへようこそ！！</h1>
-        <p>ここはClover_Midoriが提供するサービスのホームページです</p>
-    </div>
-    <div class="mdc-drawer-app-content mdc-top-app-bar--fixed-adjust">
-      <main class="main-content" id="main-content">
-      <div class="mdc-layout-grid">
-        <h4>サービス一覧</h4>
-        <div class="border-top" style="padding:10px;">
-          <div class="mdc-layout-grid__inner">
-            <div class="mdc-layout-grid__cell">
-              <div class="mdc-card mdc-card--outlined">
-                <div class="card-body">
-                  <h5 class="card-title">Clover_Bot <span class="badge badge-pill badge-success">New</span></h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Discord Bot</h6>
-                  <p class="card-text">様々なAPI等を使った高機能なBotです</p>
-                  <button class="mdc-button mdc-button--raised" onclick="location.href='https://discord.com/api/oauth2/authorize?client_id=726804663059480653&permissions=2147483639&scope=bot'">
-                    <div class="mdc-button__ripple"></div>
-                    <span class="mdc-button__label">Botを導入</span>
-                  </button>
-                  <button class="mdc-button mdc-button--raised" onclick="location.href='./discord/how-to-use.html'">
-                    <div class="mdc-button__ripple"></div>
-                    <span class="mdc-button__label">使い方</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h4>サポート</h4>
-        <div class="border-top" style="padding:10px;">
-          <div class="mdc-layout-grid__inner">
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
-              <div class="mdc-card text-center">
-                <iframe class="card-img-top" src="https://discord.com/widget?id=719167545000722472&theme=dark" width="500" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-                <div class="card-body">
-                  <h5 class="card-title">Clover_Bot サポートサーバー</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Discord Server</h6>
-                  <p class="card-text"></p>
-                  <button class="mdc-button mdc-button--raised" onclick="location.href='https://discord.gg/UpRRdGr'">
-                    <div class="mdc-button__ripple"></div>
-                    <span class="mdc-button__label">サポートサーバーに行く</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+
+    <main class="main-content" id="main-content">
+      <div class="mdc-top-app-bar--fixed-adjust">
+        App Content
       </div>
-      <nav class="navbar navbar-light bg-light">
-        <ul class="navbar-nav mr-auto">
-          <span class="navbar-text">
-            このサイトをご覧いただきありがとうございます
-          </span>
-        </ul>
-        <span class="navbar-text">
-          Created by Clover_Midori
-        </span>
-      </nav>
     </main>
-    </div>
   </div>
-  <script src="dist/bundle.js" async></script>
-  <script>
-    const drawer = mdc.drawer.MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
-    const topAppBar = mdc.topAppBar.MDCTopAppBar.attachTo(document.querySelector('.mdc-top-app-bar'));
-    topAppBar.listen('MDCTopAppBar:nav', () => {
-      drawer.open = !drawer.open;
-    });
-    const liner = mdc.linearProgress.MDCLinearProgress.attachTo(document.querySelector('.mdc-linear-progress'));
-    mdc.topAppBar.MDCTopAppBar.attachTo(document.querySelector('.mdc-top-app-bar'));
-    [].map.call(document.querySelectorAll('.mdc-button, .mdc-icon-button, .mdc-card__primary-action, .mdc-list-item'), function(el) {
-      return mdc.ripple.MDCRipple.attachTo(el);
-    });
-  </script>
 </body>
 
 </html>
