@@ -25,7 +25,7 @@ html.wf-active *{
 }
 
 body {
-  background: linear-gradient(25deg, var(--mdc-theme-primary), (--mdc-theme-secondary));
+  background: linear-gradient(25deg, var(--mdc-theme-primary), var(--mdc-theme-secondary));
 }
 
 .main-content {
