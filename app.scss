@@ -1,8 +1,8 @@
 @use "@material/theme" with (
   $primary: #B9F6CA,
   $secondary: #00E676,
-  $on-primary: ##FFFFFF,
-  $on-secondary: ##FFFFFF,
+  $on-primary: #FFFFFF,
+  $on-secondary: #FFFFFF
 );
 @use "@material/typography/mdc-typography";
 @use "@material/elevation/mdc-elevation";
