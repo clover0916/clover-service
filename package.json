@@ -5,7 +5,7 @@
   "description": "Built with Material Starter Kit, a file template to get you up and running with Material Components for the Web.",
   "scripts": {
     "build": "webpack -p",
-    "start": "webpack-dev-server --watch --disable-host-check --public clover-service.online"
+    "start": "webpack-dev-server --disable-host-check --public clover-service.online"
   },
   "dependencies": {
     "@babel/core": "^7.7.7",
