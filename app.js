@@ -2,6 +2,8 @@ import {MDCRipple} from '@material/ripple';
 import {MDCTopAppBar} from '@material/top-app-bar';
 import {MDCDrawer} from "@material/drawer";
 
+const buttonRipple = new MDCRipple(document.querySelector('.mdc-button'));
+
 const drawer = MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
 
 // インスタンス化

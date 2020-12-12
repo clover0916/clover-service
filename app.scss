@@ -13,6 +13,7 @@
 @use "@material/drawer";
 @use "@material/list";
 
+@include button.core-styles;
 @include drawer.core-styles;
 @include drawer.dismissible-core-styles;
 @include drawer.modal-core-styles;
