@@ -27,16 +27,12 @@ html {
   --mdc-typography-font-family: "Roboto", "Noto Sans JP", sans-serif;
 }
 
-body {
-  background: linear-gradient(25deg, #F13F79, #FFC778);
-}
-
 .main-content {
   height: 100%;
-  background: #FFFFFF;
 }
 
 .home {
+  background: linear-gradient(25deg, #F13F79, #FFC778);
   text-align: center;
   padding: 100px;
 }
