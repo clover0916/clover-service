@@ -11,6 +11,15 @@
 @include list.core-styles;
 @include icon-button.core-styles;
 
-.foo-button {
-  @include button.container-fill-color(darksalmon);
+body {
+  height: 100vh;
+}
+
+.main-content {
+  overflow: auto;
+  height: 100%;
+}
+
+.app-bar {
+  position: absolute;
 }
