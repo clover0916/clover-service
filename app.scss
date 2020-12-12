@@ -4,6 +4,12 @@
 @use "@material/top-app-bar/mdc-top-app-bar";
 @use "@material/drawer";
 @use "@material/list";
+@use "@material/theme" with (
+  $primary: #fcb8ab,
+  $secondary: #feeae6,
+  $on-primary: #442b2d,
+  $on-secondary: #442b2d,
+);
 
 @include drawer.core-styles;
 @include drawer.dismissible-core-styles;
@@ -23,9 +29,4 @@ body {
 
 .app-bar {
   position: absolute;
-}
-
-.mdc-top-app-bar {
-  // fill-color($color) is defined in the top-app-bar namespace
-  @include top-app-bar.fill-color(#94FF8F);
 }
