@@ -27,9 +27,11 @@
 }
 
 .back-image{
-  height: 350px;
-  width: auto;	
   background:linear-gradient(25deg, #F89174, #FFC778);
+}
+
+.back-ground {
+  background: #FFFFFF;
 }
 
 // Check out the MDC Web documentation for how to use MDC Sass mixins:
