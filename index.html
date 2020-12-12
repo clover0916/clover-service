@@ -2,8 +2,6 @@
 <html>
   <head>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,400,500" rel="stylesheet">
     <link rel="stylesheet" href="dist/bundle.css">
   </head>
   <body class="mdc-typography">
@@ -60,7 +58,22 @@
         Main
       </main>
     </div>
-    </div>
+    <script>
+      window.WebFontConfig = {
+        google: { families: ['Roboto:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900', 'Noto+Sans+JP:wght@100;300;400;500;700;900'] },
+        active: function() {
+        sessionStorage.fonts = true;
+      }
+      };
+      (function() {
+        var wf = document.createElement('script');
+        wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+      })();
+    </script>
   <script src="dist/bundle.js" async></script>
   </body>
 </html>
