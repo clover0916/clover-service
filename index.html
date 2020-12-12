@@ -16,11 +16,31 @@
     html {
       --mdc-typography-font-family: 'Roboto', 'Noto Sans JP', sans-serif;
     }
+    
+    body {
+      display: flex;
+      height: 100vh;
+    }
+
+    .mdc-drawer-app-content {
+      flex: auto;
+      overflow: auto;
+      position: relative;
+    }
+
+    .main-content {
+      overflow: auto;
+      height: 100%;
+    }
+
+    .app-bar {
+      position: absolute;
+    }
   </style>
 </head>
 
 <body class="mdc-typography back-image">
-  <aside class="mdc-drawer mdc-drawer--modal">
+  <aside class="mdc-drawer mdc-drawer--dismissible">
     <div class="mdc-drawer__header">
       <h3 class="mdc-drawer__title">Clover</h3>
       <h6 class="mdc-drawer__subtitle">ページ一覧</h6>
@@ -73,8 +93,9 @@
       </nav>
     </div>
   </aside>
-  <div class="mdc-drawer-app-content">
-    <header class="mdc-top-app-bar mdc-top-app-bar--short">
+  <div class="mdc-drawer-scrim"></div>
+  <div class="mdc-drawer-app-content back-ground">
+    <header class="mdc-top-app-bar app-bar" id="app-bar">
       <div class="mdc-top-app-bar__row">
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
           <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" aria-label="Open navigation menu">menu</button>
@@ -101,7 +122,8 @@
         <h1>ホームページへようこそ！！</h1>
         <p>ここはClover_Midoriが提供するサービスのホームページです</p>
     </div>
-    <main class="back-ground">
+    <div class="mdc-drawer-app-content mdc-top-app-bar--fixed-adjust">
+      <main class="main-content" id="main-content">
       <div class="mdc-layout-grid">
         <h4>サービス一覧</h4>
         <div class="border-top" style="padding:10px;">
@@ -156,6 +178,7 @@
         </span>
       </nav>
     </main>
+    </div>
   </div>
   <script src="dist/bundle.js" async></script>
   <script>
