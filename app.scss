@@ -1,5 +1,5 @@
 @use "@material/theme" with (
-  $primary: #B2FF59,
+  $primary: #8BC34A,
   $secondary: #FF9800
 );
 @use "@material/typography/mdc-typography";
@@ -28,7 +28,7 @@ html.wf-active *{
 }
 
 body {
-  background: linear-gradient(25deg, #F13F79, #FFC778);
+  background: linear-gradient(25deg, #01579B, #E1F5FE);
 }
 
 .main-content {
