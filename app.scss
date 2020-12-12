@@ -1,4 +1,9 @@
-@use "@material/theme";
+@use "@material/theme" with (
+  $primary: #F13F79,
+  $secondary: #FFC778,
+  $on-primary: #442b2d,
+  $on-secondary: #442b2d,
+);
 @use "@material/typography/mdc-typography";
 @use "@material/elevation/mdc-elevation";
 @use '@material/button/mdc-button';
@@ -25,7 +30,7 @@ html.wf-active *{
 }
 
 body {
-  background: linear-gradient(25deg, var(--mdc-theme-primary), var(--mdc-theme-secondary));
+  background: linear-gradient(25deg, #F13F79, #FFC778);
 }
 
 .main-content {
