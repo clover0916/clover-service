@@ -1,8 +1,8 @@
 @use "@material/theme" with (
-  $primary: #B9F6CA,
-  $secondary: #00E676,
-  $on-primary: #FFFFFF,
-  $on-secondary: #FFFFFF
+  $primary: #fcb8ab,
+  $secondary: #feeae6,
+  $on-primary: #442b2d,
+  $on-secondary: #442b2d,
 );
 @use "@material/typography/mdc-typography";
 @use "@material/elevation/mdc-elevation";
@@ -30,7 +30,7 @@ html.wf-active *{
 }
 
 body {
-  background: linear-gradient(25deg, #F13F79, #FFC778);
+  background: linear-gradient(25deg, #fcb8ab, #feeae6);
 }
 
 .main-content {
