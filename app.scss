@@ -1,8 +1,8 @@
 @use "@material/theme" with (
-  $primary: #fcb8ab,
-  $secondary: #feeae6,
-  $on-primary: #442b2d,
-  $on-secondary: #442b2d,
+  $primary: #B9F6CA,
+  $secondary: #00E676,
+  $on-primary: ##FFFFFF,
+  $on-secondary: ##FFFFFF,
 );
 @use "@material/typography/mdc-typography";
 @use "@material/elevation/mdc-elevation";
@@ -27,7 +27,6 @@
 
 html.wf-active *{
     visibility: visible;
-    --mdc-typography-font-family: "Roboto", "Noto Sans JP", sans-serif;
 }
 
 body {
