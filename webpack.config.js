@@ -2,8 +2,9 @@ const autoprefixer = require('autoprefixer');
 var nodeExternals = require('webpack-node-externals');
 
 module.exports = [{
-  context: __dirname + '/webpack',
-  entry: ['./app.js', './app.scss'],
+  target: 'node',
+  externals: [nodeExternals()],
+  entry: ['./webpack/app.js', './webpack/app.scss'],
   output: {
     filename: 'bundle.js',
     path: __dirname + 'public/dist'
