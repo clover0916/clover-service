@@ -16,12 +16,6 @@ module.exports = [{
       __filename: false, // and __filename return blank or /
     },
   externals: [nodeExternals()],
-  mode: "development",
-  devServer: {
-    port: process.env.PORT || 5000,
-    host: '0.0.0.0',
-    open: true,
-  },
   module: {
     rules: [
       {
@@ -57,10 +51,10 @@ module.exports = [{
       },
       {
         test: /\.js$/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['@babel/preset-env']
-        },
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader"
+        }
       }
     ]
   },
