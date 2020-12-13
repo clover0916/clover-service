@@ -27,12 +27,12 @@ html {
   height: 100vh;
 }
 
-body {
-  height: 100vh;
-}
-
 html.wf-active *{
   --mdc-typography-font-family: "Roboto", "Noto Sans JP", sans-serif;
+}
+
+body {
+  height: 100vh;
 }
 
 .title {
