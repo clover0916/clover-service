@@ -4,7 +4,7 @@ var nodeExternals = require('webpack-node-externals');
 module.exports = [{
   target: 'node',
   externals: [nodeExternals()],
-  entry: ['./webpack/app.js', './webpack/app.scss'],
+  entry: ['./app.js', './app.scss'],
   output: {
     filename: 'bundle.js',
     path: __dirname + 'public/dist'
