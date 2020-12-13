@@ -2,7 +2,7 @@ doctype html
 html.gradation-orange
   head
     title ページが見つかりませんでした
-    link(rel='stylesheet', href='/dist/bundle.css')
+    link(rel='stylesheet', href='./dist/bundle.css')
   body
     .error
       h1.mdc-typography--headline1
@@ -10,10 +10,10 @@ html.gradation-orange
       h2.mdc-typography--subtitle1
         | お探しのページは見つかりませんでした
       .mdc-touch-target-wrapper
-        button.mdc-button.mdc-button--raised.mdc-button--touch
+        button.mdc-button.mdc-button--raised.mdc-button--touch(onclick="location.href='./index.html'")
           .mdc-button__ripple
           i.material-icons.mdc-button__icon(aria-hidden="true") home
           span.mdc-button__label
             | ホームに戻る
           .mdc-button__touch
-    script(src="/dist/bundle.js" async)
+    script(src="./dist/bundle.js" async)
