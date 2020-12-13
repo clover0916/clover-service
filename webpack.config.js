@@ -6,7 +6,7 @@ module.exports = [{
   output: {
     path: path.join(__dirname, 'public', 'dist'),
     publicPath: '/',
-    filename: 'bundle.js'
+    filename: '[name].js'
   },
   module: {
     rules: [
@@ -16,7 +16,7 @@ module.exports = [{
           {
             loader: 'file-loader',
             options: {
-              name: 'bundle.css',
+              name: '[name].css',
             },
           },
           { loader: 'extract-loader' },
