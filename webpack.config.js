@@ -4,7 +4,7 @@ var nodeExternals = require('webpack-node-externals');
 module.exports = [{
   target: 'node',
   externals: [nodeExternals()],
-  entry: ['./app.scss', './app.js'],
+  entry: ['./webpack/app.scss', './webpack/app.js'],
   output: {
     filename: 'bundle.js',
   },
@@ -17,7 +17,7 @@ module.exports = [{
   module: {
     rules: [
       {
-        test: /webpack\/\.scss$/,
+        test: /\.scss$/,
         use: [
           {
             loader: 'file-loader',
@@ -48,7 +48,7 @@ module.exports = [{
         ]
       },
       {
-        test: /webpack\/\.js$/,
+        test: /\.js$/,
         loader: 'babel-loader',
         query: {
           presets: ['@babel/preset-env']
