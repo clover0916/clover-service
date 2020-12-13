@@ -27,8 +27,10 @@ html.wf-active *{
   --mdc-typography-font-family: "Roboto", "Noto Sans JP", sans-serif;
 }
 
-body {
+.title {
   background: linear-gradient(25deg, #AD1457, #FFE082);
+  text-align: center;
+  padding: 100px;
 }
 
 .main-content {
@@ -36,7 +38,7 @@ body {
   background: #FFFFFF;
 }
 
-.home {
+.error {
   text-align: center;
-  padding: 100px;
+  padding: 50px;
 }
