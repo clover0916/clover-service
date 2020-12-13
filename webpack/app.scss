@@ -28,9 +28,12 @@ html.wf-active *{
 }
 
 .title {
-  background: linear-gradient(25deg, #AD1457, #FFE082);
   text-align: center;
   padding: 100px;
+}
+
+.gradation-orange {
+  background: linear-gradient(25deg, #AD1457, #FFE082);
 }
 
 .main-content {
@@ -40,5 +43,5 @@ html.wf-active *{
 
 .error {
   text-align: center;
-  padding: 50px;
+  padding: 100px
 }
