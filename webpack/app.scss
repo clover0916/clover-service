@@ -23,6 +23,14 @@
   padding: 0px;
 }
 
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
 html.wf-active *{
   --mdc-typography-font-family: "Roboto", "Noto Sans JP", sans-serif;
 }
