@@ -17,7 +17,7 @@ module.exports = [{
   module: {
     rules: [
       {
-        test: /\.scss$/,
+        test: './webpack/*.scss',
         use: [
           {
             loader: 'file-loader',
@@ -48,7 +48,7 @@ module.exports = [{
         ]
       },
       {
-        test: /\.js$/,
+        test: './webpack/*.js',
         loader: 'babel-loader',
         query: {
           presets: ['@babel/preset-env']
