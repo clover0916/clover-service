@@ -1,46 +1,41 @@
-import { MDCRipple } from '@material/ripple';
-import { MDCTopAppBar } from '@material/top-app-bar';
-import { MDCDrawer } from "@material/drawer";
+var createError = require('http-errors');
+var express = require('express');
+var path = require('path');
+var cookieParser = require('cookie-parser');
+var logger = require('morgan');
 
-const buttonRipple = new MDCRipple(document.querySelector('.mdc-button'));
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
 
-const drawer = MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
+var app = express();
 
-// インスタンス化
-const topAppBarElement = document.querySelector('.mdc-top-app-bar');
-const topAppBarInstance = new MDCTopAppBar(topAppBarElement);
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
 
-const topAppBar = MDCTopAppBar.attachTo(document.getElementById('app-bar'));
-topAppBar.setScrollTarget(document.getElementById('main-content'));
-topAppBar.listen('MDCTopAppBar:nav', () => {
-  drawer.open = !drawer.open;
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+  next(createError(404));
 });
 
-const iconButtonRipple = new MDCRipple(document.querySelector('.mdc-icon-button'));
-iconButtonRipple.unbounded = true;
+// error handler
+app.use(function(err, req, res, next) {
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+  res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-const listEl = document.querySelector('.mdc-drawer .mdc-list');
-const mainContentEl = document.querySelector('.main-content');
-
-listEl.addEventListener('click', (event) => {
-  drawer.open = false;
+  // render the error page
+  res.status(err.status || 500);
+  res.render('error');
 });
 
-document.body.addEventListener('MDCDrawer:closed', () => {
-  mainContentEl.querySelector('input, button').focus();
-});
-
-window.WebFontConfig = {
-  google: { families: ['Roboto', 'Noto+Sans+JP', 'Material+Icons'] },
-  active: function() {
-    sessionStorage.fonts = true;
-  }
-};
-(function() {
-  var wf = document.createElement('script');
-  wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
-  wf.type = 'text/javascript';
-  wf.async = 'true';
-  var s = document.getElementsByTagName('script')[0];
-  s.parentNode.insertBefore(wf, s);
-})();
+module.exports = app;
