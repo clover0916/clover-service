@@ -5,7 +5,7 @@ const path = require('path');
 module.exports = [{
   entry: ['./webpack/app.js', './webpack/app.scss'],
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, 'public', 'dist'),
     publicPath: '/',
     filename: '[name].js'
   },
