@@ -4,10 +4,11 @@ var nodeExternals = require('webpack-node-externals');
 module.exports = [{
   target: 'node',
   externals: [nodeExternals()],
-  entry: ['./webpack/app.scss', './webpack/app.js'],
+  entry: './webpack',
   output: {
-    filename: 'bundle.js',
-  },
+    filename: '[name].js',
+    path: __dirname + '/public/dist'
+  }
   mode: "development",
   devServer: {
     port: process.env.PORT || 5000,
