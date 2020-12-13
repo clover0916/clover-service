@@ -28,6 +28,7 @@
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
     "pug": "2.0.0-beta11",
+    "webpack-node-externals": "^2.5.2",
     "@material/button": "^8.0.0",
     "@material/drawer": "^8.0.0",
     "@material/icon-button": "^8.0.0",

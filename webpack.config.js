@@ -1,6 +1,9 @@
 const autoprefixer = require('autoprefixer');
+var nodeExternals = require('webpack-node-externals');
 
 module.exports = [{
+  target: 'node',
+  externals: [nodeExternals()],
   entry: ['./app.scss', './app.js'],
   output: {
     filename: 'bundle.js',
