@@ -2,9 +2,8 @@ const autoprefixer = require('autoprefixer');
 var nodeExternals = require('webpack-node-externals');
 
 module.exports = [{
-  target: 'node',
-  externals: [nodeExternals()],
-  entry: ['./webpack/app.js', './webpack/app.scss'],
+  context: __dirname + '/webpack',
+  entry: ['./app.js', './app.scss'],
   output: {
     filename: 'bundle.js',
     path: __dirname + 'public/dist'
@@ -51,7 +50,6 @@ module.exports = [{
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: [/node_modules/, /routes/],
         query: {
           presets: ['@babel/preset-env']
         },
