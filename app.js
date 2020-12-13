@@ -31,7 +31,7 @@ document.body.addEventListener('MDCDrawer:closed', () => {
 });
 
 window.WebFontConfig = {
-  google: { families: ['Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700', 'Noto+Sans+JP:wght@300;400;500;700', 'Material+Icons'] },
+  google: { families: ['Roboto', 'Noto+Sans+JP', 'Material+Icons'] },
   active: function() {
     sessionStorage.fonts = true;
   }
