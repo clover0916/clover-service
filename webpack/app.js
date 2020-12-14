@@ -1,5 +1,3 @@
-window.mdc.autoInit();
-
 import { MDCRipple } from '@material/ripple';
 import { MDCTopAppBar } from '@material/top-app-bar';
 import { MDCDrawer } from "@material/drawer";
