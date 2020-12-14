@@ -5,6 +5,13 @@ html
     meta(name='viewport' content='width=device-width, initial-scale=1')
     link(rel='stylesheet' href='dist/bundle.css')
   body.mdc-typography
+    header#app-bar.mdc-top-app-bar.mdc-elevation--z6
+      .mdc-top-app-bar__row
+        section.mdc-top-app-bar__section.mdc-top-app-bar__section--align-start
+          button.material-icons.mdc-top-app-bar__navigation-icon.mdc-icon-button(aria-label='Open navigation menu') menu
+          span.mdc-top-app-bar__title Page title
+        section.mdc-top-app-bar__section.mdc-top-app-bar__section--align-end(role='toolbar')
+          button.material-icons.mdc-top-app-bar__action-item.mdc-icon-button(aria-label='Favorite') home
     .mdc-top-app-bar--fixed-adjust
       .title.gradation-orange
         h1.mdc-typography--headline1 Clover
