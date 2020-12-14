@@ -12,7 +12,6 @@
 @use '@material/button';
 @use "@material/icon-button";
 
-@import "custom";
 @import "~bootstrap/scss/bootstrap";
 
 @include button.core-styles;
