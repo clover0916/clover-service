@@ -4,7 +4,7 @@
   "main": "index.js",
   "description": "Built with Material Starter Kit, a file template to get you up and running with Material Components for the Web.",
   "scripts": {
-    "build": "webpack -p",
+    "build": "webpack --mode production",
     "start": "node ./bin/www"
   },
   "dependencies": {
@@ -21,7 +21,6 @@
     "style-loader": "^2.0.0",
     "webpack": "^5.10.2",
     "webpack-cli": "^4.2.0",
-    "webpack-dev-server": "^3.11.0",
     "cookie-parser": "~1.4.5",
     "debug": "~4.3.1",
     "express": "~4.17.1",
