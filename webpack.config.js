@@ -67,8 +67,6 @@ module.exports = [{
               sassOptions: {
                           includePaths: ['./node_modules']
               },
-              // ソースマップの利用有無
-              sourceMap: enabledSourceMap
             },
           },
         ]
@@ -82,5 +80,10 @@ module.exports = [{
       }
     ]
   },
-  target: ["web", "es5"],
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: "style.css",
+    }),
+  ],
+  target: ["web", "es5"]
 }];
