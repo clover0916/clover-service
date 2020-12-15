@@ -12,35 +12,33 @@ module.exports = [{
       {
         test: /\.scss$/,
         use: [
-          // linkタグに出力する機能
-          "style-loader",
           {
-            loader: "css-loader",
+            loader: 'file-loader',
             options: {
-              // オプションでCSS内のurl()メソッドの取り込みを禁止する
-              url: false,
-              // ソースマップの利用有無
-              sourceMap: true,
-              // 0 => no loaders (default);
-              // 1 => postcss-loader;
-              // 2 => postcss-loader, sass-loader
-              importLoaders: 2
-            }
-          },
+              name: 'bundle.css',
+            },
+                },
+          { loader: 'extract-loader' },
+          { loader: 'css-loader' },
           {
-            loader: "sass-loader",
+            loader: 'postcss-loader',
+            options: {
+              plugins: () => [autoprefixer()]
+            }
+                },
+          {
+            loader: 'sass-loader',
             options: {
               implementation: require('sass'),
-              
+      
               // See https://github.com/webpack-contrib/sass-loader/issues/804
               webpackImporter: false,
               sassOptions: {
-                          includePaths: ['./node_modules']
-              },
-              sourceMap: true,
-            },
-          },
-        ]
+                includePaths: ['./node_modules']
+              }
+            }
+                }
+              ]
       },
       {
         test: /\.js$/,
