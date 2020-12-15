@@ -1,4 +1,3 @@
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require('path');
 
 module.exports = [{
@@ -10,18 +9,6 @@ module.exports = [{
   },
   module: {
     rules: [
-      // PostCSSのための設定
-      {
-        loader: "postcss-loader",
-        options: {
-          // PostCSS側でもソースマップを有効にする
-          sourceMap: true,
-          postcssOptions: {
-            // ベンダープレフィックスを自動付与する
-            plugins: ["autoprefixer"],
-          },
-        },
-      },
       {
         test: /\.scss$/,
         use: [
