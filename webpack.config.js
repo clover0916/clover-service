@@ -49,7 +49,6 @@ module.exports = [{
               // オプションでCSS内のurl()メソッドの取り込みを禁止する
               url: false,
               // ソースマップの利用有無
-              sourceMap: enabledSourceMap,
           
               // 0 => no loaders (default);
               // 1 => postcss-loader;
