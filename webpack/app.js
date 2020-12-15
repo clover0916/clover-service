@@ -3,8 +3,6 @@ import { MDCTopAppBar } from '@material/top-app-bar';
 import { MDCDrawer } from "@material/drawer";
 import bootstrap from 'bootstrap';
 
-import './custom.scss';
-
 const buttonRipple = new MDCRipple(document.querySelector('.mdc-button'));
 
 const drawer = MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
