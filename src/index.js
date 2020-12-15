@@ -3,7 +3,7 @@ import { MDCTopAppBar } from '@material/top-app-bar';
 import { MDCDrawer } from "@material/drawer";
 
 // BootstrapのJavaScript側の機能を読み込む
-import "bootstrap";
+//import "bootstrap";
 
 import "./index.scss";
 
