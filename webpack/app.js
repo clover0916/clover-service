@@ -1,7 +1,12 @@
 import { MDCRipple } from '@material/ripple';
 import { MDCTopAppBar } from '@material/top-app-bar';
 import { MDCDrawer } from "@material/drawer";
-import bootstrap from 'bootstrap';
+
+// BootstrapのJavaScript側の機能を読み込む
+import "bootstrap";
+
+// スタイルシートを読み込む
+import "./app.scss";
 
 const buttonRipple = new MDCRipple(document.querySelector('.mdc-button'));
 

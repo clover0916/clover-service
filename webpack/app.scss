@@ -12,8 +12,7 @@
 @use '@material/button';
 @use "@material/icon-button";
 
-@import "./custom";
-@import "bootstrap/scss/bootstrap";
+@import "~bootstrap/scss/bootstrap.scss";
 
 @include button.core-styles;
 @include drawer.core-styles;
