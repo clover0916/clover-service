@@ -12,12 +12,6 @@
 @use '@material/button';
 @use "@material/icon-button";
 
-@import "bootstrap/scss/bootstrap";
-@import "bootstrap/scss/functions";
-@import "bootstrap/scss/variables";
-@import "bootstrap/scss/mixins";
-@import "bootstrap/scss/borders";
-
 @include button.core-styles;
 @include drawer.core-styles;
 @include drawer.dismissible-core-styles;

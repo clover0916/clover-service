@@ -1,7 +1,9 @@
 import { MDCRipple } from '@material/ripple';
 import { MDCTopAppBar } from '@material/top-app-bar';
 import { MDCDrawer } from "@material/drawer";
-import { Tooltip, Toast, Popover } from 'bootstrap';
+import bootstrap from 'bootstrap';
+
+import './custom.scss';
 
 const buttonRipple = new MDCRipple(document.querySelector('.mdc-button'));
 
