@@ -10,22 +10,6 @@ module.exports = [{
   },
   module: {
     rules: [
-      // CSSファイルを書き出すオプションを有効にする
-      {
-        loader: MiniCssExtractPlugin.loader,
-      },
-      // CSSをバンドルするための機能
-      {
-        loader: "css-loader",
-        options: {
-          // オプションでCSS内のurl()メソッドの取り込まない
-          url: false,
-          // ソースマップの利用有無
-          sourceMap: true,
-          // Sass+PostCSSの場合は2を指定
-          importLoaders: 2,
-        },
-      },
       // PostCSSのための設定
       {
         loader: "postcss-loader",
@@ -80,10 +64,5 @@ module.exports = [{
       }
     ]
   },
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: "style.css",
-    }),
-  ],
   target: ["web", "es5"]
 }];
