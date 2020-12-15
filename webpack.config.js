@@ -1,57 +1,64 @@
-const autoprefixer = require('autoprefixer');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require('path');
 
-module.exports = [{
-  entry:'./webpack/app.js',
+module.exports = {
   mode: 'production',
   output: {
     path: path.join(__dirname, 'public', 'dist'),
-    filename: 'bundle.js'
   },
   module: {
     rules: [
       {
+        // 対象となるファイルの拡張子(scss)
         test: /\.scss$/,
+        // Sassファイルの読み込みとコンパイル
         use: [
+          // CSSファイルを書き出すオプションを有効にする
           {
-            loader: 'file-loader',
+            loader: MiniCssExtractPlugin.loader,
+          },
+          // CSSをバンドルするための機能
+          {
+            loader: "css-loader",
             options: {
-              name: 'bundle.css',
+              // オプションでCSS内のurl()メソッドの取り込まない
+              url: false,
+              // ソースマップの利用有無
+              sourceMap: true,
+              // Sass+PostCSSの場合は2を指定
+              importLoaders: 2,
             },
-                },
-          { loader: 'extract-loader' },
-          { loader: 'css-loader' },
+          },
+          // PostCSSのための設定
           {
             loader: "postcss-loader",
             options: {
+              // PostCSS側でもソースマップを有効にする
+              sourceMap: true,
               postcssOptions: {
                 // ベンダープレフィックスを自動付与する
                 plugins: ["autoprefixer"],
-              }
-            }
+              },
+            },
           },
+        
+            // Sassをバンドルするための機能
           {
-            loader: 'sass-loader',
+            loader: "sass-loader",
             options: {
-              implementation: require('sass'),
-      
-              // See https://github.com/webpack-contrib/sass-loader/issues/804
-              webpackImporter: false,
-              sassOptions: {
-                includePaths: ['./node_modules']
-              }
-            }
-                }
-              ]
+              // ソースマップの利用有無
+              sourceMap: true,
+            },
+          },
+        ],
       },
-      {
-        test: /\.js$/,
-        loader: 'babel-loader',
-        options: {
-          presets: ['@babel/preset-env']
-        },
-      }
-    ]
+    ],
   },
-  target: ["web", "es5"]
-}];
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: "style.css",
+    }),
+  ],
+  // source-map方式でないと、CSSの元ソースが追跡できないため
+  devtool: "source-map"
+};
