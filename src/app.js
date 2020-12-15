@@ -5,6 +5,8 @@ import { MDCDrawer } from "@material/drawer";
 // BootstrapのJavaScript側の機能を読み込む
 import "bootstrap";
 
+import "./index.scss";
+
 const buttonRipple = new MDCRipple(document.querySelector('.mdc-button'));
 
 const drawer = MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
