@@ -44,7 +44,7 @@ module.exports = [{
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        query: {
+        use: {
           presets: ['@babel/preset-env']
         },
       }
