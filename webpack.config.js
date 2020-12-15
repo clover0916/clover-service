@@ -1,4 +1,4 @@
-const autoprefixer = require('autoprefixer');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require('path');
 
 module.exports = [{
@@ -10,46 +10,67 @@ module.exports = [{
   },
   module: {
     rules: [
+      // CSSファイルを書き出すオプションを有効にする
       {
-        // 対象となるファイルの拡張子(cssのみ)
-        test: /\.css$/,
-        // Sassファイルの読み込みとコンパイル
-        use: [
-          // スタイルシートをJSからlinkタグに展開する機能
-          "style-loader",
-          // CSSをバンドルするための機能
-          "css-loader"
-        ],
+        loader: MiniCssExtractPlugin.loader,
+      },
+      // CSSをバンドルするための機能
+      {
+        loader: "css-loader",
+        options: {
+          // オプションでCSS内のurl()メソッドの取り込まない
+          url: false,
+          // ソースマップの利用有無
+          sourceMap: true,
+          // Sass+PostCSSの場合は2を指定
+          importLoaders: 2,
+        },
+      },
+      // PostCSSのための設定
+      {
+        loader: "postcss-loader",
+        options: {
+          // PostCSS側でもソースマップを有効にする
+          sourceMap: true,
+          postcssOptions: {
+            // ベンダープレフィックスを自動付与する
+            plugins: ["autoprefixer"],
+          },
+        },
       },
       {
         test: /\.scss$/,
         use: [
+          // linkタグに出力する機能
+          "style-loader",
           {
-            loader: 'file-loader',
+            loader: "css-loader",
             options: {
-              name: 'bundle.css',
-            },
-          },
-          { loader: 'extract-loader' },
-          { loader: 'css-loader' },
-          {
-            loader: 'postcss-loader',
-            options: {
-               plugins: () => [autoprefixer()]
+              // オプションでCSS内のurl()メソッドの取り込みを禁止する
+              url: false,
+              // ソースマップの利用有無
+              sourceMap: enabledSourceMap,
+          
+              // 0 => no loaders (default);
+              // 1 => postcss-loader;
+              // 2 => postcss-loader, sass-loader
+              importLoaders: 2
             }
           },
           {
-            loader: 'sass-loader',
+            loader: "sass-loader",
             options: {
               implementation: require('sass'),
-
+              
               // See https://github.com/webpack-contrib/sass-loader/issues/804
               webpackImporter: false,
               sassOptions: {
-                includePaths: ['./node_modules']
-              }
-            }
-          }
+                          includePaths: ['./node_modules']
+              },
+              // ソースマップの利用有無
+              sourceMap: enabledSourceMap
+            },
+          },
         ]
       },
       {
