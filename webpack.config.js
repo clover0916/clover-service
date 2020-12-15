@@ -2,10 +2,10 @@ const autoprefixer = require('autoprefixer');
 const path = require('path');
 
 module.exports = [{
-  entry: ['./webpack/app.js', './webpack/app.scss'],
+  entry:'./webpack/app.js',
+  mode: 'production',
   output: {
     path: path.join(__dirname, 'public', 'dist'),
-    publicPath: '/',
     filename: 'bundle.js'
   },
   module: {
@@ -43,11 +43,12 @@ module.exports = [{
       },
       {
         test: /\.js$/,
-        use: 'babel-loader',
-        loader: {
+        loader: 'babel-loader',
+        options: {
           presets: ['@babel/preset-env']
         },
       }
     ]
   },
+  target: ["web", "es5"],
 }];
