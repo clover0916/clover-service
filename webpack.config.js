@@ -22,11 +22,14 @@ module.exports = [{
           { loader: 'extract-loader' },
           { loader: 'css-loader' },
           {
-            loader: 'postcss-loader',
+            loader: "postcss-loader",
             options: {
-              plugins: () => [autoprefixer()]
+              postcssOptions: {
+                // ベンダープレフィックスを自動付与する
+                plugins: ["autoprefixer"],
+              }
             }
-                },
+          },
           {
             loader: 'sass-loader',
             options: {
