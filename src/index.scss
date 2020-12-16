@@ -11,8 +11,7 @@
 @use '@material/button/mdc-button';
 @use '@material/button';
 @use "@material/icon-button";
-
-@import "~bootstrap/scss/bootstrap.scss";
+@use "bootstrap/scss/bootstrap";
 
 @include button.core-styles;
 @include drawer.core-styles;
