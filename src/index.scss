@@ -50,7 +50,6 @@ body {
 
 .main-content {
   height: 100vh;
-  margin:25px;
   background: #FFFFFF;
 }
 
@@ -61,5 +60,10 @@ body {
 }
 
 .border-bottom {
+  padding:0px 8% 0px 0px;
   border-bottom: 1px solid #cccccc;
+}
+
+.size-fixed {
+  margin:10px
 }
