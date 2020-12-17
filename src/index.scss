@@ -1,3 +1,8 @@
+$mdc-typography-styles-headline2: (
+  font-family: unquote("Noto Sans JP"),
+  font-size: 60
+);
+
 @use "@material/theme" with (
   $primary: #FFC107,
   $secondary: #CCFF90
