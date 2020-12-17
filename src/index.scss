@@ -1,8 +1,3 @@
-$mdc-typography-styles-headline2: (
-  font-family: unquote("Noto Sans JP"),
-  font-size: 60
-);
-
 @use "@material/theme" with (
   $primary: #FFC107,
   $secondary: #CCFF90
@@ -67,4 +62,8 @@ body {
 .border-bottom {
   padding:0px 10% 0px 0px;
   border-bottom: 1px solid #cccccc;
+}
+
+.use-noto {
+  font-family: unquote("Noto Sans JP");
 }
