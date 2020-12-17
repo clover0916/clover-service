@@ -65,11 +65,12 @@ body {
 }
 
 .font-thin {
+  --mdc-typography-headline3-font-weight: 100;
   font-weight: 100;
 }
 
 .font-light {
-  --mdc-typography-headline3-font-weight: light;
+  --mdc-typography-headline3-font-weight: 300;
 }
 
 .font-regular {
