@@ -24,6 +24,11 @@ topAppBar.listen('MDCTopAppBar:nav', () => {
 const iconButtonRipple = new MDCRipple(document.querySelector('.mdc-icon-button'));
 iconButtonRipple.unbounded = true;
 
+const selector = '.mdc-button, .mdc-icon-button, .mdc-card__primary-action';
+const ripples = [].map.call(document.querySelectorAll(selector), function(el) {
+  return new MDCRipple(el);
+});
+
 const listEl = document.querySelector('.mdc-drawer .mdc-list');
 const mainContentEl = document.querySelector('.main-content');
 
