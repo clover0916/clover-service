@@ -1,6 +1,7 @@
 import { MDCRipple } from '@material/ripple';
 import { MDCTopAppBar } from '@material/top-app-bar';
 import { MDCDrawer } from "@material/drawer";
+import {MDCDialog} from '@material/dialog';
 
 // BootstrapのJavaScript側の機能を読み込む
 //import "bootstrap";
@@ -8,7 +9,7 @@ import { MDCDrawer } from "@material/drawer";
 import "./index.scss";
 
 const buttonRipple = new MDCRipple(document.querySelector('.mdc-button'));
-
+const dialog = new MDCDialog(document.querySelector('.mdc-dialog'));
 const drawer = MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
 
 // インスタンス化
@@ -20,6 +21,19 @@ topAppBar.setScrollTarget(document.getElementById('main-content'));
 topAppBar.listen('MDCTopAppBar:nav', () => {
   drawer.open = !drawer.open;
 });
+
+dialog.listen('MDCDialog:opened', function() {
+  // contentElement がページのほかのコンテンツの共通の親要素を参照していると仮定
+  contentElement.setAttribute('aria-hidden', 'true');
+});
+dialog.listen('MDCDialog:closing', function() {
+  contentElement.removeAttribute('aria-hidden');
+});
+
+function open_dialog(evt) {
+  dialog.lastFocusedTarget = evt.target;
+  dialog.open();
+}
 
 const iconButtonRipple = new MDCRipple(document.querySelector('.mdc-icon-button'));
 iconButtonRipple.unbounded = true;
