@@ -27,6 +27,8 @@
     "http-errors": "~1.8.0",
     "morgan": "~1.10.0",
     "pug": "3.0.0",
+    "url-loader": "^4.1.1",
+    "file-loader": "^6.2.0",
     "@material/button": "^8.0.0",
     "@material/drawer": "^8.0.0",
     "@material/icon-button": "^8.0.0",

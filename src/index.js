@@ -5,6 +5,12 @@ import { MDCDrawer } from "@material/drawer";
 // BootstrapのJavaScript側の機能を読み込む
 //import "bootstrap";
 
+import BotIcon from './bot-icon.png'
+
+let imgPng = document.createElement('img')
+imgPng.src = BotIcon
+document.getElementById('bot-icon').appendChild(imgPng)
+
 import "./index.scss";
 
 const buttonRipple = new MDCRipple(document.querySelector('.mdc-button'));
