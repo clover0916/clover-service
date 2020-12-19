@@ -11,7 +11,7 @@ let imgPng = document.createElement('img')
 imgPng.src = BotIcon
 imgPng.alt = 'Clover_Bot_Icon'
 imgPng.style.width="auto"
-imgPng.style.height="100%"
+imgPng.style.height="50%"
 document.getElementById('bot-icon').appendChild(imgPng)
 
 import "./index.scss";
