@@ -31,7 +31,7 @@ dialog.listen('MDCDialog:closing', function() {
 });
 
 function open_dialog() {
-  dialog.open();
+  dialog.isOpen = !dialog.isOpen;
 }
 
 const iconButtonRipple = new MDCRipple(document.querySelector('.mdc-icon-button'));
