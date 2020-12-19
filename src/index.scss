@@ -64,9 +64,19 @@ body {
 }
 
 .text-border-bottom {
-  padding: 0px 15% 0px 0px;
-  display: inline-block;
-  border-bottom: 3px solid black;
+  position: relative;
+  padding: 1rem 2rem;
+  border-bottom: 3px solid #094;
+}
+
+.text-border-bottom:before {
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 20%;
+  height: 6px;
+  content: '';
+  background: #00cc5b;
 }
 
 .font-thin {
