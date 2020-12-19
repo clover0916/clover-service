@@ -55,7 +55,11 @@ module.exports = {
       {
         // 追記
         test: /\.(jpg|png)$/,
-        loaders: 'url-loader'
+        use: [
+          {
+            loaders: 'url-loader'
+          }
+        ]
       },
     ],
   },
