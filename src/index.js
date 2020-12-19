@@ -30,9 +30,12 @@ dialog.listen('MDCDialog:closing', function() {
   contentElement.removeAttribute('aria-hidden');
 });
 
-function open_dialog() {
-  dialog.isOpen = !dialog.isOpen;
-}
+document.querySelector('#dialog-open').addEventListener('click', function (evt) {
+    event.preventDefault(evt);
+    dialog.lastFocusedTarget = evt.target;
+    // This shows all dialogs, which is wrong.
+    dialog.show();
+  })
 
 const iconButtonRipple = new MDCRipple(document.querySelector('.mdc-icon-button'));
 iconButtonRipple.unbounded = true;
