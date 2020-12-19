@@ -30,9 +30,8 @@ dialog.listen('MDCDialog:closing', function() {
   contentElement.removeAttribute('aria-hidden');
 });
 
-function open_dialog(evt) {
-  dialog.lastFocusedTarget = evt.target;
-  dialog.show();
+function open_dialog() {
+  dialog.open();
 }
 
 const iconButtonRipple = new MDCRipple(document.querySelector('.mdc-icon-button'));
