@@ -29,33 +29,7 @@
     </aside>
 
     <div class="mdc-drawer-scrim"></div>
-    
-    <aside>
-      <div class="mdc-dialog">
-      <div class="mdc-dialog__container">
-        <div class="mdc-dialog__surface"
-          role="alertdialog"
-          aria-modal="true"
-          aria-labelledby="my-dialog-title"
-          aria-describedby="my-dialog-content">
-          <div class="mdc-dialog__content" id="my-dialog-content">
-            他のサイトに移動します
-          </div>
-          <div class="mdc-dialog__actions">
-            <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="cancel">
-              <div class="mdc-button__ripple"></div>
-              <span class="mdc-button__label">戻る</span>
-            </button>
-            <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="discard">
-              <div class="mdc-button__ripple"></div>
-              <span class="mdc-button__label">進む</span>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="mdc-dialog__scrim"></div>
-    </div>
-    </aside>
+  
     <header class="mdc-top-app-bar mdc-elevation--z6" id="app-bar">
       <div class="mdc-top-app-bar__row">
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
@@ -116,6 +90,30 @@
         </div>
       </main>
     </div>
+  <div class="mdc-dialog">
+  <div class="mdc-dialog__container">
+    <div class="mdc-dialog__surface"
+      role="alertdialog"
+      aria-modal="true"
+      aria-labelledby="my-dialog-title"
+      aria-describedby="my-dialog-content">
+      <div class="mdc-dialog__content" id="my-dialog-content">
+        Discard draft?
+      </div>
+      <div class="mdc-dialog__actions">
+        <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="cancel">
+          <div class="mdc-button__ripple"></div>
+          <span class="mdc-button__label">Cancel</span>
+        </button>
+        <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="discard">
+          <div class="mdc-button__ripple"></div>
+          <span class="mdc-button__label">Discard</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="mdc-dialog__scrim"></div>
+</div>
   <script src="dist/main.js" async></script>
   </body>
 </html>

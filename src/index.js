@@ -32,7 +32,7 @@ dialog.listen('MDCDialog:closing', function() {
 
 function open_dialog(evt) {
   dialog.lastFocusedTarget = evt.target;
-  dialog.open();
+  dialog.show();
 }
 
 const iconButtonRipple = new MDCRipple(document.querySelector('.mdc-icon-button'));
