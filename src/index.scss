@@ -106,3 +106,8 @@ body {
 .side-padding {
   padding: 0px 16px 8px 16px
 }
+
+.theme-green {
+  --mdc-theme-primary: #8BC34A;
+  --mdc-theme-secondary: #9CCC65;
+}
