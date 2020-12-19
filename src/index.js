@@ -9,6 +9,9 @@ import BotIcon from './bot-icon.png'
 
 let imgPng = document.createElement('img')
 imgPng.src = BotIcon
+imgPng.alt = 'Clover_Bot_Icon'
+imgPng.width = '100%'; // 横サイズ（px）
+imgPng.height = '100%'; // 縦サイズ（px）
 document.getElementById('bot-icon').appendChild(imgPng)
 
 import "./index.scss";
