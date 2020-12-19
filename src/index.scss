@@ -64,6 +64,7 @@ body {
 }
 
 .text-border-bottom {
+  position: relative;
   display: inline-block;
   padding: 0px 15% 0px 0px;
   border-bottom: 3px solid #094;
@@ -93,7 +94,7 @@ body {
 
 .font-medium {
   font-weight: 500;
-}
+} 
 
 .font-bold {
   font-weight: 700;
