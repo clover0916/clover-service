@@ -1,7 +1,4 @@
-@use "@material/theme" with (
-  $primary: #00cc5b,
-  $secondary: #094
-);
+@use "@material/theme"
 @use "@material/typography/mdc-typography";
 @use "@material/elevation/mdc-elevation";
 @use "@material/layout-grid/mdc-layout-grid";
