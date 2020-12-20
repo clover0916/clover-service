@@ -37,6 +37,11 @@ body {
   height: 100%;
 }
 
+.mdc-top-app-bar {
+  // fill-color($color) is defined in the top-app-bar namespace
+  @include top-app-bar.fill-color(#FFFFFF);
+}
+
 .title {
   text-align: center;
   padding: 100px 0px;
