@@ -22,21 +22,6 @@ topAppBar.listen('MDCTopAppBar:nav', () => {
   drawer.open = !drawer.open;
 });
 
-dialog.listen('MDCDialog:opened', function() {
-  // contentElement がページのほかのコンテンツの共通の親要素を参照していると仮定
-  contentElement.setAttribute('aria-hidden', 'true');
-});
-dialog.listen('MDCDialog:closing', function() {
-  contentElement.removeAttribute('aria-hidden');
-});
-
-document.querySelector('#dialog-open').addEventListener('click', function (evt) {
-    event.preventDefault(evt);
-    dialog.lastFocusedTarget = evt.target;
-    // This shows all dialogs, which is wrong.
-    dialog.show();
-  })
-
 const iconButtonRipple = new MDCRipple(document.querySelector('.mdc-icon-button'));
 iconButtonRipple.unbounded = true;
 
