@@ -1,4 +1,9 @@
-@use "@material/theme";
+@use "@material/theme" with (
+  $primary: #FF8C00,
+  $secondary: #FF6E00,
+  $on-primary: #7E7E7E,
+  $on-secondary: #7E7E7E,
+);;
 @use "@material/typography/mdc-typography";
 @use "@material/elevation/mdc-elevation";
 @use "@material/layout-grid/mdc-layout-grid";
@@ -40,6 +45,9 @@ body {
 .gradation-orange {
   background: linear-gradient(25deg, #FF6E00, #FF8C00);
 }
+
+.main-content {
+  h
 
 .error {
   text-align: center;
