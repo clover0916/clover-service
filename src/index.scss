@@ -3,8 +3,6 @@
 @use "@material/elevation/mdc-elevation";
 @use "@material/layout-grid/mdc-layout-grid";
 @use "@material/top-app-bar/mdc-top-app-bar";
-@use "@material/drawer";
-@use "@material/list";
 @use "@material/card";
 @use '@material/button/mdc-button';
 @use '@material/button';
@@ -14,10 +12,6 @@
 
 
 @include button.core-styles;
-@include drawer.core-styles;
-@include drawer.dismissible-core-styles;
-@include drawer.modal-core-styles;
-@include list.core-styles;
 @include icon-button.core-styles;
 @include card.core-styles;
 
@@ -44,12 +38,7 @@ body {
 }
 
 .gradation-orange {
-  background: linear-gradient(25deg, rgb(255, 124, 111), #ffc994);
-}
-
-.main-content {
-  height: 100vh;
-  background: #FFFFFF;
+  background: linear-gradient(25deg, #FF6E00, #FF8C00);
 }
 
 .error {
