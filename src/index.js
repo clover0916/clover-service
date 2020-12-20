@@ -1,7 +1,6 @@
 import { MDCRipple } from '@material/ripple';
 import { MDCTopAppBar } from '@material/top-app-bar';
 import { MDCDrawer } from "@material/drawer";
-import {MDCDialog} from '@material/dialog';
 
 // BootstrapのJavaScript側の機能を読み込む
 //import "bootstrap";
@@ -9,7 +8,6 @@ import {MDCDialog} from '@material/dialog';
 import "./index.scss";
 
 const buttonRipple = new MDCRipple(document.querySelector('.mdc-button'));
-const dialog = new MDCDialog(document.querySelector('.mdc-dialog'));
 const drawer = MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
 
 // インスタンス化

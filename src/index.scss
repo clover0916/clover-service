@@ -9,7 +9,6 @@
 @use '@material/button/mdc-button';
 @use '@material/button';
 @use "@material/icon-button";
-@use "@material/dialog";
 
 //@use "bootstrap/scss/bootstrap";
 
@@ -21,7 +20,6 @@
 @include list.core-styles;
 @include icon-button.core-styles;
 @include card.core-styles;
-@include dialog.core-styles;
 
 * {
   margin: 0px;
