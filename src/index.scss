@@ -1,6 +1,6 @@
 @use "@material/theme" with (
-  $primary: #FFC107,
-  $secondary: #CCFF90
+  $primary: #CDDC39,
+  $secondary: #FFD740
 );
 @use "@material/typography/mdc-typography";
 @use "@material/elevation/mdc-elevation";
@@ -118,9 +118,4 @@ body {
 
 .side-padding {
   padding: 0px 16px 8px 16px
-}
-
-.theme-green {
-  --mdc-theme-primary: #8BC34A;
-  --mdc-theme-secondary: #9CCC65;
 }
