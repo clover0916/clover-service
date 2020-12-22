@@ -1,11 +1,7 @@
 @use "@material/theme" with (
-  $primary: #FF8C00,
+  $primary: #008200,
   $secondary: #FF6E00,
-  $on-primary: #FFFFFF,
-  $on-secondary: #FFFFFF,
-  $on-surface: #7E7E7E
 );
-@use "@material/theme/mdc-theme";
 @use "@material/typography/mdc-typography";
 @use "@material/elevation/mdc-elevation";
 @use "@material/layout-grid/mdc-layout-grid";
@@ -40,10 +36,10 @@ body {
   height: 100%;
 }
 
-/*.mdc-top-app-bar {
+.mdc-top-app-bar {
   // fill-color($color) is defined in the top-app-bar namespace
   @include top-app-bar.fill-color(#FFFFFF);
-}*/
+}
 
 .title {
   text-align: center;
