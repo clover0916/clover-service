@@ -21,7 +21,7 @@ const ripples = [].map.call(document.querySelectorAll(selector), function(el) {
 });
 
 window.WebFontConfig = {
-  google: { families: ['Roboto', 'Noto+Sans+JP', 'Material+Icons'] },
+  google: { families: ['Noto+Sans+JP', 'Material+Icons'] },
   active: function() {
     sessionStorage.fonts = true;
   }
