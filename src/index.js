@@ -22,6 +22,7 @@ const ripples = [].map.call(document.querySelectorAll(selector), function(el) {
 
 window.WebFontConfig = {
   google: { families: ['Noto+Sans+JP', 'Material+Icons'] },
+  typekit: { id: 'pbk7rhd' },
   active: function() {
     sessionStorage.fonts = true;
   }
