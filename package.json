@@ -40,7 +40,8 @@
     "@material/theme": "^8.0.0",
     "@material/layout-grid": "^8.0.0",
     "@material/dialog": "^8.0.0",
-    "@material/elevation": "^8.0.0"
+    "@material/elevation": "^8.0.0",
+    "@material/circular-progress": "^8.0.0"
   },
   "engines": {
     "node": "14.x"
