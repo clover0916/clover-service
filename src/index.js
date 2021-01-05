@@ -21,6 +21,11 @@ const ripples = [].map.call(document.querySelectorAll(selector), function(el) {
   return new MDCRipple(el);
 });
 
+window.onload = function() {
+  const spinner = document.getElementById('loading');
+  spinner.classList.add('loaded');
+}
+
 window.WebFontConfig = {
   google: { families: ['Noto+Sans+JP', 'Material+Icons'] },
   typekit: { id: 'pbk7rhd' },
