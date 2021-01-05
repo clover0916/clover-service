@@ -25,7 +25,7 @@ const ripples = [].map.call(document.querySelectorAll(selector), function(el) {
 
 document.getElementById("OpenDialog").onclick = function() {
   try {
-    var url = document.getElementById("OpenDialog").data('url');
+    var url = document.getElementById("OpenDialog").getAttribute('url');
     alert(url);
   } catch {
     alert("Error");
