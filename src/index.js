@@ -26,9 +26,11 @@ const ripples = [].map.call(document.querySelectorAll(selector), function(el) {
 document.getElementById("OpenDialog").onclick = function() {
   var url = document.getElementById("OpenDialog").dataset.url;
   dialog.open();
-  document.getElementById("go-url").addEventListener('click', function() {
+  const go = document.getElementById("go-url");
+  go.addEventListener('click', function() {
     const spinner = document.getElementById("load");
     spinner.classList.remove("hidden");
+    go.classList.add("hidden");
     location.href = url;
   });
 };
