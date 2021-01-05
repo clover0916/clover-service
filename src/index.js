@@ -24,13 +24,14 @@ const ripples = [].map.call(document.querySelectorAll(selector), function(el) {
 });
 
 document.getElementById("OpenDialog").onclick = function() {
-  var url = document.getElementById("OpenDialog").dataset.url;
+  url = document.getElementById("OpenDialog").dataset.url;
   dialog.open();
-  dialog.listen('MDCDialog:accept', function () {
-    alert(url)
-    location.href = url;
-  });
 };
+
+dialog.listen('MDCDialog:accept', function () {
+  alert(url)
+  location.href = url;
+});
 
 window.onload = function() {
   const spinner = document.getElementById('loading');
