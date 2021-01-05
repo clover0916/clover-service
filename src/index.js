@@ -24,8 +24,12 @@ const ripples = [].map.call(document.querySelectorAll(selector), function(el) {
 });
 
 document.getElementById("OpenDialog").onclick = function() {
-  var url = document.getElementById("OpenDialog").data('url');
-  alert(url);
+  try {
+    var url = document.getElementById("OpenDialog").data('url');
+    alert(url);
+  } catch {
+    alert("Error");
+  }
   dialog.open()
   document.getElementById("go-url").onclick = function() {
     location.href = url
