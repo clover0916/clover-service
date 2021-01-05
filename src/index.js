@@ -23,6 +23,8 @@ const ripples = [].map.call(document.querySelectorAll(selector), function(el) {
   return new MDCRipple(el);
 });
 
+dialog.open()
+
 window.onload = function() {
   const spinner = document.getElementById('loading');
   spinner.classList.add('loaded');
