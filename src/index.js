@@ -1,6 +1,7 @@
 import { MDCRipple } from '@material/ripple';
 import { MDCTopAppBar } from '@material/top-app-bar';
 import { MDCCircularProgress } from '@material/circular-progress';
+import { MDCDialog } from '@material/dialog';
 
 // BootstrapのJavaScript側の機能を読み込む
 //import "bootstrap";
@@ -13,6 +14,7 @@ const topAppBarElement = document.querySelector('.mdc-top-app-bar');
 const topAppBarInstance = new MDCTopAppBar(topAppBarElement);
 const buttonRipple = new MDCRipple(document.querySelector('.mdc-button'));
 const circularProgress = new MDCCircularProgress(document.querySelector('.mdc-circular-progress'));
+const dialog = new MDCDialog(document.querySelector('.mdc-dialog'));
 const iconButtonRipple = new MDCRipple(document.querySelector('.mdc-icon-button'));
 iconButtonRipple.unbounded = true;
 
