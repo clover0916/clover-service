@@ -23,14 +23,18 @@ const ripples = [].map.call(document.querySelectorAll(selector), function(el) {
   return new MDCRipple(el);
 });
 
-function OpenDialog() {
+document.getElementById("OpenDialog").onclick = function() {
+  var url = document.getElementById("OpenDialog").data('url');
   dialog.open()
-}
+  document.getElementById("go-url").onclick = function() {
+    location.href= url
+  }
+};
 
 window.onload = function() {
   const spinner = document.getElementById('loading');
   spinner.classList.add('loaded');
-}
+};
 
 window.WebFontConfig = {
   google: { families: ['Roboto', 'Noto+Sans+JP', 'Material+Icons'] },
