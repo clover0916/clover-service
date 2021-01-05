@@ -131,3 +131,8 @@ body {
   left: 0;
   z-index: 9999;
 }
+
+.loaded {
+  opacity: 0;
+  visibility: hidden;
+}
