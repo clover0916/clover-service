@@ -24,16 +24,11 @@ const ripples = [].map.call(document.querySelectorAll(selector), function(el) {
 });
 
 document.getElementById("OpenDialog").onclick = function() {
-  try {
-    var url = document.getElementById("OpenDialog").dataset.url;
-    alert(url);
-  } catch {
-    alert("Error");
-  }
-  dialog.open()
-  document.getElementById("go-url").onclick = function() {
+  var url = document.getElementById("OpenDialog").dataset.url;
+  dialog.open();
+  document.getElementById("go-url").addEventListener('click', function(){
     location.href = url
-  }
+  });
 };
 
 window.onload = function() {
