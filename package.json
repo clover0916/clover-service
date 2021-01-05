@@ -1,6 +1,6 @@
 {
   "name": "clover-service-web",
-  "version": "2.8.1",
+  "version": "5.7.0",
   "main": "index.js",
   "description": "Built with Material Starter Kit, a file template to get you up and running with Material Components for the Web.",
   "scripts": {
@@ -29,6 +29,7 @@
     "pug": "3.0.0",
     "url-loader": "^4.1.1",
     "file-loader": "^6.2.0",
+    "express-subdomain": "^1.0.5",
     "@material/button": "^9.0.0",
     "@material/drawer": "^9.0.0",
     "@material/icon-button": "^9.0.0",

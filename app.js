@@ -3,7 +3,9 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const subdomain = require('express-subdomain');
 
+var botRouter = require('./routes/bot');
 var usersRouter = require('./routes/users');
 
 var app = express();
@@ -23,6 +25,8 @@ app.use(function (req, res, next) {
 });
 
 app.use('/users', usersRouter);
+
+app.use(subdomain('bot', botRouter));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
