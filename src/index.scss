@@ -131,9 +131,6 @@ body {
   z-index: 9999;
 }
 
-.sample2 {
-  margin-left: auto;           /* IE以外用の中央寄せ */
-  margin-right: auto;          /* IE以外用の中央寄せ */
-  width: 100vw;                /* 幅 */
-  height: 100vh;               /* 高さ */
+.kurukuru {
+  margin: 200px auto;
 }
