@@ -31,7 +31,7 @@ window.onload = function() {
 }
 
 window.WebFontConfig = {
-  google: { families: ['Noto+Sans+JP', 'Material+Icons'] },
+  google: { families: ['Roboto', 'Noto+Sans+JP', 'Material+Icons'] },
   typekit: { id: 'pbk7rhd' },
   active: function() {
     sessionStorage.fonts = true;
