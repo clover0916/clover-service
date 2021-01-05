@@ -125,13 +125,10 @@ body {
   height: 100vh;
   transition: all 1s;
   background-color: #fff;
-   text-align: center;
+  text-align: center;
+  padding: 50vh 50vw;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 9999;
-}
-
-.kurukuru {
-  padding: 250px 0px;
 }
