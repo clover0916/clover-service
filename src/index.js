@@ -27,7 +27,9 @@ document.getElementById("OpenDialog").onclick = function() {
   var url = document.getElementById("OpenDialog").dataset.url;
   dialog.open();
   document.getElementById("go-url").addEventListener('click', function() {
-    location.href = url
+    const spinner = document.getElementById("load");
+    spinner.classList.remove("hidden");
+    location.href = url;
   });
 };
 
