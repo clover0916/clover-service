@@ -119,3 +119,12 @@ body {
 .side-padding {
   padding: 0px 16px 8px 16px
 }
+
+.loading {
+  width: 100px;
+  height: 100px;
+  margin: 200px auto;
+  background-color: #fff;
+  border-radius: 100%;
+  animation: sk-scaleout 1.0s infinite ease-in-out;
+}
