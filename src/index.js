@@ -23,7 +23,9 @@ const ripples = [].map.call(document.querySelectorAll(selector), function(el) {
   return new MDCRipple(el);
 });
 
-dialog.open()
+function OpenDialog() {
+  dialog.open()
+}
 
 window.onload = function() {
   const spinner = document.getElementById('loading');
