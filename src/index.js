@@ -23,6 +23,12 @@ const ripples = [].map.call(document.querySelectorAll(selector), function(el) {
   return new MDCRipple(el);
 });
 
+window.onload = function() {
+  alert('ele?')
+  const spinner = document.getElementById('loading');
+  spinner.classList.add('loaded');
+};
+
 document.getElementById("OpenDialog").onclick = function() {
   var url = document.getElementById("OpenDialog").dataset.url;
   dialog.open();
@@ -44,16 +50,12 @@ var xhr = new XMLHttpRequest(),
 	xhr.open(method, url, true);
 	xhr.onreadystatechange = function () {
 		if(xhr.readyState === 4 && xhr.status === 200) {
+		  alert('ho?')
 			var restxt=xhr.responseText;//String型で取得
 			dialog.innerHTML=restxt;//完了
 		}
 	};
 	xhr.send();
-
-window.onload = function() {
-  const spinner = document.getElementById('loading');
-  spinner.classList.add('loaded');
-};
 
 window.WebFontConfig = {
   google: { families: ['Roboto', 'Noto+Sans+JP', 'Material+Icons'] },
