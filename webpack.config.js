@@ -3,8 +3,13 @@ const path = require('path');
 
 module.exports = {
   mode: 'production',
+  entry: {
+    main: './src/app.js',
+    vendor: './src/vendor.js'
+  },
   output: {
     path: path.join(__dirname, 'public', 'dist'),
+    filename: '[name].bundle.js'
   },
   module: {
     rules: [
