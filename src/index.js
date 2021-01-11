@@ -42,20 +42,20 @@ document.getElementById("OpenDialog").onclick = function() {
   });
 };
 
-var xhr = new XMLHttpRequest(),
-		method = "GET",
-		url = "../dialog.html";//読み込まれるHTMLを指定
-	var box=document.getElementById("dialog");//読み込みたい位置を指定
+//var xhr = new XMLHttpRequest(),
+//		method = "GET",
+//		url = "../dialog.html";//読み込まれるHTMLを指定
+//	var box=document.getElementById("dialog");//読み込みたい位置を指定
  
-	xhr.open(method, url, true);
-	xhr.onreadystatechange = function () {
-		if(xhr.readyState === 4 && xhr.status === 200) {
-		  alert('ho?')
-			var restxt=xhr.responseText;//String型で取得
-			dialog.innerHTML=restxt;//完了
-		}
-	};
-	xhr.send();
+//	xhr.open(method, url, true);
+//	xhr.onreadystatechange = function () {
+//		if(xhr.readyState === 4 && xhr.status === 200) {
+//		  alert('ho?')
+//			var restxt=xhr.responseText;//String型で取得
+//			dialog.innerHTML=restxt;//完了
+//		}
+//	};
+//	xhr.send();
 
 window.WebFontConfig = {
   google: { families: ['Roboto', 'Noto+Sans+JP', 'Material+Icons'] },
