@@ -23,11 +23,11 @@ const ripples = [].map.call(document.querySelectorAll(selector), function(el) {
   return new MDCRipple(el);
 });
 
-window.onload = function() {
+window.addEventListener('load', () => {
   alert('ele?')
   const spinner = document.getElementById('loading');
   spinner.classList.add('loaded');
-};
+});
 
 document.getElementById("OpenDialog").onclick = function() {
   var url = document.getElementById("OpenDialog").dataset.url;
