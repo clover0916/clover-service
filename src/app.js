@@ -69,6 +69,10 @@ document.getElementById("OpenDialog").onclick = function() {
 //	};
 //	xhr.send();
 
+$(function(){
+  $("#dialog").load("dialog.html");
+});
+
 window.WebFontConfig = {
   google: { families: ['Roboto', 'Noto+Sans+JP', 'Material+Icons'] },
   typekit: { id: 'pbk7rhd' },
