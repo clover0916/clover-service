@@ -24,7 +24,6 @@ const ripples = [].map.call(document.querySelectorAll(selector), function(el) {
 const loader = document.getElementById('loading');
 
 window.addEventListener('load', () => {
-  alert('load')
   const ms = 400;
   loader.style.transition = 'opacity ' + ms + 'ms';
   
