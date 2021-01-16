@@ -50,7 +50,7 @@ document.getElementById("OpenDialog").onclick = function() {
   });
 };
 
-var xhr = new XMLHttpRequest(),
+/*var xhr = new XMLHttpRequest(),
 		method = "GET",
 		url = "../dialog.html";//読み込まれるHTMLを指定
 	var box=document.getElementById("dialog");//読み込みたい位置を指定
@@ -64,7 +64,7 @@ var xhr = new XMLHttpRequest(),
 		}
 	};
 	xhr.send();
-
+*/
 window.WebFontConfig = {
   google: { families: ['Roboto', 'Noto+Sans+JP', 'Material+Icons'] },
   typekit: { id: 'pbk7rhd' },
