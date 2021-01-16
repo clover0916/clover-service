@@ -149,3 +149,7 @@ body {
   position: absolute;
   right: 28px;
 }
+
+.glass {
+  backdrop-filter: blur(5px);
+}
