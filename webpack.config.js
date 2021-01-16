@@ -3,7 +3,7 @@ const path = require('path');
 
 module.exports = {
   mode: 'production',
-  entry: ['./app.scss', './app.js'],
+  entry: ['./src/app.scss', './src/app.js'],
   output: {
     path: path.join(__dirname, 'public', 'dist'),
     filename: 'bundle.js'
@@ -46,13 +46,6 @@ module.exports = {
         },
         ]
       },
-      /*{
-        test: /\.js$/,
-        loader: 'babel-loader',
-        options: {
-          presets: ['@babel/preset-env'],
-        },
-      }*/
     ],
   },
 };
