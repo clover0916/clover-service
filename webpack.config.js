@@ -3,13 +3,10 @@ const path = require('path');
 
 module.exports = {
   mode: 'production',
-  entry: {
-    main: './src/app.js',
-    vendor: './src/vendor.js'
-  },
+  entry: ['./app.scss', './app.js'],
   output: {
     path: path.join(__dirname, 'public', 'dist'),
-    filename: '[name].bundle.js'
+    filename: 'bundle.js'
   },
   module: {
     rules: [
@@ -21,7 +18,7 @@ module.exports = {
             options: {
               name: 'style.css',
             },
-                },
+          },
           { loader: 'extract-loader' },
           { loader: 'css-loader' },
           {
@@ -46,18 +43,16 @@ module.exports = {
               // See https://github.com/webpack-contrib/sass-loader/issues/804
               webpackImporter: false,
             }
-          },
+        },
         ]
       },
       {
-        // 追記
-        test: /\.(jpg|png)$/,
-        use: [
-          {
-            loader: 'url-loader'
-          }
-        ]
-      },
+        test: /\.js$/,
+        loader: 'babel-loader',
+        query: {
+          presets: ['@babel/preset-env'],
+        },
+      }
     ],
   },
 };
