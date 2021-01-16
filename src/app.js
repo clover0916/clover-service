@@ -1,5 +1,3 @@
-import "./index.scss";
-
 import { MDCRipple } from '@material/ripple';
 import { MDCTopAppBar } from '@material/top-app-bar';
 import { MDCCircularProgress } from '@material/circular-progress';
