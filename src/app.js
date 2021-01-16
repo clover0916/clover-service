@@ -39,6 +39,7 @@ window.addEventListener('load', () => {
   }
   setTimeout(loaderOpacity, 1);
   setTimeout(loaderDisplay, ms); // op
+})
 
 document.getElementById("OpenDialog").onclick = function() {
   var url = document.getElementById("OpenDialog").dataset.url;
