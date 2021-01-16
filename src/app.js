@@ -25,15 +25,20 @@ const ripples = [].map.call(document.querySelectorAll(selector), function(el) {
   return new MDCRipple(el);
 });
 
-$(window).load(function() {
-  // 消えるタイミングはお好みで
-  $('#loading').delay(1500).fadeOut(300);
-});
-// 10秒待っても読み込みが終わらない時は強制的にローディング画面をフェードアウト
-function stopload() {
-  $('#loading').delay(1000).fadeOut(700);
-}
-setTimeout('stopload()', 10000);
+const loader = document.getElementById('loading');
+
+window.addEventListener('load', () => {
+  const ms = 400;
+  loader.style.transition = 'opacity ' + ms + 'ms';
+  
+  const loaderOpacity = function(){
+    loader.style.opacity = 0;
+  }
+  const loaderDisplay = function(){
+    loader.style.display = 'none';
+  }
+  setTimeout(loaderOpacity, 1);
+  setTimeout(loaderDisplay, ms); // op
 
 document.getElementById("OpenDialog").onclick = function() {
   var url = document.getElementById("OpenDialog").dataset.url;
