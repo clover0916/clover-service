@@ -14,48 +14,27 @@ module.exports = {
   module: {
     rules: [
       {
-        // 対象となるファイルの拡張子(scss)
         test: /\.scss$/,
-        // Sassファイルの読み込みとコンパイル
         use: [
-          // CSSファイルを書き出すオプションを有効にする
           {
-            loader: MiniCssExtractPlugin.loader,
-          },
-          // CSSをバンドルするための機能
-          {
-            loader: "css-loader",
+            loader: 'file-loader',
             options: {
-              // オプションでCSS内のurl()メソッドの取り込まない
-              url: false,
-              // ソースマップの利用有無
-              sourceMap: true,
-              // Sass+PostCSSの場合は2を指定
-              importLoaders: 2,
+              name: 'style.css',
             },
-          },
-          // PostCSSのための設定
+                },
+          { loader: 'extract-loader' },
+          { loader: 'css-loader' },
           {
-            loader: "postcss-loader",
+            loader: 'sass-loader',
             options: {
-              // PostCSS側でもソースマップを有効にする
-              sourceMap: true,
-              postcssOptions: {
-                // ベンダープレフィックスを自動付与する
-                plugins: ["autoprefixer"],
-              },
+              // Prefer Dart Sass
+              implementation: require('sass'),
+      
+              // See https://github.com/webpack-contrib/sass-loader/issues/804
+              webpackImporter: false,
             },
-          },
-        
-            // Sassをバンドルするための機能
-          {
-            loader: "sass-loader",
-            options: {
-              // ソースマップの利用有無
-              sourceMap: true,
-            },
-          },
-        ],
+                },
+              ]
       },
       {
         // 追記
@@ -68,11 +47,4 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: "style.css",
-    }),
-  ],
-  // source-map方式でないと、CSSの元ソースが追跡できないため
-  devtool: "source-map"
 };
