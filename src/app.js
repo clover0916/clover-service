@@ -23,9 +23,11 @@ const ripples = [].map.call(document.querySelectorAll(selector), function(el) {
 
 alert('test')
 
-window.addEventListener('load', () => {
+window.addEventListener('load', ae());
+
+function ae(){
   alert('load')
-});
+}
 
 document.getElementById("OpenDialog").onclick = function() {
   var url = document.getElementById("OpenDialog").dataset.url;
