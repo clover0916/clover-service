@@ -25,18 +25,7 @@ const loader = document.getElementById('loading');
 
 window.addEventListener('load', () => {
   alert('load')
-  const ms = 400;
-  loader.style.transition = 'opacity ' + ms + 'ms';
-  
-  const loaderOpacity = function(){
-    loader.style.opacity = 0;
-  }
-  const loaderDisplay = function(){
-    loader.style.display = 'none';
-  }
-  setTimeout(loaderOpacity, 1);
-  setTimeout(loaderDisplay, ms); // op
-})
+});
 
 document.getElementById("OpenDialog").onclick = function() {
   var url = document.getElementById("OpenDialog").dataset.url;
@@ -66,6 +55,7 @@ document.getElementById("OpenDialog").onclick = function() {
 	};
 	xhr.send();
 */
+
 window.WebFontConfig = {
   google: { families: ['Roboto', 'Noto+Sans+JP', 'Material+Icons'] },
   typekit: { id: 'pbk7rhd' },
