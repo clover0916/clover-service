@@ -70,7 +70,7 @@ document.getElementById("OpenDialog").onclick = function() {
 //	xhr.send();
 
 $(function(){
-  $("#dialog").load("dialog.html");
+  $("#dialog").load("../dialog.html");
 });
 
 window.WebFontConfig = {
