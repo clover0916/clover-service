@@ -26,6 +26,7 @@ const ripples = [].map.call(document.querySelectorAll(selector), function(el) {
 });
 
 $(window).on('load',function(){
+  alert('load')
   $("loading").fadeOut();
 });
 
