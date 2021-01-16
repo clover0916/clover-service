@@ -21,7 +21,7 @@ const ripples = [].map.call(document.querySelectorAll(selector), function(el) {
   return new MDCRipple(el);
 });
 
-window.addEventListener('load', ae());
+window.addEventListener('load', ae);
 
 function ae(){
   alert('load')
