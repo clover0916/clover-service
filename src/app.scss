@@ -14,7 +14,7 @@
 @use '@material/button';
 @use "@material/icon-button";
 
-@import "../node_modules/swiper/dist/css/swiper.css";
+@import "~swiper/dist/css/swiper.css";
 
 @include button.core-styles;
 @include icon-button.core-styles;
