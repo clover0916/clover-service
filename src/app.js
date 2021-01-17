@@ -3,7 +3,7 @@ import { MDCTopAppBar } from '@material/top-app-bar';
 import { MDCCircularProgress } from '@material/circular-progress';
 import { MDCDialog } from '@material/dialog';
 
-import Swiper, { Navigation, Pagination } from 'swiper';
+import Swiper from 'swiper/bundle';
 
 window.WebFontConfig = {
   google: { families: ['Roboto', 'Noto+Sans+JP', 'Material+Icons'] },
@@ -35,30 +35,27 @@ const ripples = [].map.call(document.querySelectorAll(selector), function(el) {
   return new MDCRipple(el);
 });
 
-// configure Swiper to use modules
-Swiper.use([Navigation, Pagination]);
-
-var mySwiper = new Swiper('.swiper-container', {
-  // Optional parameters
-  direction: 'vertical',
+var galleryThumbs = new Swiper('.gallery-thumbs', {
+  spaceBetween: 10,
+  slidesPerView: 4,
   loop: true,
-
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-  },
-
-  // Navigation arrows
+  freeMode: true,
+  loopedSlides: 5, //looped slides should be the same
+  watchSlidesVisibility: true,
+  watchSlidesProgress: true,
+});
+var galleryTop = new Swiper('.gallery-top', {
+  spaceBetween: 10,
+  loop: true,
+  loopedSlides: 5, //looped slides should be the same
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
-
-  // And if we need scrollbar
-  scrollbar: {
-    el: '.swiper-scrollbar',
+  thumbs: {
+    swiper: galleryThumbs,
   },
-})
+});
 
 document.getElementById("OpenDialog").onclick = function() {
   var url = document.getElementById("OpenDialog").dataset.url;
