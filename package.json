@@ -28,7 +28,7 @@
     "url-loader": "^4.1.1",
     "file-loader": "^6.2.0",
     "bootstrap": "next",
-    "popper.js": "1.14.3",
+    "@popperjs/core": "2.6.0",
     "@babel/core": "^7.12.10",
     "babel-loader": "^8.2.2",
     "@babel/preset-env": "^7.12.11",
