@@ -14,7 +14,7 @@
 @use '@material/button';
 @use "@material/icon-button";
 
-//@use "bootstrap/scss/bootstrap";
+@use "bootstrap/scss/bootstrap";
 
 
 @include button.core-styles;
@@ -140,5 +140,5 @@ body {
 
 .glass {
   background-color: rgba( 255, 255, 255, 0.5 );
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(3px);
 }

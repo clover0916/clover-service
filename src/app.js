@@ -3,6 +3,8 @@ import { MDCTopAppBar } from '@material/top-app-bar';
 import { MDCCircularProgress } from '@material/circular-progress';
 import { MDCDialog } from '@material/dialog';
 
+import { Carousel } from 'bootstrap';
+
 window.WebFontConfig = {
   google: { families: ['Roboto', 'Noto+Sans+JP', 'Material+Icons'] },
   typekit: { id: 'pbk7rhd' },
