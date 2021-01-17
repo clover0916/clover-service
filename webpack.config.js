@@ -13,6 +13,7 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
+          'style-loader',
           {
             loader: 'file-loader',
             options: {
@@ -20,7 +21,12 @@ module.exports = {
             },
           },
           { loader: 'extract-loader' },
-          { loader: 'css-loader' },
+          {
+            loader: 'css-loader',
+            options: {
+              url: false
+            },
+          },
           {
             loader: 'postcss-loader',
             options: {
