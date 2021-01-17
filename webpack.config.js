@@ -55,6 +55,7 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
+        exclude: /node_modules\/(?!(dom7|ssr-window|swiper)\/).*/,
         options: {
           presets: ['@babel/preset-env'],
         },
