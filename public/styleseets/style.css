@@ -1,0 +1,119 @@
+.title {
+  text-align: center;
+  padding: 150px 25vw;
+}
+
+.futura-pt {
+  font-family: "futura-pt", sans-serif;
+}
+
+.gradation-orange {
+  background: linear-gradient(25deg, #FF6E00, #FFC100);
+}
+
+.error {
+  text-align: center;
+  padding: 100px;
+  height: 100%;
+}
+
+.text-border-bottom {
+  position: relative;
+  display: inline-block;
+  padding: 0px 15% 0px 0px;
+  border-bottom: 3px solid #094;
+}
+
+.text-border-bottom:before {
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 20%;
+  height: 3px;
+  content: '';
+  background: #00cc5b;
+}
+
+.font-thin {
+  font-weight: 100;
+}
+
+.font-light {
+  font-weight: 300;
+}
+
+.font-regular {
+  font-weight: 400;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-black {
+  font-weight: 900;
+}
+
+.mdc-card-fixed {
+  padding: 16px;
+}
+
+.rounded-circle {
+  border-radius: 50%;
+}
+
+.text-gray {
+  color: gray;
+}
+
+.text-white {
+  color: white;
+}
+
+.side-padding {
+  padding: 0px 16px 8px 16px
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.relative {
+    position: relative;
+}
+.absolute {
+  position: absolute;
+  right: 28px;
+}
+
+.glass {
+  position: relative;
+  overflow: hidden;
+}
+.glass::before {
+  content: " ";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url(/assets/bot_icon.jpg) no-repeat center center fixed;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  filter: blur(10px);
+}
+
+.p-text {
+  color: #fff;
+  font-size: 100px;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  text-align: center;
+  position: relative;
+}
