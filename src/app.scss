@@ -126,18 +126,6 @@ body {
   padding: 0px 16px 8px 16px
 }
 
-#loading {
-  width: 100vw;
-  height: 100vh;
-  transition: all 1s;
-  background-color: #fff;
-  padding: 40vh 48.2vw;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999;
-}
-
 .hidden {
   visibility: hidden;
 }
@@ -152,4 +140,8 @@ body {
 
 .glass {
   filter: blur(5px);
+}
+
+.bot-icon {
+  background-image: url(/assets/bot_icon.png);
 }
