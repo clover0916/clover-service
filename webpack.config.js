@@ -15,8 +15,8 @@ module.exports = {
     fallback: { 
       "stream": require.resolve("stream-browserify"),
       "http": require.resolve("stream-http"),
-      "url": require.resolve("url/"),
-      "buffer": require.resolve("buffer/")
+      "url": require.resolve("url"),
+      "buffer": require.resolve("buffer")
     },
   },
   module: {
