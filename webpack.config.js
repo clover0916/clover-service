@@ -13,11 +13,7 @@ module.exports = {
   },
   resolve: {
     fallback: { 
-      "stream": {
-        require: {
-          resolve: "stream-browserify"
-        }
-      }
+      "stream": require.resolve("stream-browserify")
     },
   },
   module: {
