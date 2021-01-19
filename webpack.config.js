@@ -11,6 +11,11 @@ module.exports = {
     path: path.join(__dirname, 'public', 'dist'),
     filename: '[name].js'
   },
+  resolve: {
+    fallback: { 
+      "stream": require.resolve("stream-browserify")
+    },
+  },
   module: {
     rules: [
       {
