@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
   var stream = ytdl(URL);
   stream.on('info', (info) => {
     var title = info.videoDetails.title.replace(' ', '')
-    res.header('Content-Disposition', `attachment; filename="${title}.mp4"`);
+    res.header('Content-Disposition', `attachment; filename="video.mp4"`);
     ytdl(URL, {
       format: 'mp4'
     }).pipe(res);
