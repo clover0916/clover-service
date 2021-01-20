@@ -8,7 +8,7 @@ videoTag.src = url;
 const audioSourceBuffer = myMediaSource
   .addSourceBuffer('audio/mp4; codecs="mp4a.40.2"');
 const videoSourceBuffer = myMediaSource
-  .addSourceBuffer('video/mp4; codecs="avc1.64001e"');
+  .addSourceBuffer('video/mp4; codecs="avc1.42001E"');
 
 // 2. download and add our audio/video to the SourceBuffers
 
