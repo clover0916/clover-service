@@ -1,4 +1,3 @@
-//const fs = require('fs');
 const ytdl = require('ytdl-core');
 
 const videoTag = document.getElementById("video");
