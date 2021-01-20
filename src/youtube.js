@@ -1,9 +1,23 @@
-const ytdl = require('ytdl-core');
+const videoTag = document.getElementById("video");
+const myMediaSource = new MediaSource();
+const url = URL.createObjectURL(myMediaSource);
+videoTag.src = url;
 
-var video = document.getElementById('video');
+// 1. add source buffers
 
-video.src = ytdl('https://youtu.be/QW28YKqdxe0').pipe(fs.createWriteStream('video.mp4'));
+const audioSourceBuffer = myMediaSource
+  .addSourceBuffer('audio/mp4; codecs="mp4a.40.2"');
+const videoSourceBuffer = myMediaSource
+  .addSourceBuffer('video/mp4; codecs="avc1.64001e"');
 
-video.load()
+// 2. download and add our audio/video to the SourceBuffers
 
-video.play()
+// for the audio SourceBuffer
+ytdl('https://youtu.be/QW28YKqdxe0').then(function(audioData) {
+  audioSourceBuffer.appendBuffer(audioData);
+});
+
+// the same for the video SourceBuffer
+ytdl('https://youtu.be/QW28YKqdxe0').then(function(videoData) {
+  videoSourceBuffer.appendBuffer(videoData);
+});
