@@ -81,9 +81,15 @@
           検索機能は後々付けます...
         </p>
         <div class="mdc-layout-grid">
-          <form action="http://127.0.0.1:3000/youtube" method="get">
+          <form action="https://clover-service.onlineyoutube" method="get">
+            <label class="mdc-text-field mdc-text-field--filled">
+              <span class="mdc-text-field__ripple"></span>
+              <span class="mdc-floating-label" id="my-label-id">Hint text</span>
+              <input class="mdc-text-field__input" type="text" aria-labelledby="my-label-id" name="url">
+              <span class="mdc-line-ripple"></span>
+            </label>
           <input  name='url' placeholder="Video URL e.g. https://www.youtube.com/'watch?v=MtN1YnoL46Q'">
-          <button type='submit'>mp4</button></a>
+          <button type='submit'>mp4</button>
         </form>
         </div>
       </div>
