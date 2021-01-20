@@ -5,20 +5,22 @@ const ytdl = require('ytdl-core');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.set('Content-Type', 'video/mp4');
-  
   var videoUrl = req.query.videoUrl;
-  var videoName;
   
-  ytdl.getInfo(videoUrl, function(err, info) {
-    videoName = info.title.replace('|', '').toString('ascii');
-    res.set('Content-Disposition', 'attachment; filename=' + videoName + '.mp4');
-  });
-  
-  var videoWritableStream = fs.createWriteStream('..' + '/public' + videoName); // some path on my computer (exists!)
   var videoReadableStream = ytdl(videoUrl);
   
-  var stream = videoReadableStream.pipe(videoWritableStream);
+  ytdl.getInfo(videoUrl, function(err, info) {
+    var videoName = info.title.replace('|', '').toString('ascii');
+  
+    var videoWritableStream = fs.createWriteStream('..' + '/public' + videoName + '.mp4');
+  
+    var stream = videoReadableStream.pipe(videoWritableStream);
+  
+    stream.on('finish', function() {
+      res.writeHead(204);
+      res.end();
+    });
+  });
 });
 
 module.exports = router;
