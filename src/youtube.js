@@ -21,3 +21,8 @@ ytdl('https://youtu.be/QW28YKqdxe0', { filter: format => format.container === 'm
 ytdl('https://youtu.be/QW28YKqdxe0', { filter: format => format.container === 'mp4' }).then(function(videoData) {
   videoSourceBuffer.appendBuffer(videoData);
 });
+
+video.load()
+
+video.play()
+
