@@ -13,7 +13,8 @@ const videoSourceBuffer = myMediaSource
 // 2. download and add our audio/video to the SourceBuffers
 
 // for the audio SourceBuffer
-fetch("https://clover-service.online/youtube?url=watch?v=QW28YKqdxe0", {method: 'GET'}).then(function(response) {
+fetch("https://clover-service.online/youtube?url=watch?v=QW28YKqdxe0", {method: 'GET'}).then((response) => {
+  alert(response)
   // The data has to be a JavaScript ArrayBuffer
   return response.arrayBuffer();
 }).then(function(audioData) {
@@ -21,7 +22,7 @@ fetch("https://clover-service.online/youtube?url=watch?v=QW28YKqdxe0", {method: 
 });
 
 // the same for the video SourceBuffer
-fetch("https://clover-service.online/youtube?url=watch?v=QW28YKqdxe0", {method: 'GET'}).then(function(response) {
+fetch("https://clover-service.online/youtube?url=watch?v=QW28YKqdxe0", {method: 'GET'}).then((response) => {
   // The data has to be a JavaScript ArrayBuffer
   return response.arrayBuffer();
 }).then(function(videoData) {
