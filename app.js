@@ -6,7 +6,7 @@ var logger = require('morgan');
 const subdomain = require('express-subdomain');
 
 var botRouter = require('./routes/bot');
-var usersRouter = require('./routes/users');
+var youtubeRouter = require('./routes/youtube');
 
 var app = express();
 
@@ -25,9 +25,9 @@ app.use(function (req, res, next) {
 
 app.use(subdomain('bot', botRouter));
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use('/youtube', youtubeRouter);
 
-app.use('/users', usersRouter);
+app.use(express.static(path.join(__dirname, 'public')));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
