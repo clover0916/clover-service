@@ -28,3 +28,6 @@ fetch("https://clover-service.online/youtube?url=watch?v=QW28YKqdxe0", {method: 
 }).then(function(videoData) {
   videoSourceBuffer.appendBuffer(videoData);
 });
+
+video.load()
+video.play()
