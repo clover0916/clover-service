@@ -1,5 +1,3 @@
-const ytdl = require('ytdl-core');
-
 const videoTag = document.getElementById("video");
 const myMediaSource = new MediaSource();
 const url = URL.createObjectURL(myMediaSource);
@@ -14,14 +12,18 @@ const videoSourceBuffer = myMediaSource
 
 // 2. download and add our audio/video to the SourceBuffers
 
-// for the audio SourceBuffer
-ytdl('https://www.youtube.com/watch?v=QW28YKqdxe0').then(function(audioData) {
-  alert('Load Audio\n' + audioData)
+fetch("http://127.0.0.1:3000/youtube?url=watch?v=QW28YKqdxe0").then(function(response) {
+  // The data has to be a JavaScript ArrayBuffer
+  return response.arrayBuffer();
+}).then(function(audioData) {
   audioSourceBuffer.appendBuffer(audioData);
 });
 
 // the same for the video SourceBuffer
-ytdl('https://www.youtube.com/watch?v=QW28YKqdxe0').then(function(videoData) {
+fetch("http://127.0.0.1:3000/youtube?url=watch?v=QW28YKqdxe0").then(function(response) {
+  // The data has to be a JavaScript ArrayBuffer
+  return response.arrayBuffer();
+}).then(function(videoData) {
   videoSourceBuffer.appendBuffer(videoData);
 });
 
