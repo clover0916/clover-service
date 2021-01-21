@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
   var URL = 'https://www.youtube.com/' + url 
   var stream = ytdl(URL);
   stream.on('info', (info) => {
-    var title = info.player_response.videoDetails.title.replace(' ', '_').toString('utf8');
+    var title = encodeURI(info.player_response.videoDetails.title)
     res.header('Content-Disposition', `attachment; filename="${title}.mp4"`);
     ytdl(URL, {
       format: 'mp4'
