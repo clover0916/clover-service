@@ -1,33 +1,17 @@
-const videoTag = document.getElementById("my-video");
-const myMediaSource = new MediaSource();
-const url = URL.createObjectURL(myMediaSource);
-videoTag.src = url;
+var ms = new MediaSource();
+var sb, type;
 
-// 1. add source buffers
+function initVideo() {
+  var video = document.getElementsByTagName('video')[0];
+  ms.addEventListener('sourceopen', initSourceBuffer, false);
+  if('srcObject' in video)
+    video.srcObject = ms;
+  else
+    video.src = URL.createObjectURL(ms);
+}
 
-const audioSourceBuffer = myMediaSource
-  .addSourceBuffer('audio/mp4; codecs="mp4a.40.2"');
-const videoSourceBuffer = myMediaSource
-  .addSourceBuffer('video/mp4; codecs="avc1.42001E"');
-
-// 2. download and add our audio/video to the SourceBuffers
-
-// for the audio SourceBuffer
-fetch("https://clover-service.online/youtube?url=watch?v=QW28YKqdxe0", {method: 'GET'}).then((res) => {
-  alert(res)
-  // The data has to be a JavaScript ArrayBuffer
-  return res.arrayBuffer();
-}).then(function(audioData) {
-  audioSourceBuffer.appendBuffer(audioData);
-});
-
-// the same for the video SourceBuffer
-fetch("https://clover-service.online/youtube?url=watch?v=QW28YKqdxe0", {method: 'GET'}).then((res) => {
-  // The data has to be a JavaScript ArrayBuffer
-  return res.arrayBuffer();
-}).then(function(videoData) {
-  videoSourceBuffer.appendBuffer(videoData);
-});
-
-video.load()
-video.play()
+function initSourceBuffer() {
+  sb = ms.addSourceBuffer(type);
+  sb.addEventListener('updateend', appendMediaSegment, false);
+  appendInitSegment();
+}
