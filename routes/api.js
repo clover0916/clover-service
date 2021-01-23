@@ -21,6 +21,7 @@ router.get('/get_video', async function(req, res, next) {
       res.header('Content-Disposition', 'attachment; filename*=UTF-8\'\'' + title);
     });
   });
+  next()
 });
 
 router.get('/video_info', async function(req, res, next) {
