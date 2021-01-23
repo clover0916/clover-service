@@ -6,7 +6,7 @@ var logger = require('morgan');
 const subdomain = require('express-subdomain');
 
 var botRouter = require('./routes/bot');
-var youtubeRouter = require('./routes/youtube');
+var apiRouter = require('./routes/api');
 
 var app = express();
 
@@ -25,7 +25,7 @@ app.use(function (req, res, next) {
 
 app.use(subdomain('bot', botRouter));
 
-app.use('/youtube', youtubeRouter);
+app.use(subdomain('api', apiRouter));
 
 app.use(express.static(path.join(__dirname, 'public')));
 

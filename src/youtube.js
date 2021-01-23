@@ -1,17 +1,5 @@
-var ms = new MediaSource();
-var sb, type;
-
-function initVideo() {
-  var video = document.getElementsByTagName('video')[0];
-  ms.addEventListener('sourceopen', initSourceBuffer, false);
-  if('srcObject' in video)
-    video.srcObject = ms;
-  else
-    video.src = URL.createObjectURL(ms);
-}
-
-function initSourceBuffer() {
-  sb = ms.addSourceBuffer(type);
-  sb.addEventListener('updateend', appendMediaSegment, false);
-  appendInitSegment();
-}
+document.getElementById('get_video').addEventListener('click', function() {
+  document.getElementById("video_url").value = document.getElementById("video_url").value.replace('https://www.youtube.com/', '')
+  //submit()でフォームの内容を送信
+  document.myform.submit();
+})
