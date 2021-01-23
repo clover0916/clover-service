@@ -4,9 +4,14 @@ var router = express.Router();
 const ytdl = require('ytdl-core');
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
+router.get('/', async function(req, res, next) {
   var url = req.query.url;
   var URL = 'https://www.youtube.com/' + url 
+  
+  let info = await ytdl.getInfo(URL);
+  let format = ytdl.chooseFormat(info.formats, { quality: '134' });
+  console.log('Format found!', format);
+  
   var stream = ytdl(URL, { format: 'mp4'});
 
   stream.on('info', (info) => {
