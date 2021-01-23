@@ -1,15 +1,33 @@
-import { MDCTextField } from '@material/textfield';
+var ms = new MediaSource();
+var sb, type;
 
-const textField = new MDCTextField(document.querySelector('.mdc-text-field'));
+function initVideo() {
+  var video = document.getElementsByTagName('my-video')[0];
+  ms.addEventListener('sourceopen', initSourceBuffer, false);
+  if ('srcObject' in video)
+    video.srcObject = ms;
+  else
+    video.src = URL.createObjectURL(ms);
+}
 
-document.getElementById('get_video').addEventListener('click', function() {
-  document.getElementById("video_url").value = document.getElementById("video_url").value.replace('https://www.youtube.com/', '')
-  if (!document.getElementById("video_url").value) {
-    textField.valid = false;
-    textField.helperTextContent = 'URLを入力してください';
-    return;
+function initSourceBuffer() {
+  sb = ms.addSourceBuffer(type);
+  sb.addEventListener('updateend', appendMediaSegment, false);
+  appendInitSegment();
+}
+
+var mpd;
+
+function getDescription(file) {
+  var xhr = new XMLHttpRequset();
+  xhr.open('GET', 'https://api.clover-service.online/video_info?url=' + file);
+  xhr.onload = function() {
+    mpd = JSON.parse(xhr.response);
+    var representation = mpd;
+    //var codecs = representation.getAttribute('codecs');
+    //type = mimeType + '; codecs="' + codecs + '"';
+    initVideo();
   }
-  //submit()でフォームの内容を送信
-  document.myform.submit();
-})
+}
 
+getDescription('watch?v=QW28YKqdxe0');

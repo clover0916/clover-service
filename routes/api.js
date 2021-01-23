@@ -23,4 +23,14 @@ router.get('/get_video', async function(req, res, next) {
   });
 });
 
+router.get('/video_info', async function(req, res, next) {
+  var url = req.query.url;
+  var URL = 'https://www.youtube.com/' + url
+  
+  ytdl.getInfo(URL, (err, info) => {
+    if (err) throw err;
+    res.send(JSON.stringify(info));
+  });
+});
+
 module.exports = router;

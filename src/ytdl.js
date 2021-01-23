@@ -1,0 +1,15 @@
+import { MDCTextField } from '@material/textfield';
+
+const textField = new MDCTextField(document.querySelector('.mdc-text-field'));
+
+document.getElementById('get_video').addEventListener('click', function() {
+  document.getElementById("video_url").value = document.getElementById("video_url").value.replace('https://www.youtube.com/', '')
+  if (!document.getElementById("video_url").value) {
+    textField.valid = false;
+    textField.helperTextContent = 'URLを入力してください';
+    return;
+  }
+  //submit()でフォームの内容を送信
+  document.myform.submit();
+})
+

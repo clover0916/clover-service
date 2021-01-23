@@ -69,7 +69,7 @@
   </header>
   <div class="mdc-top-app-bar--dense-fixed-adjust">
     <div class="title gradation-orange text-white">
-      <h1 class="mdc-typography--headline1 font-light futura-pt">Youtube</h1>
+      <h1 class="mdc-typography--headline1 font-light futura-pt">Youtube Downloader</h1>
       <p class="mdc-typography--subtitle1">
         学校でYoutube見られるなんて最高🎵
       </p>
@@ -81,12 +81,32 @@
           検索機能は後々付けます...
         </p>
         <div class="mdc-layout-grid">
-          <video id="my-video" width="720px" height="480px" />
+          <!--<video id="my-video" width="720px" height="480px" />-->
+          <form class="flex" action="https://api.clover-service.online/get_video" method="get" name="myform">
+            <div>
+              <label class="mdc-text-field mdc-text-field--filled">
+                <span class="mdc-text-field__ripple"></span>
+                <span class="mdc-floating-label" id="my-label-id">URL</span>
+                <input class="mdc-text-field__input" type="text" aria-labelledby="my-label-id" name="url" id="video_url" aria-labelledby="my-label-id" aria-controls="my-helper-id" aria-describedby="my-helper-id">
+                <span class="mdc-line-ripple"></span>
+              </label>
+              <div class="mdc-text-field-helper-line">
+                <div class="mdc-text-field-helper-text" id="my-helper-id" aria-hidden="true">Video URL e.g. https://www.youtube.com/'watch?v=MtN1YnoL46Q'</div>
+              </div>
+            </div>
+            <div class="mdc-touch-target-wrapper">
+              <button class="mdc-button mdc-button--touch" id="get_video">
+                <span class="mdc-button__ripple"></span>
+                <span class="mdc-button__label">Go!</span>
+                <span class="mdc-button__touch"></span>
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </main>
   </div>
   <script src="dist/app.js" async></script>
-  <script src="dist/youtube.js" async></script>
+  <script src="dist/ytdl.js" async></script>
 </body>
 </html>
