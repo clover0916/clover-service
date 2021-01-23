@@ -4,7 +4,7 @@ var router = express.Router();
 const ytdl = require('ytdl-core');
 
 /* GET users listing. */
-router.get('/get_video', function(req, res, next) {
+router.get('/', function(req, res, next) {
   var url = req.query.url;
   var URL = 'https://www.youtube.com/' + url 
   var video = ytdl(URL, { format: 'mp4'});
@@ -14,6 +14,8 @@ router.get('/get_video', function(req, res, next) {
     let format = ytdl.chooseFormat(info.formats, { quality: 'highest' })
     if (format) {
       console.log('Format found!', format);
+    } else {
+      console.log('Not Found...')
     }
   })
   stream.on('info', (info) => {
@@ -22,17 +24,6 @@ router.get('/get_video', function(req, res, next) {
     ytdl(URL)
       .pipe(res);
   });
-});
-
-router.get('/get_format', function(req, res, next) {
-  var url = req.query.url;
-  var URL = 'https://www.youtube.com/' + url 
-  var stream = ytdl(URL);
-  stream.on('info', (info) => {
-    ytdl(URL, { filter: format => format.container === 'mp4' && format.quality === 'medium'})
-      .pipe(res);
-  });
-  next()
 });
 
 module.exports = router;
