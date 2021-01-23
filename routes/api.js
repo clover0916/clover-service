@@ -21,22 +21,14 @@ router.get('/get_video', async function(req, res, next) {
       res.header('Content-Disposition', 'attachment; filename*=UTF-8\'\'' + title);
     });
   });
-  next()
 });
 
 router.get('/video_info', async function(req, res, next) {
   var url = req.query.url;
   var URL = 'https://www.youtube.com/' + url
-  
-  const video = ytdl(url, { filter: (format) => format.container === 'mp4' });
-  
-  video.on('end', () => {
-    //DLしたYoutube動画の情報
-    ytdl.getInfo(URL, (err, info) => {
-      if (err) throw err;
-      res.send(JSON.stringify(info))
-    });
-  });
+  console.log('Connected!!!')
+  const info = await ytdl.getInfo(args[1]);
+  res.send(JSON.stringify(info))
 });
 
 module.exports = router;
