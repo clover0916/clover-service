@@ -9,20 +9,11 @@ router.get('/', function(req, res, next) {
   var URL = 'https://www.youtube.com/' + url 
   var stream = ytdl(URL, { format: 'mp4'});
 
-  ytdl.getInfo(URL, (err, info) => {
-    if (err) return console.log(err);
-    let format = ytdl.chooseFormat(info.formats, { quality: 'highest' })
-    if (format) {
-      console.log('Format found!', format);
-    } else {
-      console.log('Not Found...')
-    }
-  })
-  
   stream.on('info', (info) => {
+    console.log(info)
     var title = encodeURIComponent(info.player_response.videoDetails.title + '.mp4')
     res.header('Content-Disposition', 'attachment; filename*=UTF-8\'\'' + title);
-    ytdl(URL)
+    ytdl(URL, { format: 'mp4'})
       .pipe(res);
   });
 });
