@@ -2,7 +2,6 @@ import { MDCRipple } from '@material/ripple';
 import { MDCTopAppBar } from '@material/top-app-bar';
 import { MDCCircularProgress } from '@material/circular-progress';
 import { MDCDialog } from '@material/dialog';
-import { MDCTextField } from '@material/textfield';
 
 import Swiper from 'swiper';
 
