@@ -2,7 +2,7 @@ import { MDCRipple } from '@material/ripple';
 import { MDCTopAppBar } from '@material/top-app-bar';
 import { MDCCircularProgress } from '@material/circular-progress';
 import { MDCDialog } from '@material/dialog';
-import {MDCTextField} from '@material/textfield';
+import { MDCTextField } from '@material/textfield';
 
 import Swiper from 'swiper';
 
@@ -28,7 +28,6 @@ const topAppBarInstance = new MDCTopAppBar(topAppBarElement);
 const buttonRipple = new MDCRipple(document.querySelector('.mdc-button'));
 const circularProgress = new MDCCircularProgress(document.querySelector('.mdc-circular-progress'));
 const dialog = new MDCDialog(document.querySelector('.mdc-dialog'));
-const textField = new MDCTextField(document.querySelector('.mdc-text-field'));
 const iconButtonRipple = new MDCRipple(document.querySelector('.mdc-icon-button'));
 iconButtonRipple.unbounded = true;
 
