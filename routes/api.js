@@ -27,7 +27,7 @@ router.get('/video_info', async function(req, res, next) {
   var url = req.query.url;
   var URL = 'https://www.youtube.com/' + url
   console.log('Connected!!!')
-  const info = await ytdl.getInfo(args[1]);
+  const info = await ytdl.getInfo(URL);
   res.send(JSON.stringify(info))
 });
 
