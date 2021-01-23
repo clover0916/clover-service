@@ -7,8 +7,9 @@ const ytdl = require('ytdl-core');
 router.get('/', function(req, res, next) {
   var url = req.query.url;
   var URL = 'https://www.youtube.com/' + url 
-  var video = ytdl(URL, { format: 'mp4'});
+  var stream = ytdl(URL, { format: 'mp4'});
   
+  console.log('Connected..')
   ytdl.getInfo(URL, (err, info) => {
     if (err) throw err;
     let format = ytdl.chooseFormat(info.formats, { quality: 'highest' })
@@ -18,6 +19,7 @@ router.get('/', function(req, res, next) {
       console.log('Not Found...')
     }
   })
+  
   stream.on('info', (info) => {
     var title = encodeURIComponent(info.player_response.videoDetails.title + '.mp4')
     res.header('Content-Disposition', 'attachment; filename*=UTF-8\'\'' + title);
