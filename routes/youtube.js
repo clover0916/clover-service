@@ -8,10 +8,9 @@ router.get('/', function(req, res, next) {
   var url = req.query.url;
   var URL = 'https://www.youtube.com/' + url 
   var stream = ytdl(URL, { format: 'mp4'});
-  
-  console.log('Connected..')
+
   ytdl.getInfo(URL, (err, info) => {
-    if (err) throw err;
+    if (err) return console.log(err);
     let format = ytdl.chooseFormat(info.formats, { quality: 'highest' })
     if (format) {
       console.log('Format found!', format);
