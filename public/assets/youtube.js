@@ -3,7 +3,7 @@ const myMediaSource = new MediaSource();
 const url = URL.createObjectURL(myMediaSource);
 videoTag.src = url;
 
-const file = getParam('id')
+const file = getQueryVariable('id')
 
 // 1. add source buffers
 
@@ -20,8 +20,7 @@ fetch('https://api.clover-service.online/video_info?id=' + file, { method: 'GET'
       .then(response => response.arrayBuffer())
       .then(videoData => {
         videoSourceBuffer.appendBuffer(videoData);
-        
-        videoTag.load()
+
         videoTag.play()
       });
   })
@@ -38,12 +37,14 @@ document.getElementById('go').addEventListener('click', function() {
   document.myform.submit();
 })
 
-function getParam(name, url) {
-    if (!url) url = window.location.href;
-    name = name.replace(/[\[\]]/g, "\\$&");
-    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-        results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, " "));
+function getQueryVariable(variable) {
+    var query = window.location.search.substring(1);
+    var vars = query.split("&");
+    for (var i=0;i<vars.length;i++) {
+        var pair = vars[i].split("=");
+        if (pair[0] == variable) {
+            return pair[1];
+        }
+    }
+    //alert('Query Variable ' + variable + ' not found');
 }
