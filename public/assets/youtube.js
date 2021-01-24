@@ -3,7 +3,7 @@ const myMediaSource = new MediaSource();
 const url = URL.createObjectURL(myMediaSource);
 videoTag.src = url;
 
-const file = 'QW28YKqdxe0'//getParam('id')
+const file = getParam('id')
 
 // 1. add source buffers
 
