@@ -3,7 +3,7 @@ import { MDCTextField } from '@material/textfield';
 const textField = new MDCTextField(document.querySelector('.mdc-text-field'));
 
 document.getElementById('get_video').addEventListener('click', function() {
-  document.getElementById("video_url").value = document.getElementById("video_url").value.replace('https://www.youtube.com/', '')
+  document.getElementById("video_url").value = document.getElementById("video_url").value.replace('https://www.youtube.com/watch?v=', '')
   if (!document.getElementById("video_url").value) {
     textField.valid = false;
     textField.helperTextContent = 'URLを入力してください';
