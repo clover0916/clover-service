@@ -19,7 +19,7 @@ function initSourceBuffer() {
 var mpd;
 
 function getDescription(file) {
-  var xhr = new XMLHttpRequset();
+  var xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://api.clover-service.online/video_info?id=' + file);
   xhr.onload = function() {
     mpd = JSON.parse(xhr.response);
