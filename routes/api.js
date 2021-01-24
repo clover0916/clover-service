@@ -10,7 +10,8 @@ router.get('/get_video', async function(req, res, next) {
   
   const video = ytdl(url,{filter: (format) => format.container === 'mp4' });
   
-  console.log(video)
+  const info = await ytdl.getInfo(URL);
+
   var title = encodeURIComponent(info.player_response.videoDetails.title + '.mp4')
       
   res.header('Content-Disposition', 'attachment; filename*=UTF-8\'\'' + title);
