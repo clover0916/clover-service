@@ -3,18 +3,7 @@ const myMediaSource = new MediaSource();
 const url = URL.createObjectURL(myMediaSource);
 videoTag.src = url;
 
-document.getElementById('go').addEventListener('click', function() {
-  document.getElementById("url").value = document.getElementById("video_url").value.replace('https://www.youtube.com/watch?v=', '')
-  if (!document.getElementById("video_url").value) {
-    return;
-  }
-  //submit()でフォームの内容を送信
-  document.myform.submit();
-})
-
-var url_string = window.location.href
-var urL = new URL(url_string);
-var file = urL.searchParams.get("id");
+const file = getParam('id')
 
 // 1. add source buffers
 
@@ -34,8 +23,30 @@ fetch('https://api.clover-service.online/video_info?id=' + file, { method: 'GET'
       .then(response => response.arrayBuffer())
       .then(data => {
         videoSourceBuffer.appendBuffer(data);
+        
+        videoTag.load()
+        videoTag.play()
       });
   })
   .catch(err => {
     console.error(err);
   });
+  
+document.getElementById('go').addEventListener('click', function() {
+  document.getElementById("url").value = document.getElementById("video_url").value.replace('https://www.youtube.com/watch?v=', '')
+  if (!document.getElementById("url").value) {
+    return;
+  }
+  //submit()でフォームの内容を送信
+  document.myform.submit();
+})
+
+function getParam(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
