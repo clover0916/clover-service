@@ -88,6 +88,11 @@ body {
   background: #00cc5b;
 }
 
+.mdc-top-app-bar__section {
+  align-items: flex-start;
+  justify-content: center
+}
+
 .font-thin {
   font-weight: 100;
 }
@@ -151,9 +156,4 @@ body {
 
 .flex {
   display: flex;
-}
-
-.tp {
-  width: auto;
-  height: 100%;
 }
