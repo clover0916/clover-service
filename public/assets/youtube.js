@@ -5,10 +5,6 @@ videoTag.src = url;
 
 const file = getQueryVariable('id')
 
-if (!file) {
-  return
-}
-
 // 1. add source buffers
 
 // for the audio SourceBuffer
