@@ -10,15 +10,12 @@ router.get('/get_video', async function(req, res, next) {
   
   const video = ytdl(url,{filter: (format) => format.container === 'mp4' });
   
-  video.on('end', () => {
-    //DLしたYoutube動画の情報
-    ytdl.getInfo(URL, (err, info) => {
-      if (err) throw err;
-      var title = encodeURIComponent(video.player_response.videoDetails.title + '.mp4')
+  ytdl.getInfo(URL, (err, info) => {
+    if (err) throw err;
+    var title = encodeURIComponent(info.player_response.videoDetails.title + '.mp4')
       
-      res.header('Content-Disposition', 'attachment; filename*=UTF-8\'\'' + title);
-      video.pipe(res);
-    });
+    res.header('Content-Disposition', 'attachment; filename*=UTF-8\'\'' + title);
+    video.pipe(res);
   });
 });
 
