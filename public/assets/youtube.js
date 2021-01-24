@@ -12,6 +12,7 @@ fetch('https://api.clover-service.online/video_info?id=' + file, { method: 'GET'
   .then(response => response.json())
   .then(data => {
     document.getElementById('video_title').innerHTML = data.videoDetails.title;
+    document.getElementById('video_description').innerHTML = data.videoDetails.description;
     const videoSourceBuffer = myMediaSource.addSourceBuffer(`${data.formats[0].mimeType}; codecs="${data.formats[0].codecs}"`);
 
     // 2. download and add our audio/video to the SourceBuffers

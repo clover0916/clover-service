@@ -21,7 +21,6 @@ router.get('/get_video', async function(req, res, next) {
 router.get('/video_info', async function(req, res, next) {
   var id = req.query.id;
   var URL = 'https://www.youtube.com/watch?v=' + id
-  console.log('Connected!!!')
   try {
     const info = await ytdl.getInfo(URL);
     res.json(info)
