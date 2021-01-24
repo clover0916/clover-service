@@ -182,3 +182,34 @@ body {
 .video_wrapper > video {
     width: 100%;
 }*/
+
+#my-video {
+    left: 0; /* ADD */
+    margin: 0;
+    min-height: 100%;
+    min-width: 100%;
+    position: fixed;
+    top: 0; /* ADD */
+    z-index: -100;
+}
+
+#Header {
+    width: 100%;
+    height: 55px;
+    z-index: 999;
+    position: fixed;
+    right: 0;
+    top:0;
+    background-color: transparent;
+}
+#ico {
+    width: 100px;
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+    font-size: 30px;
+    color: white;
+}
+#Contents {
+    background-color: #000;
+}
