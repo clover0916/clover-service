@@ -28,15 +28,6 @@ fetch('https://api.clover-service.online/video_info?id=' + file, { method: 'GET'
     console.error(err);
   });
   
-document.getElementById('go').addEventListener('click', function() {
-  document.getElementById("url").value = document.getElementById("video_url").value.replace('https://www.youtube.com/watch?v=', '')
-  if (!document.getElementById("url").value) {
-    return;
-  }
-  //submit()でフォームの内容を送信
-  document.myform.submit();
-})
-
 function getQueryVariable(variable) {
     var query = window.location.search.substring(1);
     var vars = query.split("&");

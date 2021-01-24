@@ -63,7 +63,26 @@
         <span class="mdc-top-app-bar__title" style="padding-left: 6px" onclick="location.href='./index.html'">Clover</span>
       </section>
       <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-        <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Search">search</button>
+        <form action="https://www.clover-service.online/youtube.html" method="get" name="myform">
+          <div>
+            <label class="mdc-text-field mdc-text-field--filled">
+              <span class="mdc-text-field__ripple"></span>
+              <span class="mdc-floating-label" id="my-label-id">URL</span>
+              <input class="mdc-text-field__input" type="text" aria-labelledby="my-label-id" name="id" id="video_url" aria-labelledby="my-label-id" aria-controls="my-helper-id" aria-describedby="my-helper-id">
+              <span class="mdc-line-ripple"></span>
+            </label>
+            <div class="mdc-text-field-helper-line">
+              <div class="mdc-text-field-helper-text" id="my-helper-id" aria-hidden="true">Video URL e.g. https://www.youtube.com/'watch?v=MtN1YnoL46Q'</div>
+            </div>
+          </div>
+          <div class="mdc-touch-target-wrapper">
+            <button class="mdc-button mdc-button--touch" id="get_video">
+              <span class="mdc-button__ripple"></span>
+              <span class="mdc-button__label">Go!</span>
+              <span class="mdc-button__touch"></span>
+            </button>
+          </div>
+        </form>
       </section>
     </div>
   </header>
@@ -81,23 +100,13 @@
           検索機能は後々付けます...
         </p>
         <div class="mdc-layout-grid">
-          <form action="https://www.clover-service.online/youtube.html" method="get" name="myform">
-            <p>リンク：<br>
-            <input type="text" name="id" id="url"></p>
-          </form>
-          <div class="mdc-touch-target-wrapper">
-            <button class="mdc-button mdc-button--touch" id="go">
-              <span class="mdc-button__ripple"></span>
-              <span class="mdc-button__label">Go!</span>
-              <span class="mdc-button__touch"></span>
-            </button>
-          </div>
           <video id="my-video" width="720px" height="480px" controls/>
         </div>
       </div>
     </main>
   </div>
   <script src="assets/youtube.js"></script>
+  <script src="dist/youtube.js" async></script>
   <script src="dist/app.js" async></script>
 </body>
 </html>
