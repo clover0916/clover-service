@@ -89,8 +89,9 @@ body {
 }
 
 .mdc-top-app-bar__section {
+  display: flex;
   align-items: flex-start;
-  justify-content: center
+  justify-content: start
 }
 
 .font-thin {
