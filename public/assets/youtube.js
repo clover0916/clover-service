@@ -5,23 +5,23 @@ videoTag.src = url;
 
 const file = 'QW28YKqdxe0'
 
+var video;
 // 1. add source buffers
-
-//const videoSourceBuffer = myMediaSource
-  //.addSourceBuffer('video/mp4; codecs="avc1.64001e"');
-
-// 2. download and add our audio/video to the SourceBuffers
 
 // for the audio SourceBuffer
 fetch('https://api.clover-service.online/video_info?id=' + file, { method: 'GET' })
-  .then(response => console.log(response))
+  .then(response => response.json())
+  .then(data => console.log(data.formats[0]))
   .catch(err => {
     console.error(err);
   });
-  //.then(data => console.log(data.formats))
   //.then(function(audioData) {
   //audioSourceBuffer.appendBuffer(audioData);
 //});
+
+const videoSourceBuffer = myMediaSource.addSourceBuffer(`${video.formats[0].mimetype}video/mp4; codecs="${video.formats[0].codecs}"`);
+
+// 2. download and add our audio/video to the SourceBuffers
 
 // the same for the video SourceBuffer
 fetch("https://api.clover-service.online/get_video?id=" + file).then(function(response) {
