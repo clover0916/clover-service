@@ -22,8 +22,12 @@ router.get('/video_info', async function(req, res, next) {
   var id = req.query.id;
   var URL = 'https://www.youtube.com/watch?v=' + id
   console.log('Connected!!!')
-  const info = await ytdl.getInfo(URL);
-  res.json(info)
+  try {
+    const info = await ytdl.getInfo(URL);
+    res.json(info)
+  } catch (err) {
+    res.json({ "error_message": err})
+  }
 });
 
 module.exports = router;
