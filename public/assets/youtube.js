@@ -1,59 +1,32 @@
-var ms = new MediaSource();
-var sb, type;
+const videoTag = document.getElementById("my-video");
+const myMediaSource = new MediaSource();
+const url = URL.createObjectURL(myMediaSource);
+videoTag.src = url;
 
-function initVideo() {
-  var video = document.getElementsByTagName('my-video')[0];
-  ms.addEventListener('sourceopen', initSourceBuffer, false);
-  if ('srcObject' in video)
-    video.srcObject = ms;
-  else
-    video.src = URL.createObjectURL(ms);
-}
+const file = 'QW28YKqdxe0'
 
-function initSourceBuffer() {
-  sb = ms.addSourceBuffer(type);
-  sb.addEventListener('updateend', appendMediaSegment, false);
-  appendInitSegment();
-}
+// 1. add source buffers
 
-var mpd;
+//const videoSourceBuffer = myMediaSource
+  //.addSourceBuffer('video/mp4; codecs="avc1.64001e"');
 
-function getDescription(file) {
-  var xhr = new XMLHttpRequest();
-  xhr.open('GET', 'https://api.clover-service.online/video_info?id=' + file);
-  xhr.onload = function() {
-    mpd = JSON.parse(xhr.response);
-    var representation = mpd;
-    var codecs = representation.formats[0].codecs;
-    var mimeType = representation.formats[0].mimeType
-    type = mimeType + '; codecs="' + codecs + '"';
-    initVideo();
-  }
-}
+// 2. download and add our audio/video to the SourceBuffers
 
-getDescription('QW28YKqdxe0');
+// for the audio SourceBuffer
+fetch('https://api.clover-service.online/video_info?id=' + file, { method: 'GET' })
+  .then(response => console.log(response))
+  .catch(err => {
+    console.error(err);
+  });
+  //.then(data => console.log(data.formats))
+  //.then(function(audioData) {
+  //audioSourceBuffer.appendBuffer(audioData);
+//});
 
-var mediaAppended = false;
-
-function appendSegment(event) {
-  sb.appendBuffer(event.target.response);
-  if (mediaAppended)
-    sb.removeEventListener('updateend', appendMediaSegment);
-}
-
-function appendMediaSegment() {
-  var xhr = new XMLHttpRequest();
-  xhr.open('GET', 'https://api.clover-service.online/video_info?id=' + mpd.videoDetails.videoId);
-  xhr.responseType = 'arraybuffer';
-  xhr.onload = appendSegment;
-  mediaAppended = true;
-  xhr.send(null);
-}
-
-function appendInitSegment() {
-  var xhr = new XMLHttpRequest();
-  xhr.open('GET', 'https://api.clover-service.online/video_info?id=' + mpd.videoDetails.videoId);
-  xhr.responseType = 'arraybuffer';
-  xhr.onload = appendSegment;
-  xhr.send(null);
-}
+// the same for the video SourceBuffer
+fetch("https://api.clover-service.online/get_video?id=" + file).then(function(response) {
+  // The data has to be a JavaScript ArrayBuffer
+  return response.arrayBuffer();
+}).then(function(videoData) {
+  videoSourceBuffer.appendBuffer(videoData);
+});
