@@ -23,7 +23,7 @@ router.get('/video_info', async function(req, res, next) {
   var URL = 'https://www.youtube.com/watch?v=' + id
   console.log('Connected!!!')
   const info = await ytdl.getInfo(URL);
-  res.json(JSON.stringify(info))
+  res.json(info)
 });
 
 module.exports = router;
