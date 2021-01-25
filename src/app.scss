@@ -184,12 +184,9 @@ body {
 }*/
 
 #my-video {
-    left: 0; /* ADD */
     margin: 0;
     min-height: 100%;
     min-width: 100%;
-    position: fixed;
-    top: 0; /* ADD */
     z-index: -100;
 }
 
@@ -198,8 +195,6 @@ body {
     height: 55px;
     z-index: 999;
     position: fixed;
-    right: 0;
-    top:0;
     background-color: transparent;
 }
 #ico {
