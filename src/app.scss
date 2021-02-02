@@ -18,15 +18,20 @@
 @use "@material/notched-outline/mdc-notched-outline";
 @use "@material/textfield";
 
+@use "@material/drawer";
+@use "@material/list";
+
+@include drawer.core-styles;
+@include drawer.dismissible-core-styles;
+@include drawer.modal-core-styles;
+@include list.core-styles;
 
 @import "swiper/swiper-bundle.css";
 
-@include button.core-styles;
-@include icon-button.core-styles;
-@include card.core-styles;
-@include dialog.core-styles;
-@include textfield.core-styles;
-
+@include drawer.core-styles;
+@include drawer.dismissible-core-styles;
+@include drawer.modal-core-styles;
+@include list.core-styles;
 
 * {
   margin: 0px;
