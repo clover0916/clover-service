@@ -17,6 +17,8 @@
 @use "@material/line-ripple/mdc-line-ripple";
 @use "@material/notched-outline/mdc-notched-outline";
 @use "@material/textfield";
+@use "@material/drawer";
+@use "@material/list";
 
 
 @import "swiper/swiper-bundle.css";
@@ -26,6 +28,10 @@
 @include card.core-styles;
 @include dialog.core-styles;
 @include textfield.core-styles;
+@include drawer.core-styles;
+@include drawer.dismissible-core-styles;
+@include drawer.modal-core-styles;
+@include list.core-styles;
 
 
 * {

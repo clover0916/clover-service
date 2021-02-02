@@ -2,6 +2,8 @@ import { MDCRipple } from '@material/ripple';
 import { MDCTopAppBar } from '@material/top-app-bar';
 import { MDCCircularProgress } from '@material/circular-progress';
 import { MDCDialog } from '@material/dialog';
+import {MDCList} from "@material/list";
+import {MDCDrawer} from "@material/drawer";
 
 import Swiper from 'swiper';
 
@@ -28,6 +30,10 @@ const buttonRipple = new MDCRipple(document.querySelector('.mdc-button'));
 const circularProgress = new MDCCircularProgress(document.querySelector('.mdc-circular-progress'));
 const dialog = new MDCDialog(document.querySelector('.mdc-dialog'));
 const iconButtonRipple = new MDCRipple(document.querySelector('.mdc-icon-button'));
+const drawer = MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
+const list = MDCList.attachTo(document.querySelector('.mdc-list'));
+
+list.wrapFocus = true;
 iconButtonRipple.unbounded = true;
 
 const selector = '.mdc-button, .mdc-icon-button, .mdc-card__primary-action';
