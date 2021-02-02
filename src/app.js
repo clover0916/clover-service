@@ -43,6 +43,21 @@ const ripples = [].map.call(document.querySelectorAll(selector), function(el) {
 
 var swiper = new Swiper('.swiper-container');
 
+const listEl = document.querySelector('.mdc-drawer .mdc-list');
+const mainContentEl = document.querySelector('.main-content');
+
+listEl.addEventListener('click', (event) => {
+  drawer.open = false;
+});
+
+document.body.addEventListener('MDCDrawer:closed', () => {
+  mainContentEl.querySelector('input, button').focus();
+});
+
+topAppBarElement.addEventListener('MDCTopAppBar:nav', () => {
+  drawer.open = true;
+})
+
 document.getElementById("OpenDialog").onclick = function() {
   var url = document.getElementById("OpenDialog").dataset.url;
   dialog.open();
