@@ -53,7 +53,8 @@
     "@material/dialog": "^9.0.0",
     "@material/elevation": "^9.0.0",
     "@material/circular-progress": "^9.0.0",
-    "@material/textfield": "^9.0.0"
+    "@material/textfield": "^9.0.0",
+    "@material/data-table": "^9.0.0"
   },
   "engines": {
     "node": "14.x"
