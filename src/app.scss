@@ -21,6 +21,7 @@
 @use "@material/drawer";
 @use "@material/list";
 @use "@material/checkbox"; // Required only for data table with row selection.
+@use "@material/checkbox/mdc-checkbox";
 @use "@material/data-table/data-table";
 
 @import "swiper/swiper-bundle.css";
