@@ -5,6 +5,7 @@ import { MDCDialog } from '@material/dialog';
 import {MDCList} from "@material/list";
 import {MDCDrawer} from "@material/drawer";
 import {MDCDataTable} from '@material/data-table';
+import {MDCIconButtonToggle} from '@material/icon-button';
 
 import Swiper from 'swiper';
 
@@ -32,6 +33,7 @@ const circularProgress = new MDCCircularProgress(document.querySelector('.mdc-ci
 const dialog = new MDCDialog(document.querySelector('.mdc-dialog'));
 const iconButtonRipple = new MDCRipple(document.querySelector('.mdc-icon-button'));
 const dataTable = new MDCDataTable(document.querySelector('.mdc-data-table'));
+const iconToggle = new MDCIconButtonToggle(document.querySelector('.mdc-icon-button'));
 const drawer = MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
 const list = MDCList.attachTo(document.querySelector('.mdc-list'));
 
