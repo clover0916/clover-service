@@ -13,43 +13,14 @@
         aria-modal="true"
         aria-labelledby="my-dialog-title"
         aria-describedby="my-dialog-content">
-        <h2 class="mdc-dialog__title" id="my-dialog-title">
-          ここから先は別のサイトに移動しますが進みますか？
-        </h2>
-        <div class="mdc-dialog__content" id="my-dialog-content">
-          <span id="url"></span>
+        <div class="mdc-dialog__content" id="detail">
+          Error
         </div>
         <div class="mdc-dialog__actions">
           <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="cancel">
             <div class="mdc-button__ripple"></div>
-            <span class="mdc-button__label">キャンセル</span>
+            <span class="mdc-button__label">閉じる</span>
           </button>
-          <button type="button" class="mdc-button mdc-dialog__button" id="go-url">
-            <div class="mdc-button__ripple"></div>
-            <span class="mdc-button__label">進む</span>
-          </button>
-          <div class="mdc-circular-progress mdc-circular-progress--indeterminate hidden absolute" id="load" style="width:24px;height:24px;" role="progressbar" aria-label="Example Progress Bar" aria-valuemin="0" aria-valuemax="1">
-            <div class="mdc-circular-progress__determinate-container">
-              <svg class="mdc-circular-progress__determinate-circle-graphic" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <circle class="mdc-circular-progress__determinate-track" cx="12" cy="12" r="8.75" stroke-width="2.5" />
-                <circle class="mdc-circular-progress__determinate-circle" cx="12" cy="12" r="8.75" stroke-dasharray="54.978" stroke-dashoffset="54.978" stroke-width="2.5" />
-              </svg>
-            </div>
-            <div class="mdc-circular-progress__indeterminate-container">
-              <div class="mdc-circular-progress__spinner-layer">
-                <div class="mdc-circular-progress__circle-clipper mdc-circular-progress__circle-left">
-                  <svg class="mdc-circular-progress__indeterminate-circle-graphic" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="12" cy="12" r="8.75" stroke-dasharray="54.978" stroke-dashoffset="27.489" stroke-width="2.5" />
-                  </svg>
-                </div>
-                <div class="mdc-circular-progress__gap-patch">
-                  <svg class="mdc-circular-progress__indeterminate-circle-graphic" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="12" cy="12" r="8.75" stroke-dasharray="54.978" stroke-dashoffset="27.489" stroke-width="2" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -113,15 +84,14 @@
                     <td class="mdc-data-table__cell">特になし</td>
                     <td class="mdc-data-table__cell">特になし</td>
                     <td class="mdc-data-table__cell">
-                      <button id="add-to-favorites"
-                        class="mdc-icon-button"
-                        aria-label="Add to favorites"
-                        aria-pressed="false">
-                        <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">favorite</i>
-                        <i class="material-icons mdc-icon-button__icon">favorite_border</i>
-                      </button>
+                      <div class="mdc-touch-target-wrapper" id="od" data-command="help">
+                        <button class="mdc-button mdc-button--touch">
+                          <span class="mdc-button__ripple"></span>
+                          <span class="mdc-button__label">詳細</span>
+                          <span class="mdc-button__touch"></span>
+                        </button>
+                      </div>
                     </td>
-                    <tr class="mdc-data-table__row">Test</tr>
                   </tr>
                   <tr data-row-id="u1" class="mdc-data-table__row">
                     <th class="mdc-data-table__cell" scope="row" id="u1">!cm info</th>
@@ -129,13 +99,13 @@
                     <td class="mdc-data-table__cell">Huge</td>
                     <td class="mdc-data-table__cell">Triaged</td>
                     <td class="mdc-data-table__cell">
-                      <button id="add-to-favorites"
-                        class="mdc-icon-button"
-                        aria-label="Add to favorites"
-                        aria-pressed="false">
-                        <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">favorite</i>
-                        <i class="material-icons mdc-icon-button__icon">favorite_border</i>
-                      </button>
+                      <div class="mdc-touch-target-wrapper">
+                        <button class="mdc-button mdc-button--touch">
+                          <span class="mdc-button__ripple"></span>
+                          <span class="mdc-button__label">詳細</span>
+                          <span class="mdc-button__touch"></span>
+                        </button>
+                      </div>
                     </td>
                   </tr>
                   <tr data-row-id="u2" class="mdc-data-table__row">
@@ -144,13 +114,13 @@
                     <td class="mdc-data-table__cell">Minor</td>
                     <td class="mdc-data-table__cell">Not triaged</td>
                     <td class="mdc-data-table__cell">
-                      <button id="add-to-favorites"
-                        class="mdc-icon-button"
-                        aria-label="Add to favorites"
-                        aria-pressed="false">
-                        <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">favorite</i>
-                        <i class="material-icons mdc-icon-button__icon">favorite_border</i>
-                      </button>
+                      <div class="mdc-touch-target-wrapper">
+                        <button class="mdc-button mdc-button--touch">
+                          <span class="mdc-button__ripple"></span>
+                          <span class="mdc-button__label">詳細</span>
+                          <span class="mdc-button__touch"></span>
+                        </button>
+                      </div>
                     </td>
                   </tr>
                   <tr data-row-id="u3" class="mdc-data-table__row">
@@ -159,13 +129,13 @@
                     <td class="mdc-data-table__cell">Negligible</td>
                     <td class="mdc-data-table__cell">Triaged</td>
                     <td class="mdc-data-table__cell">
-                      <button id="add-to-favorites"
-                        class="mdc-icon-button"
-                        aria-label="Add to favorites"
-                        aria-pressed="false">
-                        <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">favorite</i>
-                        <i class="material-icons mdc-icon-button__icon">favorite_border</i>
-                      </button>
+                      <div class="mdc-touch-target-wrapper">
+                        <button class="mdc-button mdc-button--touch">
+                          <span class="mdc-button__ripple"></span>
+                          <span class="mdc-button__label">詳細</span>
+                          <span class="mdc-button__touch"></span>
+                        </button>
+                      </div>
                     </td>
                   </tr>
                 </tbody>

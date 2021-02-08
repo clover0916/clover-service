@@ -74,3 +74,13 @@ document.getElementById("OpenDialog").onclick = function() {
     location.href = url;
   });
 };
+
+document.getElementById('od').onclick = function() {
+  fetch("../assets/commands.json")
+    .then(res => res.json())
+    .then(data => {
+      const json = data.find((v) => v.id === document.getElementById("od").dataset.command)
+      dialog.open()
+      document.getElementById("detail ").innerHTML = json.description;
+    }
+}
