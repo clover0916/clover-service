@@ -81,6 +81,6 @@ document.getElementById('od').onclick = function() {
     .then(data => {
       const json = data.find((v) => v.name === document.getElementById("od").dataset.command)
       dialog.open()
-      document.getElementById("detail ").innerHTML = json.description;
+      document.getElementById("detail").innerHTML = json.description;
     })
 }
