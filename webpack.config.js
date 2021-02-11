@@ -6,7 +6,8 @@ module.exports = {
   entry: {
     app: ['./src/app.scss', './src/app.js'],
     ytdl: './src/ytdl.js',
-    youtube: './src/youtube.js'
+    youtube: './src/youtube.js',
+    commands: './src/commands.js'
   },
   output: {
     path: path.join(__dirname, 'public', 'dist'),

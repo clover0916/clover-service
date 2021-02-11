@@ -4,7 +4,6 @@ import { MDCCircularProgress } from '@material/circular-progress';
 import { MDCDialog } from '@material/dialog';
 import {MDCList} from "@material/list";
 import {MDCDrawer} from "@material/drawer";
-import {MDCDataTable} from '@material/data-table';
 import {MDCIconButtonToggle} from '@material/icon-button';
 
 import Swiper from 'swiper';
@@ -32,7 +31,6 @@ const buttonRipple = new MDCRipple(document.querySelector('.mdc-button'));
 const circularProgress = new MDCCircularProgress(document.querySelector('.mdc-circular-progress'));
 const dialog = new MDCDialog(document.querySelector('.mdc-dialog'));
 const iconButtonRipple = new MDCRipple(document.querySelector('.mdc-icon-button'));
-const dataTable = new MDCDataTable(document.querySelector('.mdc-data-table'));
 const iconToggle = new MDCIconButtonToggle(document.querySelector('.mdc-icon-button'));
 const drawer = MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
 const list = MDCList.attachTo(document.querySelector('.mdc-list'));
@@ -74,13 +72,3 @@ document.getElementById("OpenDialog").onclick = function() {
     location.href = url;
   });
 };
-
-document.getElementById('od').onclick = function() {
-  fetch("../assets/commands.json")
-    .then(res => res.json())
-    .then(data => {
-      const json = data.find((v) => v.name === document.getElementById("od").dataset.command)
-      dialog.open()
-      document.getElementById("detail").innerHTML = json.description;
-    })
-}
