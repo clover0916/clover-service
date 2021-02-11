@@ -82,7 +82,32 @@
     <div class="mdc-dialog__scrim"></div>
   </div>
 
-  <header class="mdc-top-app-bar mdc-top-app-bar--fixed mdc-elevation--z4">
+  <aside class="mdc-drawer mdc-drawer--modal">
+    <div class="mdc-drawer__content">
+      <nav class="mdc-list">
+        <a class="mdc-list-item mdc-list-item--activated" href="#" aria-current="page" tabindex="0">
+          <span class="mdc-list-item__ripple"></span>
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">inbox</i>
+          <span class="mdc-list-item__text">Inbox</span>
+        </a>
+        <a class="mdc-list-item" href="#">
+          <span class="mdc-list-item__ripple"></span>
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">send</i>
+          <span class="mdc-list-item__text">Outgoing</span>
+        </a>
+        <a class="mdc-list-item" href="#">
+          <span class="mdc-list-item__ripple"></span>
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">drafts</i>
+          <span class="mdc-list-item__text">Drafts</span>
+        </a>
+      </nav>
+    </div>
+  </aside>
+
+  <div class="mdc-drawer-scrim"></div>
+
+  <div class="main-content">
+    <header class="mdc-top-app-bar mdc-top-app-bar--fixed mdc-elevation--z4">
     <div class="mdc-top-app-bar__row">
       <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
         <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" aria-label="Open navigation menu">menu</button>
@@ -92,8 +117,8 @@
         <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Search">search</button>
       </section>
     </div>
-  </header>
-  <div class="mdc-top-app-bar--fixed-adjust">
+    </header>
+    <div class="mdc-top-app-bar--fixed-adjust">
     <div class="title gradation-orange text-white">
       <h1 class="mdc-typography--headline1 font-light futura-pt">Clover Bot</h1>
       <p class="mdc-typography--subtitle1">
@@ -119,6 +144,7 @@
         </div>
       </div>
     </main>
+    </div>
   </div>
   <script src="dist/app.js" async></script>
 </body>
