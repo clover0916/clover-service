@@ -5,7 +5,7 @@ var xhr = new XMLHttpRequest(),
  
 	xhr.responseType = "document";//XMLとして扱いたいので一応記述
 	xhr.open(method, url, true);
-	xhr.onreadystatechange = async function () {
+	xhr.onreadystatechange = function () {
 		if (xhr.readyState === 4 && xhr.status === 200) {
 			var restxt = xhr.responseXML;//重要
 			var int = restxt.getElementsByTagName("html")[0].getElementsByTagName("body")[0].getElementsByTagName("aside")[0];//読み込まれるセレクタを指定
