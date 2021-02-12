@@ -9,7 +9,7 @@ var xhr = new XMLHttpRequest(),
 		if (xhr.readyState === 4 && xhr.status === 200) {
 			var restxt = xhr.responseXML;//重要
 			var int = restxt.getElementsByTagName("html")[0].getElementsByTagName("body")[0].getElementsByTagName("asyde")[0];//読み込まれるセレクタを指定
-			box.innerHTML=int.innerHTML;//完了
+			box.innerHTML = int.innerHTML;//完了
 		}
 	};
 	xhr.send();
