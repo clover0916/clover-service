@@ -1,6 +1,6 @@
 var xhr = new XMLHttpRequest(),
 		method = "GET",
-		url = "https://www.clover-service.online/index.html";//読み込まれるHTMLを指定
+		url = "https://bot.clover-service.online/index.html";//読み込まれるHTMLを指定
 	var box = document.getElementById("drawer");//読み込みたい位置を指定
  
 	xhr.responseType = "document";//XMLとして扱いたいので一応記述
