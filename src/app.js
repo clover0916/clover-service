@@ -1,7 +1,5 @@
 import { MDCRipple } from '@material/ripple';
 import { MDCTopAppBar } from '@material/top-app-bar';
-import { MDCCircularProgress } from '@material/circular-progress';
-import { MDCDialog } from '@material/dialog';
 import {MDCList} from "@material/list";
 import {MDCDrawer} from "@material/drawer";
 import {MDCIconButtonToggle} from '@material/icon-button';
@@ -28,8 +26,6 @@ window.WebFontConfig = {
 const topAppBarElement = document.querySelector('.mdc-top-app-bar');
 const topAppBarInstance = new MDCTopAppBar(topAppBarElement);
 const buttonRipple = new MDCRipple(document.querySelector('.mdc-button'));
-const circularProgress = new MDCCircularProgress(document.querySelector('.mdc-circular-progress'));
-const dialog = new MDCDialog(document.querySelector('.mdc-dialog'));
 const iconButtonRipple = new MDCRipple(document.querySelector('.mdc-icon-button'));
 const iconToggle = new MDCIconButtonToggle(document.querySelector('.mdc-icon-button'));
 const drawer = MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
@@ -59,16 +55,3 @@ document.body.addEventListener('MDCDrawer:closed', () => {
 topAppBarElement.addEventListener('MDCTopAppBar:nav', () => {
   drawer.open = true;
 })
-
-document.getElementById("OpenDialog").onclick = function() {
-  var url = document.getElementById("OpenDialog").dataset.url;
-  dialog.open();
-  document.getElementById("url").innerHTML = url;
-  const go = document.getElementById("go-url");
-  go.addEventListener('click', function() {
-    const spinner = document.getElementById("load");
-    spinner.classList.remove("hidden");
-    go.classList.add("hidden");
-    location.href = url;
-  });
-};

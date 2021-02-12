@@ -8,7 +8,8 @@ module.exports = {
     ytdl: './src/ytdl.js',
     youtube: './src/youtube.js',
     commands: './src/commands.js',
-    bot: './src/bot.js'
+    bot: './src/bot.js',
+    index: './src/index.js'
   },
   output: {
     path: path.join(__dirname, 'public', 'dist'),
