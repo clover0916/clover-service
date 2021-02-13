@@ -14,11 +14,13 @@ var xhr = new XMLHttpRequest(),
 	};
 	xhr.send();
 	
-let links = document.getElementsByClassName('link');
+window.onload = function() {
+  let links = document.getElementsByClassName('link');
   
-for (let link of links) {
-  if (location.href === link.href) {
-    link.href = '#',
-    link.classList.add('mdc-list-item--activated')
+  for (let link of links) {
+    if (location.href === link.href) {
+      link.href = '#';
+      link.classList.add('mdc-list-item--activated');
+    }
   }
 }
