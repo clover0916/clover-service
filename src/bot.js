@@ -21,6 +21,8 @@ window.onload = function() {
     if (location.href === link.href) {
       link.href = '#';
       link.classList.add('mdc-list-item--activated');
+      link.setAttribute('aria-current', 'page');
+      link.setAttribute('tabindex', "0");
     }
   }
 }
