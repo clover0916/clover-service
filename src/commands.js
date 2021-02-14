@@ -7,7 +7,10 @@ const dataTable = new MDCDataTable(document.querySelector('.mdc-data-table'));
 const dialog = new MDCDialog(document.querySelector('.mdc-dialog'));
 
 
-document.getElementsByClassName('od').onclick = function() {
+var OpenDialog = document.getElementsByClassName('od');
+
+for(var i = 0; i < OpenDialog.length; i++) {
+  OpenDialog[i].onclick = function() {
     fetch("../assets/commands.json")
       .then(res => res.json())
       .then(data => {
@@ -16,3 +19,4 @@ document.getElementsByClassName('od').onclick = function() {
         document.getElementById("detail").innerHTML = json.description;
       })
   }
+}
