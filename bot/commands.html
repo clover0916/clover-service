@@ -13,6 +13,9 @@
         aria-modal="true"
         aria-labelledby="my-dialog-title"
         aria-describedby="my-dialog-content">
+        <h2 class="mdc-dialog__title" id="my-dialog-title">
+          コマンドの詳細
+        </h2>
         <div class="mdc-dialog__content" id="detail">
           Error
         </div>
@@ -60,7 +63,7 @@
                 </thead>
                 <tbody class="mdc-data-table__content">
                   <tr data-row-id="u0" class="mdc-data-table__row">
-                    <th class="mdc-data-table__cell" scope="row" id="u0">!cm help</th>
+                    <th class="mdc-data-table__cell" scope="row" id="u0">help</th>
                     <td class="mdc-data-table__cell">ヘルプを表示します</td>
                     <td class="mdc-data-table__cell">特になし</td>
                     <td class="mdc-data-table__cell">特になし</td>
@@ -75,13 +78,13 @@
                     </td>
                   </tr>
                   <tr data-row-id="u1" class="mdc-data-table__row">
-                    <th class="mdc-data-table__cell" scope="row" id="u1">!cm info</th>
+                    <th class="mdc-data-table__cell" scope="row" id="u1">info</th>
                     <td class="mdc-data-table__cell">Botの情報などを表示します</td>
-                    <td class="mdc-data-table__cell">Huge</td>
-                    <td class="mdc-data-table__cell">Triaged</td>
+                    <td class="mdc-data-table__cell">特になし</td>
+                    <td class="mdc-data-table__cell">特になし</td>
                     <td class="mdc-data-table__cell">
                       <div class="mdc-touch-target-wrapper">
-                        <button class="mdc-button mdc-button--touch">
+                        <button class="mdc-button mdc-button--touch" id="od" data-command="info">
                           <span class="mdc-button__ripple"></span>
                           <span class="mdc-button__label">詳細</span>
                           <span class="mdc-button__touch"></span>
@@ -90,13 +93,13 @@
                     </td>
                   </tr>
                   <tr data-row-id="u2" class="mdc-data-table__row">
-                    <th class="mdc-data-table__cell" scope="row" id="u2">monarch: prod shared ares-managed-features-provider-heavy</th>
-                    <td class="mdc-data-table__cell">Online</td>
-                    <td class="mdc-data-table__cell">Minor</td>
-                    <td class="mdc-data-table__cell">Not triaged</td>
+                    <th class="mdc-data-table__cell" scope="row" id="u2">ping</th>
+                    <td class="mdc-data-table__cell">Pingの測定を行います</td>
+                    <td class="mdc-data-table__cell">特になし</td>
+                    <td class="mdc-data-table__cell">特になし</td>
                     <td class="mdc-data-table__cell">
                       <div class="mdc-touch-target-wrapper">
-                        <button class="mdc-button mdc-button--touch">
+                        <button class="mdc-button mdc-button--touch" id="od" data-command="ping">
                           <span class="mdc-button__ripple"></span>
                           <span class="mdc-button__label">詳細</span>
                           <span class="mdc-button__touch"></span>
@@ -105,13 +108,13 @@
                     </td>
                   </tr>
                   <tr data-row-id="u3" class="mdc-data-table__row">
-                    <th class="mdc-data-table__cell" scope="row" id="u3">Arcus watch slowdown</th>
-                    <td class="mdc-data-table__cell">Online</td>
-                    <td class="mdc-data-table__cell">Negligible</td>
-                    <td class="mdc-data-table__cell">Triaged</td>
+                    <th class="mdc-data-table__cell" scope="row" id="u3">uptime</th>
+                    <td class="mdc-data-table__cell">Botの起動時間の表示</td>
+                    <td class="mdc-data-table__cell">特になし</td>
+                    <td class="mdc-data-table__cell">特になし</td>
                     <td class="mdc-data-table__cell">
                       <div class="mdc-touch-target-wrapper">
-                        <button class="mdc-button mdc-button--touch">
+                        <button class="mdc-button mdc-button--touch" id="od" data-command="uptime">
                           <span class="mdc-button__ripple"></span>
                           <span class="mdc-button__label">詳細</span>
                           <span class="mdc-button__touch"></span>
