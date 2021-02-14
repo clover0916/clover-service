@@ -9,7 +9,8 @@ module.exports = {
     youtube: './src/youtube.js',
     commands: './src/commands.js',
     bot: './src/bot.js',
-    index: './src/index.js'
+    index: './src/index.js',
+    bot_drawer: './src/bot_drawer.js'
   },
   output: {
     path: path.join(__dirname, 'public', 'dist'),
