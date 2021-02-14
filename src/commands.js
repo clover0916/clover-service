@@ -1,6 +1,10 @@
+
 import {MDCDataTable} from '@material/data-table';
+import { MDCDialog } from '@material/dialog';
 
 const dataTable = new MDCDataTable(document.querySelector('.mdc-data-table'));
+const dialog = new MDCDialog(document.querySelector('.mdc-dialog'));
+
 
 document.getElementById('od').onclick = function() {
     fetch("../assets/commands.json")
