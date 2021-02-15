@@ -6,10 +6,10 @@ import { MDCDialog } from '@material/dialog';
 const dataTable = new MDCDataTable(document.querySelector('.mdc-data-table'));
 const dialog = new MDCDialog(document.querySelector('.mdc-dialog'));
 
-var OpenDialog = document.getElementsByClassName('od');
+var OpenDialog = document.querySelectorAll('.od');
 
 for(var i = 0; i < OpenDialog.length; i++) {
-  OpenDialog[i].onclick = function() {
+  OpenDialog[i].addEventListener('click', function() {
     fetch("../assets/commands.json")
       .then(res => res.json())
       .then(data => {
@@ -17,5 +17,5 @@ for(var i = 0; i < OpenDialog.length; i++) {
         dialog.open()
         document.getElementById("detail").innerHTML = json.description;
       })
-  }
+  }, false);
 }
