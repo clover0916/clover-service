@@ -6,7 +6,6 @@ import { MDCDialog } from '@material/dialog';
 const dataTable = new MDCDataTable(document.querySelector('.mdc-data-table'));
 const dialog = new MDCDialog(document.querySelector('.mdc-dialog'));
 
-
 var OpenDialog = document.getElementsByClassName('od');
 
 for(var i = 0; i < OpenDialog.length; i++) {
