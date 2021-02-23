@@ -7,13 +7,15 @@ const dialog = new MDCDialog(document.querySelector('.mdc-dialog'));
 
 var OpenDialog = document.querySelectorAll('.od');
 
-OpenDialog[0].addEventListener('click', function() {
-  fetch("../assets/commands.json")
-    .then(res => res.json())
-    .then(data => {
-      var command = OpenDialog[0].dataset.command
-      const json = data.find((v) => v.name === command);
-      dialog.open();
-      document.getElementById("detail").innerHTML = json.description;
+for (var i = 0; i < OpenDialog.length; i++) {
+  var command = OpenDialog[i].dataset.command
+  OpenDialog[i].addEventListener('click', function() {
+    fetch("../assets/commands.json")
+      .then(res => res.json())
+      .then(data => {
+        const json = data.find((v) => v.name === command);
+        dialog.open();
+        document.getElementById("detail").innerHTML = json.description;
     })
-}, false);
+  }, false);
+}
