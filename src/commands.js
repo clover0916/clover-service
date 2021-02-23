@@ -1,4 +1,3 @@
-
 import { MDCDataTable } from '@material/data-table';
 import { MDCDialog } from '@material/dialog';
 
@@ -8,15 +7,13 @@ const dialog = new MDCDialog(document.querySelector('.mdc-dialog'));
 
 var OpenDialog = document.querySelectorAll('.od');
 
-for (var i = 0; i < OpenDialog.length; i++) {
-  OpenDialog[i].addEventListener('click', function() {
-    fetch("../assets/commands.json")
-      .then(res => res.json())
-      .then(data => {
-        var command = OpenDialog[i].dataset.command
-        const json = data.find((v) => v.name === command);
-        dialog.open();
-        document.getElementById("detail").innerHTML = json.description;
-      })
-  }, false);
-};
+OpenDialog[0].addEventListener('click', function() {
+  fetch("../assets/commands.json")
+    .then(res => res.json())
+    .then(data => {
+      var command = OpenDialog[0].dataset.command
+      const json = data.find((v) => v.name === command);
+      dialog.open();
+      document.getElementById("detail").innerHTML = json.description;
+    })
+}, false);
