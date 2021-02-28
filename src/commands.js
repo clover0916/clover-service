@@ -6,6 +6,7 @@ const dataTable = new MDCDataTable(document.querySelector('.mdc-data-table'));
 const dialog = new MDCDialog(document.querySelector('.mdc-dialog'));
 
 var OpenDialog = document.querySelectorAll('.od');
+const command;
 
 for (var i = 0; i < OpenDialog.length; i++) {
   command[i] = OpenDialog[i].dataset.command
