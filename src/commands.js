@@ -14,7 +14,11 @@ for (var i = 0; i < OpenDialog.length; i++) {
     fetch("../assets/commands.json")
       .then(res => res.json())
       .then(data => {
-        const json = data.find((v) => v.name === command[i]);
+        for (var index = 0; index < OpenDialog.length; i++) {
+          if (OpenDialog[index].dataset.command === command[index]) {
+            json = data.find((v) => v.name === OpenDialog[index].dataset.command);
+          }
+        }
         dialog.open();
         document.getElementById("detail").innerHTML = json.description;
     })
