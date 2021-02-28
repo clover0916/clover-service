@@ -7,6 +7,7 @@ const dialog = new MDCDialog(document.querySelector('.mdc-dialog'));
 
 var OpenDialog = document.querySelectorAll('.od');
 var command = {};
+var json;
 
 for (var i = 0; i < OpenDialog.length; i++) {
   command[i] = OpenDialog[i].dataset.command
