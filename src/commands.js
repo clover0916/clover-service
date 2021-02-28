@@ -8,17 +8,14 @@ const dialog = new MDCDialog(document.querySelector('.mdc-dialog'));
 var OpenDialog = document.querySelectorAll('.od');
 
 for (var i = 0; i < OpenDialog.length; i++) {
-  try {
-    OpenDialog[i].onclick = function() {
-      fetch("../assets/commands.json")
-        .then(res => res.json())
-        .then(data => {
-          const json = data.find((v) => v.name === OpenDialog[i].dataset.command);
-          dialog.open();
-          document.getElementById("detail").innerHTML = json.description;
-      })
-    };
-  } catch (err) {
-    alert(err)
-  }
+  command[i] = OpenDialog[i].dataset.command
+  OpenDialog[i].onclick = function() {
+    fetch("../assets/commands.json")
+      .then(res => res.json())
+      .then(data => {
+        const json = data.find((v) => v.name === command[i]);
+        dialog.open();
+        document.getElementById("detail").innerHTML = json.description;
+    })
+  };
 }
