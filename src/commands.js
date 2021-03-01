@@ -18,6 +18,7 @@ for (var i = 0; i < OpenDialog.length; i++) {
         for (var index = 0; index < OpenDialog.length; i++) {
           if (OpenDialog[index].dataset.command === command[index]) {
             json = data.find((v) => v.name === OpenDialog[index].dataset.command);
+            break;
           }
         }
         dialog.open();
