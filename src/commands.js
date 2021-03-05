@@ -11,7 +11,7 @@ var json;
 
 for (var i = 0; i < OpenDialog.length; i++) {
   command[i] = OpenDialog[i].dataset.command
-  OpenDialog[i].onclick = function(this) {
+  OpenDialog[i].onclick = function() {
     fetch("../assets/commands.json")
       .then(res => res.json())
       .then(data => {
