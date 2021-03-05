@@ -15,12 +15,7 @@ for (var i = 0; i < OpenDialog.length; i++) {
     fetch("../assets/commands.json")
       .then(res => res.json())
       .then(data => {
-        for (var index = 0; index < OpenDialog.length; i++) {
-          if (this.dataset.command === command[index]) {
-            json = data.find((v) => v.name === OpenDialog[index].dataset.command);
-            break;
-          }
-        }
+        json = data.find((v) => v.name === this.dataset.command);
         dialog.open();
         document.getElementById("detail").innerHTML = json.description;
     })
