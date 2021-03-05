@@ -20,6 +20,7 @@
 @use "@material/textfield";
 @use "@material/drawer";
 @use "@material/list";
+@use "@material/checkbox"; // Required only for data table with row selection.
 @use "@material/data-table/data-table";
 @use "@material/list/mdc-list";
 @use "@material/menu-surface/mdc-menu-surface";
@@ -36,6 +37,7 @@
 @include drawer.dismissible-core-styles;
 @include drawer.modal-core-styles;
 @include list.core-styles;
+@include checkbox.core-styles;
 @include data-table.core-styles;
 @include data-table.theme-baseline;
 
