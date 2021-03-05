@@ -11,12 +11,12 @@ var json;
 
 for (var i = 0; i < OpenDialog.length; i++) {
   command[i] = OpenDialog[i].dataset.command
-  OpenDialog[i].onclick = function() {
+  OpenDialog[i].onclick = function(this) {
     fetch("../assets/commands.json")
       .then(res => res.json())
       .then(data => {
         for (var index = 0; index < OpenDialog.length; i++) {
-          if (OpenDialog[index].dataset.command === command[index]) {
+          if (this.dataset.command === command[index]) {
             json = data.find((v) => v.name === OpenDialog[index].dataset.command);
             break;
           }
