@@ -11,8 +11,7 @@
 @use "@material/circular-progress/mdc-circular-progress";
 @use "@material/card";
 @use "@material/dialog";
-@use '@material/button/mdc-button';
-@use '@material/button';
+@use "@material/button/styles";
 @use "@material/icon-button";
 @use "@material/floating-label/mdc-floating-label";
 @use "@material/line-ripple/mdc-line-ripple";
@@ -20,7 +19,6 @@
 @use "@material/textfield";
 @use "@material/drawer";
 @use "@material/list";
-@use "@material/checkbox"; // Required only for data table with row selection.
 @use "@material/data-table/data-table";
 @use "@material/list/mdc-list";
 @use "@material/menu-surface/mdc-menu-surface";
@@ -28,7 +26,6 @@
 
 @import "swiper/swiper-bundle.css";
 
-@include button.core-styles;
 @include icon-button.core-styles;
 @include card.core-styles;
 @include dialog.core-styles;
