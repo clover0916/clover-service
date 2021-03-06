@@ -23,3 +23,15 @@ document.getElementById('menu-button').onclick = function () {
   menu.open = !menu.open
   menu.setAnchorElement(document.getElementById('demo-menu'));
 }
+
+document.getElementById('ss').onclick = function() {
+  dialog.open()
+  document.getElementById('my-dialog-title').innerHTML = 'サポートサーバーとは？';
+  document.getElementById('my-dialog-content').innerHTML = 'ここにいろいろ';
+  go.addEventListener('click', function() {
+    const spinner = document.getElementById("load");
+    spinner.classList.remove("hidden");
+    go.classList.add("hidden");
+    location.href = 'https://discord.gg/WJn3tbdMsz';
+  });
+}

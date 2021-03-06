@@ -34,7 +34,7 @@ const list = MDCList.attachTo(document.querySelector('.mdc-list'));
 list.wrapFocus = true;
 iconButtonRipple.unbounded = true;
 
-const selector = '.mdc-button, .mdc-icon-button, .mdc-card__primary-action .mdc-list-item';
+const selector = '.mdc-button, .mdc-icon-button, .mdc-card__primary-action';
 const ripples = [].map.call(document.querySelectorAll(selector), function(el) {
   return new MDCRipple(el);
 });
