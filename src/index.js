@@ -19,8 +19,8 @@ document.getElementById("OpenDialog").onclick = function() {
   });
 };
 
-document.getElementById('om').onclick = function () {
+document.getElementById('menu-button').onclick = function () {
   menu.open = !menu.open
   menu.setFixedPosition(true);
-  menu.setAnchorElement(document.getElementById('om'));
+  menu.setAnchorElement(document.getElementById('demo-menu'));
 }
