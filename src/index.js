@@ -34,16 +34,7 @@ document.getElementById('ss').onclick = function() {
       </div>
     </div>
   `;
-  const go = document.getElementById("go-url");
-  go.addEventListener('click', function() {
-    const spinner = document.getElementById("load");
-    spinner.classList.remove("hidden");
-    go.classList.add("hidden");
-    location.href = 'https://discord.gg/WJn3tbdMsz';
-  });
-}
-
-let amountOfColors = 18; // Or "participants"
+  let amountOfColors = 18; // Or "participants"
 
 let container = document.getElementById('chat-container');
 let lineWidth = 500;
@@ -226,3 +217,11 @@ function stopLoop() {
 }
 
 (() => addChat())();
+  const go = document.getElementById("go-url");
+  go.addEventListener('click', function() {
+    const spinner = document.getElementById("load");
+    spinner.classList.remove("hidden");
+    go.classList.add("hidden");
+    location.href = 'https://discord.gg/WJn3tbdMsz';
+  });
+}
