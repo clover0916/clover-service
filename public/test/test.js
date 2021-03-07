@@ -1,39 +1,4 @@
-import { MDCDialog } from '@material/dialog';
-import { MDCCircularProgress } from '@material/circular-progress';
-import { MDCMenu } from '@material/menu';
 
-const circularProgress = new MDCCircularProgress(document.querySelector('.mdc-circular-progress'));
-const dialog = new MDCDialog(document.querySelector('.mdc-dialog'));
-const menu = new MDCMenu(document.querySelector('.mdc-menu'));
-
-document.getElementById("OpenDialog").onclick = function() {
-  var url = document.getElementById("OpenDialog").dataset.url;
-  dialog.open();
-  document.getElementById("url").innerHTML = url;
-  const go = document.getElementById("go-url");
-  go.addEventListener('click', function() {
-    const spinner = document.getElementById("load");
-    spinner.classList.remove("hidden");
-    go.classList.add("hidden");
-    location.href = url;
-  });
-};
-
-document.getElementById('menu-button').onclick = function() {
-  menu.open = !menu.open
-  menu.setAnchorElement(document.getElementById('demo-menu'));
-}
-
-document.getElementById('ss').onclick = function() {
-  dialog.open()
-  document.getElementById('my-dialog-title').innerHTML = 'サポートサーバーとは？';
-  document.getElementById('my-dialog-content').innerHTML = `
-    <div id="chat-container">
-      <div id="chat-input">
-        <div id="file-input"></div>
-      </div>
-    </div>
-  `;
   let amountOfColors = 18; // Or "participants"
 
   let container = document.getElementById('chat-container');
@@ -217,11 +182,3 @@ document.getElementById('ss').onclick = function() {
   }
 
   (() => addChat())();
-  const go = document.getElementById("go-url");
-  go.addEventListener('click', function() {
-    const spinner = document.getElementById("load");
-    spinner.classList.remove("hidden");
-    go.classList.add("hidden");
-    location.href = 'https://discord.gg/WJn3tbdMsz';
-  });
-}
