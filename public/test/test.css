@@ -1,5 +1,5 @@
 #chat-input {
-	position: fixed;
+	position: relative;
 	bottom: 10px;
 	height: 40px;
 	width: 500px;
