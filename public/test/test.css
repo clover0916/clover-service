@@ -75,7 +75,7 @@
 		}
 
 .chat {
-	position: fixed;
+	position: relative;
 	bottom: 60px;
 	width: 500px;
 	display: inline-block;
