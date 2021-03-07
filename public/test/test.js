@@ -40,7 +40,7 @@
       return l;
     }
     removeOldest() {
-      let maxCount = Math.ceil(window.innerHeight / 1080 * 12);
+      let maxCount = Math.ceil(document.getElementById('my-dialog-content').height / 1080 * 12);
       if (this.lines.length > maxCount) {
         let oldest = this.lines.splice(0, this.lines.length - maxCount);
         oldest.forEach(n => this.ele.removeChild(n.ele.lineContainer));
