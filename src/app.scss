@@ -224,6 +224,9 @@ body {
 }
 
 #chat-input {
+	bottom: 10px;
+	height: 40px;
+	width: 500px;
 	background-color: hsl(0, 0%, 14%);
 	border-radius: 6px;
 	overflow: hidden;
