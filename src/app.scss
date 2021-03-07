@@ -218,12 +218,12 @@ body {
 
 // For centering
 #chat-container {
-	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
 #chat-input {
+	position: fixed;
 	bottom: 10px;
 	height: 40px;
 	width: 500px;

@@ -1,11 +1,4 @@
-html,
-body {
-	background-color: hsl(0, 0%, 8%);
-	user-select: none;
-}
-
 #chat-container {
-	display: flex;
 	justify-content: center;
 	align-items: center;
 }
