@@ -224,6 +224,7 @@ body {
 }
 
 #chat-input {
+	position: fixed;
 	bottom: 10px;
 	height: 40px;
 	width: 500px;
@@ -235,7 +236,6 @@ body {
 	&:after {
 		content: '';
 		display: block;
-		position: absolute;
 		top: 12px;
 		bottom: 12px;
 		background-color: hsla(0, 0%, 22%, 0.4);
@@ -258,7 +258,6 @@ body {
 		cursor: pointer;
 		display: block;
 		border-right: 2px solid hsl(0, 0%, 16%);
-		position: absolute;
 		top: 2px;
 		left: 2px;
 		bottom: 2px;
@@ -278,7 +277,6 @@ body {
 		&:after {
 			content: '';
 			display: block;
-			position: absolute;
 			background-color: hsl(0, 0%, 22%);
 		}
 		&:before {
@@ -325,7 +323,6 @@ body {
 	background-color: hsl(0, 0%, 14%);
 	
 	& > div {
-		display: inline-block;
 		vertical-align: top;
 	}
 }
@@ -353,12 +350,10 @@ body {
 .name {
 	width: 100px;
 	margin-bottom: 10px;
-	position: relative;
 	cursor: pointer;
 	
 	&:after {
 		content: '';
-		display: block;
 		border-radius: 2px;
 		background-color: hsla(0, 0%, 22%, 0.4);
 		height: 16px;
@@ -388,12 +383,10 @@ body {
 .rich-body {
 	margin-left: 14px;
 	margin-top: 36px;
-	position: relative;
 	
 	&:before {
 		content: '';
 		display: block;
-		position: absolute;
 		top: -26px;
 		left: -14px;
 		bottom: 0;
@@ -402,8 +395,6 @@ body {
 	}
 	&:after {
 		content: '';
-		display: block;
-		position: absolute;
 		height: 16px;
 		width: 200px;
 		top: -26px;
