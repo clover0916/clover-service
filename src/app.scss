@@ -154,11 +154,11 @@ body {
 }
 
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-　.glass {
+  .glass {
 	-webkit-backdrop-filter: blur(5px);
-	backdrop-filter: blur(5px);
-    background-color: rgba( 255, 255, 255, 0.55 );
-　}
+    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.55);  
+  }
 }
 
 .flex {
