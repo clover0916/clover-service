@@ -8,17 +8,17 @@ const menu = new MDCMenu(document.querySelector('.mdc-menu'));
 
 document.getElementById('redirect').onclick = function() {
   var title = 'ここから先は別のサイトに移動しますが進みますか？'
-  var description = document.getElementById('redirect').dataset.url;
-  var redirect = true;
+  var description = '<span id="url"></span>'
+  var redirect = document.getElementById('redirect').dataset.url;
   od(title, description, redirect)
 }
 
 function od(title, description, redirect) {
   dialog.open();
   if(redirect) {
-    document.getElementById('my-dialog-title').innerHTML = title
-    document.getElementById('my-dialog-content').innerHTML = '<span id="url"></span>'
-    document.getElementById("url").innerHTML = description;
+    document.getElementById('my-dialog-title').innerHTML = title;
+    document.getElementById('my-dialog-content').innerHTML = description;
+    document.getElementById("url").innerHTML = redirect;
   } else {
     document.getElementById('my-dialog-title').innerHTML = title
     document.getElementById('my-dialog-content').innerHTML = description
@@ -28,7 +28,7 @@ function od(title, description, redirect) {
     const spinner = document.getElementById("load");
     spinner.classList.remove("hidden");
     go.classList.add("hidden");
-    location.href = url;
+    location.href = redirect;
   });
 };
 
