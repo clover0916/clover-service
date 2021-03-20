@@ -6,10 +6,23 @@ const circularProgress = new MDCCircularProgress(document.querySelector('.mdc-ci
 const dialog = new MDCDialog(document.querySelector('.mdc-dialog'));
 const menu = new MDCMenu(document.querySelector('.mdc-menu'));
 
-document.getElementById("OpenDialog").onclick = function() {
-  var url = document.getElementById("OpenDialog").dataset.url;
+document.getElementById('redirect').onclick = function() {
+  var title = 'ここから先は別のサイトに移動しますが進みますか？'
+  var description = document.getElementById('redirect').dataset.url;
+  var redirect = true;
+  od(title, description, redirect)
+}
+
+function od(title, description, redirect) {
   dialog.open();
-  document.getElementById("url").innerHTML = url;
+  if(redirect) {
+    document.getElementById('my-dialog-title').innerHTML = title
+    document.getElementById('my-dialog-content').innerHTML = '<span id="url"></span>'
+    document.getElementById("url").innerHTML = description;
+  } else {
+    document.getElementById('my-dialog-title').innerHTML = title
+    document.getElementById('my-dialog-content').innerHTML = description
+  }
   const go = document.getElementById("go-url");
   go.addEventListener('click', function() {
     const spinner = document.getElementById("load");
@@ -25,15 +38,15 @@ document.getElementById('menu-button').onclick = function() {
 }
 
 document.getElementById('ss').onclick = function() {
-  dialog.open()
-  document.getElementById('my-dialog-title').innerHTML = 'サポートサーバーとは？';
-  document.getElementById('my-dialog-content').innerHTML = `
+  var title = 'サポートサーバーとは？';
+  var description  = `
     <div id="chat-container">
       <div id="chat-input">
         <div id="file-input"></div>
       </div>
     </div>
   `;
+  od(title, description)
   let amountOfColors = 18; // Or "participants"
 
   let container = document.getElementById('chat-container');

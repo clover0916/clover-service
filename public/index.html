@@ -14,12 +14,8 @@
         aria-modal="true"
         aria-labelledby="my-dialog-title"
         aria-describedby="my-dialog-content">
-        <h2 class="mdc-dialog__title" id="my-dialog-title">
-          ここから先は別のサイトに移動しますが進みますか？
-        </h2>
-        <div class="mdc-dialog__content" id="my-dialog-content">
-          <span id="url"></span>
-        </div>
+        <h2 class="mdc-dialog__title" id="my-dialog-title"></h2>
+        <div class="mdc-dialog__content" id="my-dialog-content"></div>
         <div class="mdc-dialog__actions">
           <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="cancel">
             <div class="mdc-button__ripple"></div>
@@ -123,7 +119,7 @@
                   </div>
                   <div class="mdc-card__actions">
                     <div class="mdc-card__action-buttons">
-                      <button class="mdc-button mdc-card__action mdc-card__action--button" id="OpenDialog" data-url="https://bot.clover-service.online/invite"> <span class="mdc-button__ripple"></span>導入する</button>
+                      <button class="mdc-button mdc-card__action mdc-card__action--button" id="redirect" data-url="https://bot.clover-service.online/invite"> <span class="mdc-button__ripple"></span>導入する</button>
                       <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="location.href='https://bot.clover-service.online'"> <span class="mdc-button__ripple"></span>詳細</button>
                     </div>
                     <div class="mdc-card__action-icons">
