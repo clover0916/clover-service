@@ -40,10 +40,8 @@ document.getElementById('menu-button').onclick = function() {
 document.getElementById('ss').onclick = function() {
   var title = 'サポートサーバーとは？';
   var description  = `
-    <div id="chat-container">
-      <div id="chat-input">
-        <div id="file-input"></div>
-      </div>
+    <div id='ws' style='height: 75vh'>
+      <div id="chat-container"><div id="chat-input"><div id="file-input"></div></div></div>
     </div>
   `;
   od(title, description)
@@ -88,7 +86,7 @@ document.getElementById('ss').onclick = function() {
       return l;
     }
     removeOldest() {
-      let maxCount = Math.ceil(window.innerHeight / 1080 * 12);
+      let maxCount = document.getElementById('ws').clientHeight;
       if (this.lines.length > maxCount) {
         let oldest = this.lines.splice(0, this.lines.length - maxCount);
         oldest.forEach(n => this.ele.removeChild(n.ele.lineContainer));
