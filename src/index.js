@@ -40,7 +40,7 @@ document.getElementById('menu-button').onclick = function() {
 document.getElementById('ss').onclick = function() {
   var title = 'サポートサーバーとは？';
   var description  = `
-    <div id='ws' style='height: 75vh'>
+    <div id='ws' style='height: 60vh'>
       <div id="chat-container"><div id="chat-input"><div id="file-input"></div></div></div>
     </div>
   `;
