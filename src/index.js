@@ -7,24 +7,19 @@ const dialog = new MDCDialog(document.querySelector('.mdc-dialog'));
 const menu = new MDCMenu(document.querySelector('.mdc-menu'));
 
 document.getElementById('redirect').onclick = function() {
-  var title = 'ここから先は別のサイトに移動しますが進みますか？'
-  var description = '<span id="url"></span>'
+  var title = 'ここから先は別のサイトに移動しますが進みますか？';
+  var description = `<span id="url">${document.getElementById('redirect').dataset.url}</span>`;
   var redirect = document.getElementById('redirect').dataset.url;
-  od(title, description, redirect)
+  od(title, description, redirect);
 }
 
 function od(title, description, redirect) {
   dialog.open();
+  document.getElementById('my-dialog-title').innerHTML = title;
+  document.getElementById('my-dialog-content').innerHTML = description;
   if(redirect) {
-    document.getElementById('my-dialog-title').innerHTML = title;
-    document.getElementById('my-dialog-content').innerHTML = description;
-    document.getElementById("url").innerHTML = redirect;
-  } else {
-    document.getElementById('my-dialog-title').innerHTML = title
-    document.getElementById('my-dialog-content').innerHTML = description
-  }
-  const go = document.getElementById("go-url");
-  go.addEventListener('click', function() {
+    const go = document.getElementById("go-url");
+    go.addEventListener('click', function() {
     const spinner = document.getElementById("load");
     spinner.classList.remove("hidden");
     go.classList.add("hidden");
@@ -40,11 +35,13 @@ document.getElementById('menu-button').onclick = function() {
 document.getElementById('ss').onclick = function() {
   var title = 'サポートサーバーとは？';
   var description  = `
+    <h2>
     <div id='ws' style='height: 60vh'>
       <div id="chat-container"><div id="chat-input"><div id="file-input"></div></div></div>
     </div>
   `;
-  od(title, description)
+  var redirect = 'https://discord.gg/WJn3tbdMsz'
+  od(title, description, redirect)
   let amountOfColors = 18; // Or "participants"
 
   let container = document.getElementById('chat-container');
