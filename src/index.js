@@ -33,12 +33,10 @@ document.getElementById('menu-button').onclick = function() {
 }
 
 document.getElementById('ss').onclick = function() {
-  var title = 'サポートサーバーとは？';
+  var title = 'サポートサーバー';
   var description  = `
-    <h2>
-    <div id='ws' style='height: 60vh;width: 60vh'>
-      <div id="chat-container"><div id="chat-input"><div id="file-input"></div></div></div>
-    </div>
+    <h2 style="mdc-typography--headline2">サポートサーバーとは？</h2>
+    <div id="chat-container"><div id="chat-input"><div id="file-input"></div></div></div>
   `;
   var redirect = 'https://discord.gg/WJn3tbdMsz'
   od(title, description, redirect)
