@@ -71,7 +71,7 @@ body {
 }
 
 .gradation-orange {
-  background: linear-gradient(135deg, #D6FF7F, #00B3CC);
+  background-image: linear-gradient( 135deg, #70F570 10%, #49C628 100%);
 }
 
 .error {
@@ -219,6 +219,10 @@ body {
     background-color: #000;
 }
 
+#chat-container {
+  background-color: 
+}
+
 #chat-input {
 	position: relative;
 	bottom: 10px;
@@ -333,17 +337,6 @@ body {
 	height: 60px;
 	background-color: hsl(0, 0%, 22%);
 	margin-right: 10px;
-}
-
-.body {
-	// background-color: black;
-	
-	.name,
-	.text {
-		border-radius: 2px;
-		background-color: hsl(0, 0%, 28%);
-		height: 16px;
-	}
 }
 
 .name {
