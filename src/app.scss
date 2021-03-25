@@ -56,12 +56,15 @@ body {
 
 .mdc-top-app-bar {
   // fill-color($color) is defined in the top-app-bar namespace
-  background-color: rgba(255, 255, 255, 0);  
   @include top-app-bar.ink-color(#435167);
   @include top-app-bar.icon-ink-color(#435167);
-  backdrop-filter: blur(2px);
 }
 
+.mdc-top-app-bar.top {
+  backdrop-filter: blur(2px);
+  background-color: rgba(255, 255, 255, 0);  
+  transform: none;
+}
 .title {
   text-align: center;
   padding: 150px 25vw;
