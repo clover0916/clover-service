@@ -56,9 +56,10 @@ body {
 
 .mdc-top-app-bar {
   // fill-color($color) is defined in the top-app-bar namespace
-  @include top-app-bar.fill-color(rgba(0,0,0,1));
+  @include top-app-bar.fill-color(#FFFFFF);
   @include top-app-bar.ink-color(#435167);
   @include top-app-bar.icon-ink-color(#435167);
+  opacity: 0;
 }
 
 .title {
