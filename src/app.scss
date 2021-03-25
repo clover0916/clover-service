@@ -59,7 +59,7 @@ body {
   @include top-app-bar.fill-color(#FFFFFF);
   @include top-app-bar.ink-color(#435167);
   @include top-app-bar.icon-ink-color(#435167);
-  opacity: 0;
+  backdrop-filter: blur(2px);
 }
 
 .title {
