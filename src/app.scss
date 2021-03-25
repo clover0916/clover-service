@@ -55,10 +55,10 @@ body {
 
 .mdc-top-app-bar {
   // fill-color($color) is defined in the top-app-bar namespace
-  transition: all .5s ease;
-  @include top-app-bar.ink-color(#FFFFFF);
-  @include top-app-bar.ink-color(#435167#435167);
+  @include top-app-bar.fill-color(#FFFFFF);
+  @include top-app-bar.ink-color(#435167);
   @include top-app-bar.icon-ink-color(#435167);
+  transition: all .5s ease;
 }
 
 .mdc-top-app-bar.top {
