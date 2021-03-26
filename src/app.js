@@ -61,10 +61,8 @@ var scrollAnimationFunc = function() {
   var triggerMargin = 500;
   if (window.innerHeight > scrollAnimationElm.getBoundingClientRect().top + triggerMargin) {
     topAppBarElement.classList.remove('top');
-    topAppBarElement.classList.add('mdc-top-app-bar--fixed');
   } else {
     topAppBarElement.classList.add('top');
-    topAppBarElement.classList.remove('mdc-top-app-bar--fixed');
   }
 }
 
