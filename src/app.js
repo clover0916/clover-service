@@ -58,7 +58,7 @@ topAppBarElement.addEventListener('MDCTopAppBar:nav', () => {
 
 var scrollAnimationElm = document.querySelector('.main');
 var scrollAnimationFunc = function() {
-  var triggerMargin = 200;
+  var triggerMargin = 500;
   if (window.innerHeight > scrollAnimationElm.getBoundingClientRect().top + triggerMargin) {
     topAppBarElement.classList.remove('top');
   } else {
