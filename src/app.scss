@@ -77,7 +77,7 @@ body {
 }
 
 .title {
-  animation: fadein 250ms animation.$deceleration-curve-timing-function;
+  animation: fade-in 250ms animation.$deceleration-curve-timing-function;
   margin: 0;
   position: absolute;
   top: calc(50% - 5em);
