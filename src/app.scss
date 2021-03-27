@@ -76,11 +76,24 @@ body {
 }
 
 .title {
+  animation: fadein 250ms animation.$deceleration-curve-timing-function;
   margin: 0;
   position: absolute;
   top: calc(50% - 5em);
   width: 100%;
   text-align: center;
+}
+
+@keyframes fade-in {
+  from {
+    transform: translateY(-80px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .futura-pt {
