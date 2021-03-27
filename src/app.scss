@@ -69,9 +69,18 @@ body {
   transform: none;
 }
 
+.full {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
 .title {
+  margin: 0;
+  position: absolute;
+  top: calc(50% - 0.5em);
+  width: 100%;
   text-align: center;
-  padding: 20% 0;
 }
 
 .futura-pt {
