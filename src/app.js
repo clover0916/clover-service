@@ -3,6 +3,7 @@ import { MDCTopAppBar } from '@material/top-app-bar';
 import {MDCList} from "@material/list";
 import {MDCDrawer} from "@material/drawer";
 import {MDCIconButtonToggle} from '@material/icon-button';
+import { MDCLinearProgress } from '@material/linear-progress';
 
 import Swiper from 'swiper';
 
@@ -30,6 +31,7 @@ const iconButtonRipple = new MDCRipple(document.querySelector('.mdc-icon-button'
 const iconToggle = new MDCIconButtonToggle(document.querySelector('.mdc-icon-button'));
 const drawer = MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
 const list = MDCList.attachTo(document.querySelector('.mdc-list'));
+const linearProgress = new MDCLinearProgress(document.querySelector('.mdc-linear-progress'));
 
 list.wrapFocus = true;
 iconButtonRipple.unbounded = true;
@@ -65,6 +67,10 @@ var scrollAnimationFunc = function() {
     topAppBarElement.classList.add('top');
   }
 }
+
+window.onload = function () {
+  linearProgress.classList.add("mdc-linear-progress--closed")
+};
 
 window.addEventListener('load', scrollAnimationFunc);
 window.addEventListener('scroll', scrollAnimationFunc);

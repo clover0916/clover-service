@@ -56,7 +56,8 @@
     "@material/textfield": "^10.0.0",
     "@material/data-table": "^10.0.0",
     "@material/menu": "^10.0.0",
-    "@material/animation": "^10.0.0"
+    "@material/animation": "^10.0.0",
+    "@material/progress-indicator": "^10.0.0"
   },
   "engines": {
     "node": "14.x"
