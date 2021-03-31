@@ -69,9 +69,7 @@ var scrollAnimationFunc = function() {
 }
 
 window.onload = function () {
-  window.setTimeOut(function(){
-    linearProgress.addClass("mdc-linear-progress--closed")
-  }, 5000);
+  linearProgress.addClass("mdc-linear-progress--closed")
 };
 
 window.addEventListener('load', scrollAnimationFunc);
