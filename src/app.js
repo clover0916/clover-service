@@ -7,6 +7,9 @@ import { MDCLinearProgress } from '@material/linear-progress';
 
 import Swiper from 'swiper';
 
+import '@fortawesome/fontawesome-free/js/brands.js'
+import '@fortawesome/fontawesome-free/js/fontawesome.js'
+
 window.WebFontConfig = {
   google: { families: ['Roboto', 'Noto+Sans+JP', 'Material+Icons'] },
   typekit: { id: 'pbk7rhd' },

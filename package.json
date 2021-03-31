@@ -40,6 +40,7 @@
     "babel-loader": "^8.2.2",
     "@babel/preset-env": "^7.12.11",
     "express-subdomain": "^1.0.5",
+    "@fortawesome/fontawesome-free": "latest",
     "@material/button": "^10.0.0",
     "@material/drawer": "^10.0.0",
     "@material/icon-button": "^10.0.0",
