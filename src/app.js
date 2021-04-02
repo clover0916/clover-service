@@ -32,7 +32,7 @@ const topAppBarInstance = new MDCTopAppBar(topAppBarElement);
 const buttonRipple = new MDCRipple(document.querySelector('.mdc-button'));
 const iconButtonRipple = new MDCRipple(document.querySelector('.mdc-icon-button'));
 const iconToggle = new MDCIconButtonToggle(document.querySelector('.mdc-icon-button'));
-const listRipple = new MDCRipple(document.querySelector('.mdc-list-item'));
+const listItemRipples = list.listElements.map((listItemEl) => new MDCRipple(listItemEl));
 const drawer = MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
 const list = MDCList.attachTo(document.querySelector('.mdc-list'));
 const linearProgress = new MDCLinearProgress(document.querySelector('.mdc-linear-progress'));
