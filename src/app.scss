@@ -114,8 +114,12 @@ body {
   top: calc(50% + 2.5em);
   width: 100%;
   text-align: center;
+}
+
+.mdc-button-white {
   @include button.ink-color(#FFFFFF);
 }
+
 .title-fade {
   animation: fade-in-c 750ms animation.$deceleration-curve-timing-function;
 }
