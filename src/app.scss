@@ -121,7 +121,7 @@ body {
 }
 
 .title-fade {
-  animation: fade-in-c 750ms animation.$deceleration-curve-timing-function;
+  animation: fade-in-c 1500ms animation.$deceleration-curve-timing-function;
 }
 
 @keyframes fade-in-c {
