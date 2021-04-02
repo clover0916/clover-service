@@ -84,12 +84,15 @@ body {
 }
 
 .title {
-  animation: fade-in 750ms animation.$deceleration-curve-timing-function;
   margin: 0;
   position: absolute;
   top: calc(50% - 5em);
   width: 100%;
   text-align: center;
+}
+
+.title-anm {
+  animation: fade-in 750ms animation.$deceleration-curve-timing-function;
 }
 
 @keyframes fade-in {
@@ -100,6 +103,20 @@ body {
 
   to {
     transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.title-fade {
+  animation: fade-in-c 750ms animation.$deceleration-curve-timing-function;
+}
+
+@keyframes fade-in-c {
+  from {
+    opacity: 0;
+  }
+
+  to {
     opacity: 1;
   }
 }
