@@ -107,6 +107,14 @@ body {
   }
 }
 
+.title-button {
+  margin: 0;
+  position: absolute;
+  top: calc(50% - 0.2em);
+  width: 100%;
+  text-align: center;
+}
+
 .title-fade {
   animation: fade-in-c 750ms animation.$deceleration-curve-timing-function;
 }
