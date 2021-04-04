@@ -142,12 +142,13 @@ body {
 .pop {
   margin-left: auto;
   text-align: center;
+  background-color: #FFFFFF
   width: 30%;
   padding: 1em;
   position: absolute;
   right: 0;
   bottom: 0;
-  border-top-left-radius: 30%;
+  border-top-left-radius: 10px;
 }
 
 .text-border-bottom {
