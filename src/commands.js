@@ -9,7 +9,7 @@ var OpenDialog = document.querySelectorAll('.od');
 var command = {};
 var json;
 
-fetch("..assets/commands.json")
+fetch("../assets/commands.json")
   .then(res => res.json())
   .then(data => {
     console.log(datd.length)
