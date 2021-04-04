@@ -1,6 +1,14 @@
-[
-  {"name": "help", "description": "ヘルプを表示します"},
-  {"name": "info", "description": "Botの情報を表示します"},
-  {"name": "ping", "description": "Pingを計測します"},
-  {"name": "uptime", "description": "Botの起動時間を表示します"}
-]
+{
+  "help": {
+    "description": "ヘルプを表示します"
+  },
+  "info": {
+    "description": "Botの情報を表示します"
+  },
+  "ping": {
+    "description": "Pingを計測します"
+  },
+  "uptime": {
+    "description": "Botの起動時間を表示します"
+  }
+}

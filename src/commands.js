@@ -9,13 +9,19 @@ var OpenDialog = document.querySelectorAll('.od');
 var command = {};
 var json;
 
+fetch("..assets/commands.json")
+  .then(res => res.json())
+  .then(data => {
+    console.log(datd.length)
+  })
+
 for (var i = 0; i < OpenDialog.length; i++) {
   command[i] = OpenDialog[i].dataset.command
   OpenDialog[i].onclick = function() {
     fetch("../assets/commands.json")
       .then(res => res.json())
       .then(data => {
-        json = data.find((v) => v.name === this.dataset.command);
+        json = data.find((v) => v === this.dataset.command);
         dialog.open();
         document.getElementById("detail").innerHTML = json.description;
     })
