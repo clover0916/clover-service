@@ -1,0 +1,498 @@
+@use "@material/theme"with ($primary: #008200,
+  $secondary: #FF6E00,
+  $on-primary: #FFFFFF,
+);
+@use "@material/typography/mdc-typography";
+@use "@material/elevation/mdc-elevation";
+@use "@material/layout-grid/mdc-layout-grid";
+@use "@material/top-app-bar/mdc-top-app-bar";
+@use "@material/top-app-bar";
+@use "@material/circular-progress/mdc-circular-progress";
+@use "@material/card";
+@use "@material/dialog";
+@use "@material/button/styles";
+@use "@material/button";
+@use "@material/icon-button";
+@use "@material/floating-label/mdc-floating-label";
+@use "@material/line-ripple/mdc-line-ripple";
+@use "@material/notched-outline/mdc-notched-outline";
+@use "@material/textfield";
+@use "@material/drawer";
+@use "@material/list";
+@use "@material/data-table/data-table";
+@use "@material/list/mdc-list";
+@use "@material/menu-surface/mdc-menu-surface";
+@use "@material/menu/mdc-menu";
+@use "@material/animation";
+@use "@material/linear-progress";
+
+@import "swiper/swiper-bundle.css";
+
+@include icon-button.core-styles;
+@include card.core-styles;
+@include dialog.core-styles;
+@include textfield.core-styles;
+@include drawer.core-styles;
+@include drawer.dismissible-core-styles;
+@include drawer.modal-core-styles;
+@include list.core-styles;
+@include data-table.core-styles;
+@include data-table.theme-baseline;
+@include linear-progress.core-styles;
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+html.wf-active * {
+  --mdc-typography-font-family: "Roboto", "Noto Sans JP", sans-serif;
+}
+
+body {
+  height: 100%;
+}
+
+.mdc-linear-progress {
+  position: fixed;
+  top: 0;
+}
+
+.mdc-top-app-bar {
+  // fill-color($color) is defined in the top-app-bar namespace
+  @include top-app-bar.fill-color(#FFFFFF);
+  @include top-app-bar.ink-color(#435167);
+  @include top-app-bar.icon-ink-color(#435167);
+  transition: all .5s ease;
+}
+
+.mdc-top-app-bar.top {
+  @include top-app-bar.ink-color(#FFFFFF);
+  @include top-app-bar.icon-ink-color(#FFFFFF);
+  backdrop-filter: blur(2px);
+  background-color: rgba(255, 255, 255, 0);
+  transform: none;
+}
+
+.full {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.title {
+  margin: 0;
+  position: absolute;
+  top: calc(50% - 5em);
+  width: 100%;
+  text-align: center;
+}
+
+.title-anm {
+  animation: fade-in 750ms animation.$deceleration-curve-timing-function;
+}
+
+@keyframes fade-in {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.title-button {
+  margin: 0;
+  position: absolute;
+  top: calc(50% + 3em);
+  width: 100%;
+  text-align: center;
+}
+
+.mdc-button-white {
+  @include button.ink-color(#FFFFFF);
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.title-fade {
+  animation: fade-in-c 750ms 750ms animation.$deceleration-curve-timing-function;
+}
+
+@keyframes fade-in-c {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.futura-pt {
+  font-family: "futura-pt", sans-serif;
+}
+
+.gradation-orange {
+  background-image: linear-gradient(135deg, #70F570 10%, #49C628 100%);
+}
+
+.error {
+  text-align: center;
+  padding: 100px;
+  height: 100%;
+}
+
+.text-border-bottom {
+  position: relative;
+  display: inline-block;
+  padding: 0px 15% 0px 0px;
+  border-bottom: 3px solid #094;
+}
+
+.text-border-bottom:before {
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 20%;
+  height: 3px;
+  content: '';
+  background: #00cc5b;
+}
+
+.font-thin {
+  font-weight: 100;
+}
+
+.font-light {
+  font-weight: 300;
+}
+
+.font-regular {
+  font-weight: 400;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-black {
+  font-weight: 900;
+}
+
+.mdc-card-fixed {
+  padding: 16px;
+}
+
+.rounded-circle {
+  border-radius: 50%;
+}
+
+.text-gray {
+  color: gray;
+}
+
+.text-white {
+  color: white;
+}
+
+.side-padding {
+  padding: 0px 16px 8px 16px
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+  right: 28px;
+}
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .glass {
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.55);
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+/*.video_wrapper {
+    position: relative;
+}
+.video_wrapper:not(.js_active)::before {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: rgba(0, 0, 0, 0.5);
+    content: "";
+}
+.video_wrapper:not(.js_active)::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 60px;
+    height: 60px;
+    background-image: url(./loading.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    content: "";
+}
+
+.video_wrapper > video {
+    width: 100%;
+}*/
+
+#my-video {
+  margin: 0;
+  z-index: -100;
+}
+
+#Header {
+  width: 100%;
+  height: 55px;
+  z-index: 999;
+  position: fixed;
+  background-color: transparent;
+}
+
+#ico {
+  width: 100px;
+  height: 55px;
+  line-height: 55px;
+  text-align: center;
+  font-size: 30px;
+  color: white;
+}
+
+#Contents {
+  background-color: #000;
+}
+
+#chat-container {
+  background-color: hsl(0, 0%, 8%);
+}
+
+#chat-input {
+  position: relative;
+  bottom: 10px;
+  height: 40px;
+  width: 500px;
+  background-color: hsl(0, 0%, 14%);
+  border-radius: 6px;
+  overflow: hidden;
+
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 12px;
+    bottom: 12px;
+    background-color: hsla(0, 0%, 22%, 0.4);
+  }
+
+  // Chat input
+  &:before {
+    cursor: text;
+    left: 52px;
+    width: 40%;
+    border-radius: 2px;
+  }
+
+  // Emote picker
+  &:after {
+    cursor: pointer;
+    right: 10px;
+    width: 16px;
+    border-radius: 8px;
+  }
+
+  #file-input {
+    cursor: pointer;
+    display: block;
+    border-right: 2px solid hsl(0, 0%, 16%);
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    bottom: 2px;
+    width: 36px;
+    transition: background-color 60ms;
+
+    &:hover {
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 40px;
+      background-color: hsl(0, 0%, 28%);
+      border-right: 0;
+      transition: background-color 120ms;
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      background-color: hsl(0, 0%, 22%);
+    }
+
+    &:before {
+      top: 30%;
+      bottom: 30%;
+      left: 50%;
+      width: 2px;
+      margin-left: -1px;
+    }
+
+    &:after {
+      left: 30%;
+      right: 30%;
+      top: 50%;
+      height: 2px;
+      margin-top: -1px;
+    }
+  }
+}
+
+.chat {
+  bottom: 60px;
+  width: 500px;
+  display: inline-block;
+}
+
+.line-container {
+  overflow: hidden;
+  border-radius: 6px;
+  max-height: 0px;
+  opacity: 0;
+  transform: translateX(-300px) scale(0.2);
+  transition: margin-bottom 200ms, max-height 500ms, opacity 100ms, transform 250ms;
+  transition-timing-function: ease-out;
+
+
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+.line {
+  padding: 10px;
+  background-color: hsl(0, 0%, 14%);
+
+  &>div {
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+
+.profile-img {
+  cursor: pointer;
+  border-radius: 6px;
+  width: 60px;
+  height: 60px;
+  background-color: hsl(0, 0%, 22%);
+  margin-right: 10px;
+}
+
+.name {
+  width: 100px;
+  margin-bottom: 10px;
+  position: relative;
+  cursor: pointer;
+
+  &:after {
+    content: '';
+    display: block;
+    border-radius: 2px;
+    background-color: hsla(0, 0%, 22%, 0.4);
+    height: 16px;
+    width: 50px;
+    position: absolute;
+    right: -60px;
+    transition: 100ms;
+  }
+}
+
+.profile-img:hover+.body .name:after,
+.name:hover:after {
+  background-color: hsla(0, 0%, 22%, 1);
+  width: 100px;
+  right: -110px;
+}
+
+.text {
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+.rich-body {
+  margin-left: 14px;
+  margin-top: 36px;
+  position: relative;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -26px;
+    left: -14px;
+    bottom: 0;
+    width: 4px;
+    background-color: inherit;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 16px;
+    width: 200px;
+    top: -26px;
+    background-color: inherit;
+    border-radius: 2px;
+  }
+}
+
+.img,
+.rich-body {
+  width: 300px;
+  height: 300px;
+  cursor: pointer;
+  border-radius: 6px;
+  background-color: hsl(0, 0%, 20%);
+}
+
+.profile-img,
+.name,
+.text,
+.img,
+.rich-body {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 200ms;
+}
