@@ -12,7 +12,7 @@ var json;
 fetch("../assets/commands.json")
   .then(res => res.json())
   .then(data => {
-    console.log(datd.length)
+    console.log(data.length)
   })
 
 for (var i = 0; i < OpenDialog.length; i++) {
