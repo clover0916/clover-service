@@ -112,29 +112,17 @@ body {
 .title-button {
   margin: 0;
   position: absolute;
-  top: calc(50% + 2.5em);
+  top: calc(50% + 3em);
   width: 100%;
   text-align: center;
 }
 
 .mdc-button-white {
   @include button.ink-color(#FFFFFF);
-  backdrop-filter: blur(2px);
-  background-color: rgba(255, 255, 255, 0);
 }
 
 .title-fade {
-  animation: fade-in-c 750ms 750ms animation.$deceleration-curve-timing-function;
-}
-
-@keyframes fade-in-c {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+  animation: fade-in 750msanimation.$deceleration-curve-timing-function;
 }
 
 .futura-pt {
