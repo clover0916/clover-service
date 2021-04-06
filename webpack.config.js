@@ -10,7 +10,8 @@ module.exports = {
     index: './src/index.js',
     bot_drawer: './src/bot_drawer.js',
     error: './src/error.scss',
-    button: './src/button.scss'
+    button: './src/button.scss',
+    theme: './src/theme.scss'
   },
   output: {
     path: path.join(__dirname, 'public', 'dist'),
