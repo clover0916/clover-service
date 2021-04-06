@@ -4,6 +4,8 @@
   $on-primary: #FFFFFF,
 );
 @use "@material/typography/mdc-typography";
+@use "@material/button/styles";
+@use "@material/button";
 
 * {
   margin: 0px;
