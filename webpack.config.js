@@ -8,7 +8,8 @@ module.exports = {
     commands: './src/commands.js',
     bot: './src/bot.js',
     index: './src/index.js',
-    bot_drawer: './src/bot_drawer.js'
+    bot_drawer: './src/bot_drawer.js',
+    error: './src/error.scss'
   },
   output: {
     path: path.join(__dirname, 'public', 'dist'),
