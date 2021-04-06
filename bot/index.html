@@ -1,50 +1,19 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+  <script data-ad-client="ca-pub-7956959425998230" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <title>Clover Bot - ホーム</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="dist/style.css">
-  <style>
-    .swiper-container {
-      width: 100%;
-      height: 300%;
-    }
-
-    .swiper-slide {
-      text-align: center;
-      font-size: 18px;
-      background: #fff;
-
-      /* Center slide text vertically */
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: -webkit-flex;
-      display: flex;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      -webkit-justify-content: center;
-      justify-content: center;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      -webkit-align-items: center;
-      align-items: center;
-    }
-  </style>
+  <link rel="stylesheet" href="dist/app.css">
 </head>
+
 <body class="mdc-typography">
-    <div class="mdc-dialog">
+  <div class="mdc-dialog">
     <div class="mdc-dialog__container">
-      <div class="mdc-dialog__surface"
-        role="alertdialog"
-        aria-modal="true"
-        aria-labelledby="my-dialog-title"
-        aria-describedby="my-dialog-content">
-        <h2 class="mdc-dialog__title" id="my-dialog-title">
-          ここから先は別のサイトに移動しますが進みますか？
-        </h2>
-        <div class="mdc-dialog__content" id="my-dialog-content">
-          <span id="url"></span>
-        </div>
+      <div class="mdc-dialog__surface" role="alertdialog" aria-modal="true" aria-labelledby="my-dialog-title" aria-describedby="my-dialog-content">
+        <h2 class="mdc-dialog__title" id="my-dialog-title"></h2>
+        <div class="mdc-dialog__content" id="my-dialog-content"></div>
         <div class="mdc-dialog__actions">
           <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="cancel">
             <div class="mdc-button__ripple"></div>
@@ -81,72 +50,154 @@
     </div>
     <div class="mdc-dialog__scrim"></div>
   </div>
-  
   <aside class="mdc-drawer mdc-drawer--modal">
     <div class="mdc-drawer__content">
       <nav class="mdc-list">
-        <a class="mdc-list-item link" href="https://bot.clover-service.online">
+        <a class="mdc-list-item mdc-list-item--activated" href="#" aria-current="page" tabindex="0">
           <span class="mdc-list-item__ripple"></span>
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">home</i>
-          <span class="mdc-list-item__text">ホーム</span>
+          <span class="mdc-list-item__text">About</span>
         </a>
-        <a class="mdc-list-item link" href="https://bot.clover-service.online/commands.html">
+        <a class="mdc-list-item" href="https://bot.clover-service.online">
           <span class="mdc-list-item__ripple"></span>
-          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">article</i>
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">android</i>
           <span class="mdc-list-item__text">コマンドリスト</span>
         </a>
-        <a class="mdc-list-item link" href="#">
-          <span class="mdc-list-item__ripple"></span>
-          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">drafts</i>
-          <span class="mdc-list-item__text">Drafts</span>
-        </a>
+        <hr class="mdc-list-divider">
       </nav>
     </div>
   </aside>
-
   <div class="mdc-drawer-scrim"></div>
-
   <div class="main-content">
-    <header class="mdc-top-app-bar mdc-top-app-bar--fixed mdc-elevation--z4">
-    <div class="mdc-top-app-bar__row">
-      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-        <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" aria-label="Open navigation menu">menu</button>
-        <span class="mdc-top-app-bar__title" onclick="location.href='https://bot.clover-service.online'">Clover Bot</span>
-      </section>
-      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-        <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Search">search</button>
-      </section>
-    </div>
+    <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+      <div role="progressbar" class="mdc-linear-progress mdc-linear-progress--indeterminate" aria-label="Example Progress Bar" aria-valuemin="0" aria-valuemax="1" aria-valuenow="0">
+        <div class="mdc-linear-progress__buffer">
+          <div class="mdc-linear-progress__buffer-bar"></div>
+          <div class="mdc-linear-progress__buffer-dots"></div>
+        </div>
+        <div class="mdc-linear-progress__bar mdc-linear-progress__primary-bar">
+          <span class="mdc-linear-progress__bar-inner"></span>
+        </div>
+        <div class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar">
+          <span class="mdc-linear-progress__bar-inner"></span>
+        </div>
+      </div>
+      <div class="mdc-top-app-bar__row">
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+          <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" aria-label="Open navigation menu">menu</button>
+          <span class="mdc-top-app-bar__title" style="padding-left: 6px" onclick="location.href='./index.html'">Clover</span>
+        </section>
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+          <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Search">search</button>
+        </section>
+      </div>
     </header>
-    <div class="mdc-top-app-bar--fixed-adjust">
-    <div class="title gradation-orange text-white">
-      <h1 class="mdc-typography--headline1 font-light futura-pt">Clover Bot</h1>
-      <p class="mdc-typography--subtitle1">
-        Discordで使える高機能なBot
-      </p>
+    <div class="full gradation-orange text-white">
+      <div class="title title-anm">
+        <h1 class="mdc-typography--headline1 font-light futura-pt">Clover</h1>
+        <p class="mdc-typography--subtitle1">
+          あなたとってに最高のサービスを
+        </p>
+      </div>
+      <div class="title-button title-fade">
+        <div class="mdc-touch-target-wrapper">
+          <button class="mdc-button mdc-button--raised mdc-button--touch mdc-button-white" onclick="location.href='#service'">
+            <span class="mdc-button__ripple"></span>
+            <span class="mdc-button__label">サービスを見る</span>
+            <span class="mdc-button__touch"></span>
+          </button>
+        </div>
+      </div>
+      <div class="pop">一部工事中</div>
     </div>
-    <main class="mdc-layout-grid mdc-elevation--z2">
-      <h3 class="mdc-typography--headline3 font-regular text-border-bottom">ハイライト</h3>
+    <main class="mdc-layout-grid main">
+      <h4 class="mdc-typography--headline4 font-regular text-border-bottom">Cloverとは</h4>
       <div class="mdc-layout-grid">
-        <div class="swiper-container">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">Slide 1</div>
-            <div class="swiper-slide">Slide 2</div>
-            <div class="swiper-slide">Slide 3</div>
-            <div class="swiper-slide">Slide 4</div>
-            <div class="swiper-slide">Slide 5</div>
-            <div class="swiper-slide">Slide 6</div>
-            <div class="swiper-slide">Slide 7</div>
-            <div class="swiper-slide">Slide 8</div>
-            <div class="swiper-slide">Slide 9</div>
-            <div class="swiper-slide">Slide 10</div>
+        <p class="mdc-typography--body1 font-light">
+          Clover_Midoriが運営しているサービスです。
+        </p>
+        <p class="mdc-typography--body1 font-light">
+          こんなこと、あんなことを実現させます！！
+        </p>
+      </div>
+      <h4 class="mdc-typography--headline4 font-regular text-border-bottom" id="service">サービス</h4>
+      <div class="mdc-layout-grid">
+        <p class="mdc-typography--body2 font-light">
+          どんどん増えていきます
+        </p>
+        <div class="mdc-layout-grid">
+          <div class="mdc-layout-grid__inner">
+            <div class="mdc-layout-grid__cell">
+              <div class="mdc-card mdc-card--outlined">
+                <div class="mdc-card__primary-action" tabindex="0">
+                  <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('./assets/bot_icon.png');background-size: cover;background-repeat: no-repeat;background-position: center;"></div>
+                  <div class="mdc-card-fixed">
+                    <h2 class="mdc-typography--headline6">Clover Bot</h2>
+                    <h3 class="text-gray mdc-typography mdc-typography--subtitle2">Discord Bot</h3>
+                  </div>
+                  <div class="side-padding mdc-typography--body2 text-gray">
+                    Discordで使える高機能なBot
+                  </div>
+                </div>
+                <div class="mdc-card__actions">
+                  <div class="mdc-card__action-buttons">
+                    <button class="mdc-button mdc-card__action mdc-card__action--button" id="redirect" data-url="https://bot.clover-service.online/invite"> <span class="mdc-button__ripple"></span>導入する</button>
+                    <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="location.href='https://bot.clover-service.online'"> <span class="mdc-button__ripple"></span>詳細</button>
+                  </div>
+                  <div class="mdc-card__action-icons">
+                    <div id="demo-menu" class="mdc-menu-surface--anchor">
+                      <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded" title="More options" data-mdc-ripple-is-unbounded="true" id="menu-button">more_vert</button>
+                      <div class="mdc-menu mdc-menu-surface">
+                        <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical" tabindex="-1">
+                          <li class="mdc-list-item" role="menuitem" id="ss">
+                            <span class="mdc-list-item__ripple"></span>
+                            <span class="mdc-list-item__text">サポートサーバー</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mdc-layout-grid__cell">
+              <div class="mdc-card mdc-card--outlined">
+                <div class="mdc-card__primary-action">
+                  <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('./assets/noimage.jpg');background-size: cover;background-repeat: no-repeat;background-position: center;"></div>
+                  <div class="mdc-card-fixed">
+                    <h2 class="mdc-typography--headline6">Not Found</h2>
+                    <h3 class="text-gray mdc-typography mdc-typography--subtitle2">Unknown</h3>
+                  </div>
+                  <div class="side-padding mdc-typography--body2 text-gray">
+                    Unknown
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mdc-layout-grid__cell">
+              <div class="mdc-card mdc-card--outlined">
+                <div class="mdc-card__primary-action">
+                  <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('./assets/noimage.jpg');background-size: cover;background-repeat: no-repeat;background-position: center;"></div>
+                  <div class="mdc-card-fixed">
+                    <h2 class="mdc-typography--headline6">Not Found</h2>
+                    <h3 class="text-gray mdc-typography mdc-typography--subtitle2">Unknown</h3>
+                  </div>
+                  <div class="side-padding mdc-typography--body2 text-gray">
+                    Unknown
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </main>
-    </div>
+    <footer>
+      <p class="mdc-typography--caption footer-copy">Copyright ©2020 Clover_Midori All Rights Reserved</p>
+    </footer>
   </div>
   <script src="dist/app.js" async></script>
-  <script src="dist/bot.js" async></script>
+  <script src="dist/index.js" async></script>
 </body>
+
 </html>
