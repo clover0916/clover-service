@@ -5,7 +5,7 @@ module.exports = {
   mode: 'production',
   entry: {
     app: ['./src/app.scss', './src/app.js'],
-    commands: './src/commands.js',
+    commands: ['./src/commands.js', './src/commands.scss'],
     bot: ['./src/bot.js', './src/bot.scss'],
     index: './src/index.js',
     bot_drawer: './src/bot_drawer.js',
