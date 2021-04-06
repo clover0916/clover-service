@@ -1,7 +1,30 @@
 @use "@material/typography/mdc-typography";
 
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+html.wf-active * {
+  --mdc-typography-font-family: "Roboto", "Noto Sans JP", sans-serif;
+}
+
+body {
+  height: 100%;
+}
+
+.gradation {
+  background-image: linear-gradient(135deg, #70F570 10%, #49C628 100%);
+}
+
 .error {
   text-align: center;
   position: absolute;
-  top: 50%
+  top: 50%;
+  width: 100%;
 }
