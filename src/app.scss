@@ -116,6 +116,18 @@ body {
   @include button.ink-color(#FFFFFF);
 }
 
+footer　{
+  /*footerの装飾*/
+  width: 100%;
+  background-color:　2E2E2E; 
+  color: #fff;
+  text-align: center;
+  padding: 15px 30px;
+  -webkit-align-items: center;
+  align-items: center;
+  position: relative;
+}
+
 .title-fade {
   animation: fade-in 750ms animation.$deceleration-curve-timing-function;
 }
