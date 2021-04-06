@@ -9,7 +9,7 @@ module.exports = {
     bot: './src/bot.js',
     index: './src/index.js',
     bot_drawer: './src/bot_drawer.js',
-    error: './src/error.scss'
+    error: ['./src/error.js', './src/error.scss']
   },
   output: {
     path: path.join(__dirname, 'public', 'dist'),
