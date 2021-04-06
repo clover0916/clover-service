@@ -26,8 +26,6 @@
 @use "@material/animation";
 @use "@material/linear-progress";
 
-@import "swiper/swiper-bundle.css";
-
 @include icon-button.core-styles;
 @include card.core-styles;
 @include dialog.core-styles;

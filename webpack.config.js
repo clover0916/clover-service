@@ -6,7 +6,7 @@ module.exports = {
   entry: {
     app: ['./src/app.scss', './src/app.js'],
     commands: './src/commands.js',
-    bot: './src/bot.js',
+    bot: ['./src/bot.js', './src/bot.scss'],
     index: './src/index.js',
     bot_drawer: './src/bot_drawer.js',
     error: ['./src/error.js', './src/error.scss']
