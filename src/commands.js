@@ -15,10 +15,33 @@ fetch("../assets/commands.json")
   .then(data => {
     data.forEach(function(element, index){
       if (index === 0) {
-        /*commandTable.createTHead();
-        var row = returnValue.insertRow(0);
-        var thr = document.createElement("th")*/
-        console.log(element["name"])
+        var thead = commandTable.createTHead();
+        var tr = thead.insertRow(0);
+        tr.classList.add("mdc-data-table__header-row")
+        var th = document.createElement("th")
+        th.innerHTML(element["name"]);
+        th.classList.add("mdc-data-table__header-cell")
+        th.setAttribute('role', "columnheader");
+        th.setAttribute('scope', "col");
+        tr.appendChild(th);
+        var th = document.createElement("th")
+        th.innerHTML(element["description"]);
+        th.classList.add("mdc-data-table__header-cell")
+        th.setAttribute('role', "columnheader");
+        th.setAttribute('scope', "col");
+        tr.appendChild(th);
+        var th = document.createElement("th")
+        th.innerHTML(element["use"]);
+        th.classList.add("mdc-data-table__header-cell")
+        th.setAttribute('role', "columnheader");
+        th.setAttribute('scope', "col");
+        tr.appendChild(th);
+        var th = document.createElement("th")
+        th.innerHTML(element["example"]);
+        th.classList.add("mdc-data-table__header-cell")
+        th.setAttribute('role', "columnheader");
+        th.setAttribute('scope', "col");
+        tr.appendChild(th);
       } else {
         console.log("Naiyou");
         console.log(element["name"]);
