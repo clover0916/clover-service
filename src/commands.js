@@ -35,7 +35,7 @@ fetch("../assets/commands.json")
       } else {
         var tbody = commandTable.createTBody()
         tbody.classList.add("mdc-data-table__content")
-        var tr = thead.insertRow(0);
+        var tr = tbody.insertRow(0);
         tr.classList.add("mdc-data-table__header-row")
         tr.setAttribute('data-row-id', `u${index - 1}`);
         var th = document.createElement("th")
