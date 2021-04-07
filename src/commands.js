@@ -14,7 +14,7 @@ fetch("../assets/commands.json")
   .then(res => res.json())
   .then(data => {
     data.forEach(function(element, index){
-      if (index = 0) {
+      if (index === 0) {
         console.log("Header");
         console.log(element);
       } else {
