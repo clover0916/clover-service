@@ -15,8 +15,12 @@ fetch("../assets/commands.json")
   .then(data => {
     data.forEach(function(element, index){
       if (index === 0) {
-        console.log("Header");
-        console.log(element);
+        /*commandTable.createTHead();
+        var row = returnValue.insertRow(0);
+        var thr = document.createElement("th")*/
+        element.forEach(function(ele){
+          console.log(ele)
+        })
       } else {
         console.log("Naiyou");
         console.log(element);
