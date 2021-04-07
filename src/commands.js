@@ -9,25 +9,25 @@ fetch("../assets/commands.json")
         var tr = thead.insertRow(0);
         tr.classList.add("mdc-data-table__header-row")
         var th = document.createElement("th")
-        th.innerHTML(element["name"]);
+        th.innerHTML = element["name"];
         th.classList.add("mdc-data-table__header-cell")
         th.setAttribute('role', "columnheader");
         th.setAttribute('scope', "col");
         tr.appendChild(th);
         var th = document.createElement("th")
-        th.innerHTML(element["description"]);
+        th.innerHTML = element["description"];
         th.classList.add("mdc-data-table__header-cell")
         th.setAttribute('role', "columnheader");
         th.setAttribute('scope', "col");
         tr.appendChild(th);
         var th = document.createElement("th")
-        th.innerHTML(element["use"]);
+        th.innerHTML = element["use"];
         th.classList.add("mdc-data-table__header-cell")
         th.setAttribute('role', "columnheader");
         th.setAttribute('scope', "col");
         tr.appendChild(th);
         var th = document.createElement("th")
-        th.innerHTML(element["example"]);
+        th.innerHTML = element["example"];
         th.classList.add("mdc-data-table__header-cell")
         th.setAttribute('role', "columnheader");
         th.setAttribute('scope', "col");
