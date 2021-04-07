@@ -53,6 +53,8 @@
   <aside class="mdc-drawer mdc-drawer--modal">
     <div class="mdc-drawer__content">
       <nav class="mdc-list">
+        <button class="mdc-icon-button material-icons" onclick="location.href='https://www.clover-service.online'">arrow_back</button>
+        <hr class="mdc-list-divider">
         <a class="mdc-list-item mdc-list-item--activated" href="#" aria-current="page" tabindex="0">
           <span class="mdc-list-item__ripple"></span>
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">home</i>
@@ -63,7 +65,6 @@
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">android</i>
           <span class="mdc-list-item__text">コマンドリスト</span>
         </a>
-        <hr class="mdc-list-divider">
       </nav>
     </div>
   </aside>
@@ -101,95 +102,21 @@
       </div>
       <div class="title-button title-fade">
         <div class="mdc-touch-target-wrapper">
-          <button class="mdc-button mdc-button--raised mdc-button--touch mdc-button-white" onclick="location.href='#service'">
+          <button class="mdc-button mdc-button--raised mdc-button--touch mdc-button-white" onclick="location.href='#about'">
             <span class="mdc-button__ripple"></span>
-            <span class="mdc-button__label">サービスを見る</span>
+            <span class="mdc-button__label">詳細</span>
             <span class="mdc-button__touch"></span>
           </button>
         </div>
       </div>
-      <div class="pop">一部工事中</div>
+      <div class="pop">工事中</div>
     </div>
     <main class="mdc-layout-grid main">
-      <h4 class="mdc-typography--headline4 font-regular text-border-bottom">Cloverとは</h4>
-      <div class="mdc-layout-grid">
-        <p class="mdc-typography--body1 font-light">
-          Clover_Midoriが運営しているサービスです。
-        </p>
-        <p class="mdc-typography--body1 font-light">
-          こんなこと、あんなことを実現させます！！
-        </p>
-      </div>
-      <h4 class="mdc-typography--headline4 font-regular text-border-bottom" id="service">サービス</h4>
+      <h4 class="mdc-typography--headline4 font-regular text-border-bottom" id="about">About</h4>
       <div class="mdc-layout-grid">
         <p class="mdc-typography--body2 font-light">
-          どんどん増えていきます
+          準備中
         </p>
-        <div class="mdc-layout-grid">
-          <div class="mdc-layout-grid__inner">
-            <div class="mdc-layout-grid__cell">
-              <div class="mdc-card mdc-card--outlined">
-                <div class="mdc-card__primary-action" tabindex="0">
-                  <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('./assets/bot_icon.png');background-size: cover;background-repeat: no-repeat;background-position: center;"></div>
-                  <div class="mdc-card-fixed">
-                    <h2 class="mdc-typography--headline6">Clover Bot</h2>
-                    <h3 class="text-gray mdc-typography mdc-typography--subtitle2">Discord Bot</h3>
-                  </div>
-                  <div class="side-padding mdc-typography--body2 text-gray">
-                    Discordで使える高機能なBot
-                  </div>
-                </div>
-                <div class="mdc-card__actions">
-                  <div class="mdc-card__action-buttons">
-                    <button class="mdc-button mdc-card__action mdc-card__action--button" id="redirect" data-url="https://bot.clover-service.online/invite"> <span class="mdc-button__ripple"></span>導入する</button>
-                    <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="location.href='https://bot.clover-service.online'"> <span class="mdc-button__ripple"></span>詳細</button>
-                  </div>
-                  <div class="mdc-card__action-icons">
-                    <div id="demo-menu" class="mdc-menu-surface--anchor">
-                      <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded" title="More options" data-mdc-ripple-is-unbounded="true" id="menu-button">more_vert</button>
-                      <div class="mdc-menu mdc-menu-surface">
-                        <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical" tabindex="-1">
-                          <li class="mdc-list-item" role="menuitem" id="ss">
-                            <span class="mdc-list-item__ripple"></span>
-                            <span class="mdc-list-item__text">サポートサーバー</span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="mdc-layout-grid__cell">
-              <div class="mdc-card mdc-card--outlined">
-                <div class="mdc-card__primary-action">
-                  <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('./assets/noimage.jpg');background-size: cover;background-repeat: no-repeat;background-position: center;"></div>
-                  <div class="mdc-card-fixed">
-                    <h2 class="mdc-typography--headline6">Not Found</h2>
-                    <h3 class="text-gray mdc-typography mdc-typography--subtitle2">Unknown</h3>
-                  </div>
-                  <div class="side-padding mdc-typography--body2 text-gray">
-                    Unknown
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="mdc-layout-grid__cell">
-              <div class="mdc-card mdc-card--outlined">
-                <div class="mdc-card__primary-action">
-                  <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('./assets/noimage.jpg');background-size: cover;background-repeat: no-repeat;background-position: center;"></div>
-                  <div class="mdc-card-fixed">
-                    <h2 class="mdc-typography--headline6">Not Found</h2>
-                    <h3 class="text-gray mdc-typography mdc-typography--subtitle2">Unknown</h3>
-                  </div>
-                  <div class="side-padding mdc-typography--body2 text-gray">
-                    Unknown
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </main>
     <footer>
@@ -197,7 +124,7 @@
     </footer>
   </div>
   <script src="dist/app.js" async></script>
-  <script src="dist/index.js" async></script>
+  <script src="dist/bot.js" async></script>
 </body>
 
 </html>
