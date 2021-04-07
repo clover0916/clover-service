@@ -18,9 +18,7 @@ fetch("../assets/commands.json")
         /*commandTable.createTHead();
         var row = returnValue.insertRow(0);
         var thr = document.createElement("th")*/
-        element.forEach(function(ele){
-          console.log(ele)
-        })
+        console.log(typeof(element))
       } else {
         console.log("Naiyou");
         console.log(element);
