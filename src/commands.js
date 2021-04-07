@@ -18,10 +18,10 @@ fetch("../assets/commands.json")
         /*commandTable.createTHead();
         var row = returnValue.insertRow(0);
         var thr = document.createElement("th")*/
-        console.log(typeof(element))
+        console.log(element["name"])
       } else {
         console.log("Naiyou");
-        console.log(element);
+        console.log(element["name"]);
       }
     });
   })
