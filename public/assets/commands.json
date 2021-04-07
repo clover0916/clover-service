@@ -1,14 +1,32 @@
-{
-  "help": {
-    "description": "ヘルプを表示します"
+[
+  {
+    "name": "コマンド",
+    "description": "詳細",
+    "use": "使用方法",
+    "example": "主な例"
   },
-  "info": {
-    "description": "Botの情報を表示します"
+  {
+    "name": "help",
+    "description": "ヘルプを表示します",
+    "use": "特になし",
+    "example": "特になし"
   },
-  "ping": {
-    "description": "Pingを計測します"
+  {
+    "name": "info",
+    "description": "Botの情報を表示します",
+    "use": "特になし",
+    "example": "特になし"
   },
-  "uptime": {
-    "description": "Botの起動時間を表示します"
+  {
+    "name": "ping",
+    "description": "Pingを計測します",
+    "use": "特になし",
+    "example": "特になし"
+  },
+  {
+    "name": "uptime",
+    "description": "Botの起動時間を表示します",
+    "use": "特になし",
+    "example": "特になし"
   }
-}
+]
