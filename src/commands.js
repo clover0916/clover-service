@@ -1,3 +1,5 @@
+import { MDCDataTable } from '@material/data-table';
+
 var commandTable = document.getElementById("cl")
 
 fetch("../assets/commands.json")
@@ -60,7 +62,4 @@ fetch("../assets/commands.json")
     });
   })
 
-  import { MDCDataTable } from '@material/data-table';
-
-
-  const dataTable = new MDCDataTable(document.querySelector('.mdc-data-table'));
+const dataTable = new MDCDataTable(document.querySelector('.mdc-data-table'));
