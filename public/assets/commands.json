@@ -28,5 +28,60 @@
     "description": "Botの起動時間を表示します",
     "use": "特になし",
     "example": "特になし"
+  },
+  {
+    "name": "spt",
+    "description": "Botのネットワークの速度を計測します",
+    "use": "特になし",
+    "example": "特になし"
+  },
+  {
+    "name": "neko",
+    "description": "「にゃーん」と返事が返ってきます",
+    "use": "特になし",
+    "example": "特になし"
+  },
+  {
+    "name": "setup (実装予定)",
+    "description": "Botの初期設定を行います",
+    "use": "特になし",
+    "example": "特になし"
+  },
+  {
+    "name": "user",
+    "description": "ユーザーの管理を行います",
+    "use": "!cm user [user_id or option]",
+    "example": "ユーザーの情報を見る場合: \"!cm user 1234567890\""
+  },
+  {
+    "name": "guild",
+    "description": "サーバーの情報を見ます",
+    "use": "特になし",
+    "example": "特になし"
+  },
+  {
+    "name": "vc",
+    "description": "ボイス関連のコマンド",
+    "use": "!cm vc [option] [Search Word or URL(Youtube URL or Music File)]",
+    "example": "そのコマンドの詳細: \"!cm vc -h\""
+  },
+  {
+    "name": "search",
+    "description": "Google検索&Youtubeの動画検索をするコマンド",
+    "use": "!cm search [Search Word or option] [Youtube Search Word]",
+    "example": "Youtube検索の場合: \"!cm search -y ヒカキン\""
+  },
+  {
+    "name": "bot-invite",
+    "description": "Botの招待URLを表示します",
+    "use": "特になし",
+    "example": "特になし"
+  },
+  {
+    "name": "trans(メンテナス中)",
+    "description": "文書を翻訳するコマンド",
+    "use": "!cm trans [Country code] [Sentence]",
+    "example": "日本語に変換する場合: !cm trans ja Your hairstyle is super cool!"
   }
+
 ]
