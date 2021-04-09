@@ -5,7 +5,7 @@ var commandTable = document.getElementById("cl")
 fetch("../assets/commands.json")
   .then(res => res.json())
   .then(data => {
-    data.forEach(function(element, index){
+    data.forEach(function (element, index) {
       if (index === 0) {
         var thead = commandTable.createTHead();
         var tr = thead.insertRow(0);
@@ -35,29 +35,54 @@ fetch("../assets/commands.json")
         th.setAttribute('scope', "col");
         tr.appendChild(th);
       } else {
-        var tbody = commandTable.createTBody()
-        tbody.classList.add("mdc-data-table__content")
-        var tr = tbody.insertRow(0);
-        tr.classList.add("mdc-data-table__header-row")
-        tr.setAttribute('data-row-id', `u${index - 1}`);
-        var th = document.createElement("th")
-        th.innerHTML = element["name"];
-        th.classList.add("mdc-data-table__cell")
-        th.setAttribute('scope', "row");
-        th.setAttribute('id', `u${index - 1}`);
-        tr.appendChild(th);
-        var td = document.createElement("td")
-        td.innerHTML = element["description"];
-        td.classList.add("mdc-data-table__cell")
-        tr.appendChild(td);
-        var td = document.createElement("td")
-        td.innerHTML = element["use"];
-        td.classList.add("mdc-data-table__cell")
-        tr.appendChild(td);
-        var td = document.createElement("td")
-        td.innerHTML = element["example"];
-        td.classList.add("mdc-data-table__cell")
-        tr.appendChild(td);
+        if (document.getElementById("c")) {
+          var tr = document.getElementById("c").insertRow(0);
+          tr.classList.add("mdc-data-table__header-row")
+          tr.setAttribute('data-row-id', `u${index - 1}`);
+          var th = document.createElement("th")
+          th.innerHTML = element["name"];
+          th.classList.add("mdc-data-table__cell")
+          th.setAttribute('scope', "row");
+          th.setAttribute('id', `u${index - 1}`);
+          tr.appendChild(th);
+          var td = document.createElement("td")
+          td.innerHTML = element["description"];
+          td.classList.add("mdc-data-table__cell")
+          tr.appendChild(td);
+          var td = document.createElement("td")
+          td.innerHTML = element["use"];
+          td.classList.add("mdc-data-table__cell")
+          tr.appendChild(td);
+          var td = document.createElement("td")
+          td.innerHTML = element["example"];
+          td.classList.add("mdc-data-table__cell")
+          tr.appendChild(td);
+        } else {
+          var tbody = commandTable.createTBody()
+          tbody.classList.add("mdc-data-table__content")
+          tbody.setAttribute('id', `c`);
+          var tr = tbody.insertRow(0);
+          tr.classList.add("mdc-data-table__header-row")
+          tr.setAttribute('data-row-id', `u${index - 1}`);
+          var th = document.createElement("th")
+          th.innerHTML = element["name"];
+          th.classList.add("mdc-data-table__cell")
+          th.setAttribute('scope', "row");
+          th.setAttribute('id', `u${index - 1}`);
+          tr.appendChild(th);
+          var td = document.createElement("td")
+          td.innerHTML = element["description"];
+          td.classList.add("mdc-data-table__cell")
+          tr.appendChild(td);
+          var td = document.createElement("td")
+          td.innerHTML = element["use"];
+          td.classList.add("mdc-data-table__cell")
+          tr.appendChild(td);
+          var td = document.createElement("td")
+          td.innerHTML = element["example"];
+          td.classList.add("mdc-data-table__cell")
+          tr.appendChild(td);
+        }
       }
     });
   })
