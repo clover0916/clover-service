@@ -37,7 +37,7 @@ fetch("../assets/commands.json")
       } else {
         if (document.getElementById("c")) {
           var tr = document.getElementById("c").insertRow(0);
-          tr.classList.add("mdc-data-table__header-row")
+          tr.classList.add("mdc-data-table__row")
           tr.setAttribute('data-row-id', `u${index - 1}`);
           var th = document.createElement("th")
           th.innerHTML = element["name"];
@@ -62,7 +62,7 @@ fetch("../assets/commands.json")
           tbody.classList.add("mdc-data-table__content")
           tbody.setAttribute('id', `c`);
           var tr = tbody.insertRow(0);
-          tr.classList.add("mdc-data-table__header-row")
+          tr.classList.add("mdc-data-table__row")
           tr.setAttribute('data-row-id', `u${index - 1}`);
           var th = document.createElement("th")
           th.innerHTML = element["name"];
