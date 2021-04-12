@@ -4,5 +4,7 @@
 @include data-table.theme-baseline;
 
 .mdc-data-table {
+  width: auto;
+  height: auto;
   overflow: scroll;
 }
