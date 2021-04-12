@@ -8,7 +8,6 @@ module.exports = {
     commands: ['./src/commands.js', './src/commands.scss'],
     bot: ['./src/bot.js', './src/bot.scss'],
     index: './src/index.js',
-    bot_drawer: './src/bot_drawer.js',
     error: ['./src/error.js', './src/error.scss']
   },
   output: {
