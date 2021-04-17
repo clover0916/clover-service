@@ -10,10 +10,17 @@ router.get('/get_video', async function(req, res, next) {
     var url = req.query.id;
     var URL = 'https://www.youtube.com/watch?v=' + url 
     const video = ytdl(url,{filter: (format) => format.container === 'mp4' });
-    const info = await ytdl.getInfo(URL);
-    var title = encodeURIComponent(info.videoDetails.title + '.mp4')    
-    res.header('Content-Disposition', 'attachment; filename*=UTF-8\'\'' + title);
-    video.pipe(res);
+    try {
+      const info = await ytdl.getInfo(URL);
+      var title = encodeURIComponent(info.videoDetails.title + '.mp4')
+      res.header('Content-Disposition', 'attachment; filename*=UTF-8\'\'' + title);
+      video.pipe(res);
+    } catch {
+      var title = encodeURIComponent('Unknown.mp4')
+      res.header('Content-Disposition', 'attachment; filename*=UTF-8\'\'' + title);
+      video.pipe(res);
+    }
+    
   } catch (err) {
     res.send("Too many request.")
   }
