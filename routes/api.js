@@ -2,18 +2,16 @@ const { request } = require('express');
 var express = require('express');
 var router = express.Router();
 
-const youtubedl = require('youtube-dl')
+const ytdl = require('ytdl-core');
 
 /* GET users listing. */
 router.get('/get_video', async function(req, res, next) {
   try {
     var url = req.query.id;
     var URL = 'https://www.youtube.com/watch?v=' + url 
-    
-    const video = youtubedl(URL);
-    const info = await youtubedl.getInfo(URL)
-    const title = encodeURIComponent(info.title + '.mp4')
-
+    const video = ytdl(url,{filter: (format) => format.container === 'mp4' });
+    const info = await ytdl.getInfo(URL);
+    var title = encodeURIComponent(info.videoDetails.title + '.mp4')    
     res.header('Content-Disposition', 'attachment; filename*=UTF-8\'\'' + title);
     video.pipe(res);
   } catch (err) {
