@@ -12,7 +12,7 @@ router.get('/get_video', async function(req, res, next) {
     const video = ytdl(url, ['-f bestvideo+bestaudio']);
 
     video.on('info', function(info) {
-      var title = encodeURIComponent(info.videoDetails.title + '.mp4')
+      var title = encodeURIComponent(info.title + '.mp4')
       res.header('Content-Disposition', 'attachment; filename*=UTF-8\'\'' + title);
       video.pipe(res);
     })
