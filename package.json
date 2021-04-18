@@ -29,6 +29,7 @@
     "file-loader": "^6.2.0",
     "swiper": "6.4.5",
     "youtube-dl": "latest",
+    "ytdl-core": "latest",
     "cors": "2.8.5",
     "@babel/core": "^7.12.10",
     "stream-browserify": "3.0.0",
