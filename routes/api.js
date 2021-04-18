@@ -15,7 +15,7 @@ router.get('/get_video', async function(req, res, next) {
       console.log(info)
       var title = encodeURIComponent(info.title + '.mp4')
       res.header('Content-Disposition', 'attachment; filename*=UTF-8\'\'' + title);
-      const video = ytdl(URL, {quality: 'highestvideo'})
+      const video = ytdl(URL)
       video.pipe(res);
     })
   } catch (err) {
