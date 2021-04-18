@@ -2,14 +2,14 @@ const { request } = require('express');
 var express = require('express');
 var router = express.Router();
 
-const ytdl = require('youtube-dl');
+const youtubedl = require('youtube-dl');
 
 /* GET users listing. */
 router.get('/get_video', async function(req, res, next) {
   try {
     var url = req.query.id;
     var URL = 'https://www.youtube.com/watch?v=' + url 
-    const video = ytdl(url, ['-f bestvideo+bestaudio']);
+    const video = youtubedl(URL , ['-f bestvideo+bestaudio']);
 
     video.on('info', function(info) {
       var title = encodeURIComponent(info.title + '.mp4')
