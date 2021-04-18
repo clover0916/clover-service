@@ -9,7 +9,7 @@ router.get('/get_video', async function(req, res, next) {
   try {
     var url = req.query.id;
     var URL = 'https://www.youtube.com/watch?v=' + url 
-    const video = youtubedl(URL , ['-f bestvideo+bestaudio']);
+    const video = youtubedl(URL)
 
     video.on('info', function(info) {
       console.log(info)
