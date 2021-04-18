@@ -12,6 +12,7 @@ router.get('/get_video', async function(req, res, next) {
     const video = youtubedl(URL , ['-f bestvideo+bestaudio']);
 
     video.on('info', function(info) {
+      console.log(info)
       var title = encodeURIComponent(info.title + '.mp4')
       res.header('Content-Disposition', 'attachment; filename*=UTF-8\'\'' + title);
       video.pipe(res);
