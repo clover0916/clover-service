@@ -12,7 +12,7 @@ router.get('/get_video', async function(req, res, next) {
     const video = ytdl(url,{filter: (format) => format.container === 'mp4' });
     const info = await ytdl.getInfo(URL);
     var title = encodeURIComponent(info.videoDetails.title + '.mp4')    
-    res.header('Content-Disposition', 'attachment; filename*=UTF-8\'\'' + title);
+    res.header('Content-Disposition', 'attachment; filename*=UTF-8\'' + title + '\'');
     video.pipe(res);
   } catch (err) {
     res.send("Too many request.")
