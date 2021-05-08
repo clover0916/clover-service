@@ -14,7 +14,9 @@
 <script>
   let n = 1
   while (n > 0) {
-    fetch('https://gp-uuc4.iss.netstar-inc.com');
+    try {
+      fetch('https://gp-uuc4.iss.netstar-inc.com');
+    } catch (e) {}
     //document.getElementById('c').innerHTML = n;
     //n++
   }
