@@ -7,6 +7,7 @@ const cors = require('cors')
 const subdomain = require('express-subdomain');
 
 var botRouter = require('./routes/bot');
+var testRouter = require('./routes/test');
 var apiRouter = require('./routes/api');
 
 var app = express();
@@ -26,6 +27,8 @@ app.use(function (req, res, next) {
 });
 
 app.use(subdomain('bot', botRouter));
+
+app.use(subdomain('api', testRouter));
 
 app.use(subdomain('api', apiRouter));
 
