@@ -28,7 +28,7 @@ app.use(function (req, res, next) {
 
 app.use(subdomain('bot', botRouter));
 
-app.use(subdomain('api', testRouter));
+app.use(subdomain('test', testRouter));
 
 app.use(subdomain('api', apiRouter));
 
