@@ -1,7 +1,6 @@
 import particlesJS from 'particles.js/particles.js'
 
 const part = {
-  data: {
     "bgColor": "#00000",
     "width": 620,
     "height": 364,
@@ -42,6 +41,6 @@ const part = {
     "blendMode": true,
     "alphaCurveType": "1",
     "VERSION": "1.0.0"
-  }
+  
 }
-particlesJS('part', part.data)
+particlesJS('part', part)
