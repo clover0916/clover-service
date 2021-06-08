@@ -10,7 +10,7 @@ module.exports = {
     index: './src/index.js',
     error: ['./src/error.js', './src/error.scss'],
     test: './src/test.scss',
-    three: '.src/three.js'
+    three: './src/three.js'
   },
   output: {
     path: path.join(__dirname, 'public', 'dist'),
