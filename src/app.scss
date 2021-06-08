@@ -1,4 +1,5 @@
-@use "@material/theme"with ($primary: #008200,
+@use "@material/theme" with (
+  $primary: #008200,
   $secondary: #FF6E00,
   $on-primary: #FFFFFF,
 );
@@ -6,12 +7,10 @@
 @use "@material/elevation/mdc-elevation";
 @use "@material/layout-grid/mdc-layout-grid";
 @use "@material/top-app-bar/mdc-top-app-bar";
-@use "@material/top-app-bar";
 @use "@material/circular-progress/mdc-circular-progress";
 @use "@material/card";
 @use "@material/dialog";
 @use "@material/button/styles";
-@use "@material/button";
 @use "@material/icon-button";
 @use "@material/floating-label/mdc-floating-label";
 @use "@material/line-ripple/mdc-line-ripple";
@@ -24,7 +23,6 @@
 @use "@material/animation";
 @use "@material/linear-progress";
 
-@include list.core-styles;
 @include icon-button.core-styles;
 @include card.core-styles;
 @include dialog.core-styles;
@@ -32,6 +30,7 @@
 @include drawer.core-styles;
 @include drawer.dismissible-core-styles;
 @include drawer.modal-core-styles;
+@include list.core-styles;
 @include linear-progress.core-styles;
 
 * {
