@@ -25,6 +25,7 @@
 @use "@material/animation";
 @use "@material/linear-progress";
 
+@include list.core-styles;
 @include icon-button.core-styles;
 @include card.core-styles;
 @include dialog.core-styles;
@@ -32,7 +33,6 @@
 @include drawer.core-styles;
 @include drawer.dismissible-core-styles;
 @include drawer.modal-core-styles;
-@include list.core-styles;
 @include linear-progress.core-styles;
 
 * {
