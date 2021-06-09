@@ -25,16 +25,16 @@
     const scene = new THREE.Scene();
     loader.load('assets/test_model.glb', function (gltf) {
 	    scene.add(gltf.scene);
+	    
+	    if ( WEBGL.isWebGLAvailable() ) {
+	      renderer.render(scene, gltf.cameras[0]);
+	    } else {
+	      const warning = WEBGL.getWebGLErrorMessage();
+	      alert(warning)
+	    }
     }, undefined, function(error) {
 	    console.error( error );
     });
-
-    if ( WEBGL.isWebGLAvailable() ) {
-	    renderer.render(scene, camera);
-    } else {
-	    const warning = WEBGL.getWebGLErrorMessage();
-	    alert(warning)
-    }
   </script>
 </body>
 
