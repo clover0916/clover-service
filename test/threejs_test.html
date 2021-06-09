@@ -20,7 +20,7 @@
     camera.position.z = 600;
 
     var geometry = new THREE.BoxGeometry(200,200,200);//ジオメトリを用意
-    var material = new THREE.MeshStandardMaterial( { color: 0x90ee90 });//ランバートマテリアルを用意
+    var material = new THREE.MeshStandardMaterial( { color: 0x90ee90 , roughness: 0});//ランバートマテリアルを用意
     var cube = new THREE.Mesh( geometry, material); //ジオメトリとマテリアルを合体させたものがcubeだ
     cube.receiveShadow = true;
     cube.receiveShadow = true;
