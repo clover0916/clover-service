@@ -22,7 +22,7 @@
     renderer.setSize( window.innerWidth, window.innerHeight );
     document.body.appendChild( renderer.domElement );
 
-    loader.load('assets/test_model.glb', function (gltf) {
+    loader.load('assets/three/test_model.glb', function (gltf) {
 	    if ( WEBGL.isWebGLAvailable() ) {
 	      renderer.render(gltf.scene, gltf.cameras[0]);
 	    } else {
