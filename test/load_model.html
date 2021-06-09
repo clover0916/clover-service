@@ -15,41 +15,45 @@
   <script type="module">
     import * as THREE from 'https://cdn.skypack.dev/three@latest';
     import { WEBGL } from 'https://cdn.skypack.dev/three@latest/examples/jsm/WebGL.js'
-    import { OrbitControls } from 'https://cdn.skypack.dev/three@latest/examples/jsm/loaders/OrbitControls.js';
     import { GLTFLoader } from 'https://cdn.skypack.dev/three@latest/examples/jsm/loaders/GLTFLoader.js';
     
-    const renderer = new THREE.WebGLRenderer();
-    renderer.setSize( window.innerWidth, window.innerHeight );
-    document.body.appendChild( renderer.domElement );
-
-    const camera = new THREE.PerspectiveCamera( 90, window.innerWidth / window.innerHeight, 1, 1000 );
-
     const scene = new THREE.Scene();
- 
-    const loader = new GLTFLoader();
-    const renderer = new THREE.WebGLRenderer();
-    renderer.setSize( window.innerWidth, window.innerHeight );
-    document.body.appendChild( renderer.domElement );
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
-    loader.load('assets/three/test_model.glb', function (gltf) {
-      scene.add(gltf.scene)
-    }, undefined, function(error) {
-	    console.error( error );
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+    
+    const axis = THREE.AxisHelper(2000);
+    axis.position.set(0, 0, 0);
+    scene.add(axis);
+    
+    const light = new THREE.AmbientLight(0xffffff, 1.0);
+    scene.add(light);
+
+    const gltfLoader = new GLTFLoader();
+    gltfLoader.load('../public/assets/three/test_model.glb', function (data) {
+      console.log('Loaded')
+      const gltf = data;
+      const object = gltf.scene;
+      scene.add(object);
     });
     
-    hemisphereLight = new THREE.HemisphereLight(0xffffff, 0x4169e1, 1.8);
-    scene.add(hemisphereLight);
     
-    function tick() {
-      requestAnimationFrame(tick);
+
+    camera.position.z = 20;
+
+    function animate() {
+      requestAnimationFrame(animate);
       renderer.render(scene, camera);
     }
     
     if ( WEBGL.isWebGLAvailable() ) {
-      tick();
+	    // Initiate function or other initializations here
+	    animate();
     } else {
-    const warning = WEBGL.getWebGLErrorMessage();
-    alert(warning)
+	    const warning = WEBGL.getWebGLErrorMessage();
+	    alert(warning)
     }
   </script>
 </body>
