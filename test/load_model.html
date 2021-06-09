@@ -32,16 +32,25 @@
     document.body.appendChild( renderer.domElement );
 
     loader.load('assets/three/test_model.glb', function (gltf) {
-	    if ( WEBGL.isWebGLAvailable() ) {
-	      scene.add(gltf.scene)
-	      renderer.render(scene, camera);
-	    } else {
-	      const warning = WEBGL.getWebGLErrorMessage();
-	      alert(warning)
-	    }
+      scene.add(gltf.scene)
     }, undefined, function(error) {
 	    console.error( error );
     });
+    
+    hemisphereLight = new THREE.HemisphereLight(0xffffff, 0x4169e1, 1.8);
+    scene.add(hemisphereLight);
+    
+    function tick() {
+      requestAnimationFrame(tick);
+      renderer.render(scene, camera);
+    }
+    
+    if ( WEBGL.isWebGLAvailable() ) {
+      tick();
+    } else {
+    const warning = WEBGL.getWebGLErrorMessage();
+    alert(warning)
+    }
   </script>
 </body>
 
