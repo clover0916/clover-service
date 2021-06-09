@@ -15,8 +15,17 @@
   <script type="module">
     import * as THREE from 'https://cdn.skypack.dev/three@latest';
     import { WEBGL } from 'https://cdn.skypack.dev/three@latest/examples/jsm/WebGL.js'
+    import { OrbitControls } from 'https://cdn.skypack.dev/three@latest/examples/jsm/loaders/OrbitControls.js';
     import { GLTFLoader } from 'https://cdn.skypack.dev/three@latest/examples/jsm/loaders/GLTFLoader.js';
     
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize( window.innerWidth, window.innerHeight );
+    document.body.appendChild( renderer.domElement );
+
+    const camera = new THREE.PerspectiveCamera( 90, window.innerWidth / window.innerHeight, 1, 1000 );
+
+    const scene = new THREE.Scene();
+ 
     const loader = new GLTFLoader();
     const renderer = new THREE.WebGLRenderer();
     renderer.setSize( window.innerWidth, window.innerHeight );
@@ -24,7 +33,8 @@
 
     loader.load('assets/three/test_model.glb', function (gltf) {
 	    if ( WEBGL.isWebGLAvailable() ) {
-	      renderer.render(gltf.scene, gltf.cameras[0]);
+	      scene.add(gltf.scene)
+	      renderer.render(scene, camera);
 	    } else {
 	      const warning = WEBGL.getWebGLErrorMessage();
 	      alert(warning)
