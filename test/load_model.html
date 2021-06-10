@@ -22,7 +22,7 @@
 
     const loader = new GLTFLoader();
 
-    loader.load('../public/assets/three/test_model.glb', function(gltf) {
+    loader.load('assets/three/test_model.glb', function(gltf) {
 	    scene.add(gltf.scene);
     }, undefined, function(error) {
 	    console.error(error);
@@ -48,8 +48,6 @@
  
     //キューブを回転させて再描画
     function animate(){
-      cube.rotation.x += 0.01;
-      cube.rotation.y += 0.01;
       requestAnimationFrame( animate );
       renderer.render( scene, camera );
     }
