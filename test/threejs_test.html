@@ -14,42 +14,60 @@
 <body>
   <script type="module">
     import * as THREE from 'https://cdn.skypack.dev/three@latest';
+    import { OrbitControls } from 'https://cdn.skypack.dev/three@latest/examples/jsm/controls/OrbitControls.js';
     
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(65, window.innerWidth / window.innerHeight, 1, 1000);
-    camera.position.z = 600;
-
-    var geometry = new THREE.BoxGeometry(200,200,200);//ジオメトリを用意
+    camera.position.z = 50;
+    
+    var geometry = new THREE.BoxGeometry(10,10,10);//ジオメトリを用意
     var material = new THREE.MeshStandardMaterial( { color: 0x90ee90 , roughness: 0});//ランバートマテリアルを用意
     var cube = new THREE.Mesh( geometry, material); //ジオメトリとマテリアルを合体させたものがcubeだ
     cube.receiveShadow = true;
-    cube.receiveShadow = true;
-    cube.rotation.set(0.5, 0.5, 0); //cube回転
+    cube.castShadow = true;
+    cube.position.y = 5
     scene.add( cube ); //シーンに追加
+    
+     const floor = new THREE.Mesh(
+     new THREE.PlaneGeometry(100, 100),
+     new THREE.MeshStandardMaterial({ color: 0x808080, roughness: 0.0, side: THREE.DoubleSide})
+    );
+    floor.receiveShadow = true;
+    floor.castShadow = true;
+    floor.rotation.x = Math.PI / -2;
+    scene.add(floor);
  
     //ライティング
-    var directionalLight = new THREE.DirectionalLight( 0xffffff, 1 ); //平行光源（色、強度）
-    directionalLight.castShadow = true;
-    directionalLight.shadow.mapSize.width = 2048;
-    directionalLight.shadow.mapSize.height = 2048;
-    directionalLight.position.set(0,0,3);
-    scene.add( directionalLight );
+    //var ambientLight = new THREE.AmbientLight( 0xffffff, 0.3 ); //平行光源（色、強度）
+    //scene.add(ambientLight)
+    var light = new THREE.PointLight( 0xffffff, 1 ); //平行光源（色、強度）
+    light.castShadow = true;
+    light.shadow.mapSize.width = 2048;
+    light.shadow.mapSize.height = 2048;
+    light.position.y = 25
+    light.position.z = 25
+    scene.add(light);
+    
+    const helper = new THREE.PointLightHelper(light);
+    scene.add(helper);
  
     //レンダラー
-    var renderer = new THREE.WebGLRenderer({antialias: true});
+    var renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.shadowMap.enabled = true;
-    renderer.setClearColor(new THREE.Color('white'));//背景色の設定
+    //renderer.setClearColor(new THREE.Color('white'));//背景色の設定
     document.body.appendChild( renderer.domElement );
+    
+    const controls = new OrbitControls( camera, renderer.domElement );
  
     //レンダリング
     renderer.render( scene, camera );
  
-    //キューブを回転させて再描画
     function animate(){
-      cube.rotation.x += 0.01;
-      cube.rotation.y += 0.01;
+      light.position.x += 1
+      helper.update();
       requestAnimationFrame( animate );
+      controls.update();
       renderer.render( scene, camera );
     }
     animate();
