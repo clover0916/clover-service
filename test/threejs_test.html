@@ -23,7 +23,6 @@
     var geometry = new THREE.BoxGeometry(10,10,10);//ジオメトリを用意
     var material = new THREE.MeshStandardMaterial( { color: 0x90ee90 , roughness: 0});//ランバートマテリアルを用意
     var cube = new THREE.Mesh( geometry, material); //ジオメトリとマテリアルを合体させたものがcubeだ
-    cube.receiveShadow = true;
     cube.castShadow = true;
     cube.position.y = 5
     scene.add( cube ); //シーンに追加
@@ -33,7 +32,6 @@
      new THREE.MeshStandardMaterial({ color: 0x808080, roughness: 0.0, side: THREE.DoubleSide})
     );
     floor.receiveShadow = true;
-    floor.castShadow = true;
     floor.rotation.x = Math.PI / -2;
     scene.add(floor);
  
@@ -42,8 +40,6 @@
     //scene.add(ambientLight)
     var light = new THREE.PointLight( 0xffffff, 1 ); //平行光源（色、強度）
     light.castShadow = true;
-    light.shadow.mapSize.width = 2048;
-    light.shadow.mapSize.height = 2048;
     light.position.y = 25
     light.position.z = 25
     scene.add(light);
@@ -64,7 +60,6 @@
     renderer.render( scene, camera );
  
     function animate(){
-      light.position.x += 1
       helper.update();
       requestAnimationFrame( animate );
       controls.update();
