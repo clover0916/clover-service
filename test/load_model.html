@@ -1,58 +1,106 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>hello_ammo</title>
+        <!-- https://raw.githubusercontent.com/kripken/ammo.js/52e7061924d2f1a4728f3cb4550794d25a0074af/builds/ammo.js -->
+        <script src="../public/assets/ammo.js"></script>
+    </head>
+    <body>
+        <script>
+            // htmlファイルを読み込んだら実行
+            window.addEventListener("DOMContentLoaded", function(){
+                // 物理エンジンの初期化
+                function init() {
+                    // 物理エンジンの初期化部分はお約束なので気になる方は個別にお調べください
+                    var collisionConfiguration = new Ammo.btDefaultCollisionConfiguration();
+                    var dispatcher = new Ammo.btCollisionDispatcher(collisionConfiguration);
+                    var overlappingPairCache = new Ammo.btDbvtBroadphase();
+                    var solver = new Ammo.btSequentialImpulseConstraintSolver();
+                    // 物理エンジンの世界(ワールド)を作成。剛体を全てここに追加していく
+                    var dynamicsWorld = new Ammo.btDiscreteDynamicsWorld(
+                        dispatcher, 
+                        overlappingPairCache, 
+                        solver, 
+                        collisionConfiguration
+                    );
+                    // 重力の設定(Y軸に対して設定)
+                    dynamicsWorld.setGravity(new Ammo.btVector3(0, -10, 0));
+                    return dynamicsWorld;
+                }
 
-<head>
-  <meta charset="utf-8">
-  <title>Load Model</title>
-  <style>
-    body {
-      margin: 0;
-    }
-  </style>
-</head>
+                // 地面の設定
+                function make_ground(size, pos) {
+                    // 初期状態を設定する
+                    var form = new Ammo.btTransform();
+                    // 初期化する
+                    form.setIdentity();
+                    // 初期座標を設定する
+                    form.setOrigin(pos);
+                    // 剛体を作成する。
+                    return new Ammo.btRigidBody(
+                        // 剛体を設定する
+                        new Ammo.btRigidBodyConstructionInfo(
+                            0,  // 質量を0にすることで、質量無限大＝動かなくなる
+                            new Ammo.btDefaultMotionState(form),  // 初期状態
+                            new Ammo.btBoxShape(size), // 箱の形状。一辺が指定値の2倍になる
+                            new Ammo.btVector3(0, 0, 0) // 慣性モーメント=物体の回転のしにくさ。地面は動かないので全部0
+                        )
+                    );
+                }
 
-<body>
-  <script type="module">
-    import * as THREE from 'https://cdn.skypack.dev/three@latest';
-    import { GLTFLoader } from 'https://cdn.skypack.dev/three@latest/examples/jsm/loaders/GLTFLoader.js';
-    
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(65, window.innerWidth / window.innerHeight, 1, 1000);
-    camera.position.z = 100;
+                // 球の設定
+                function make_sphere(r, mass, pos) {
+                    var form = new Ammo.btTransform();
+                    form.setIdentity();
+                    form.setOrigin(pos);
+                    // 半径rの球を設定
+                    var shpere = new Ammo.btSphereShape(r);
+                    // 質量massで慣性モーメントを設定。質量が設定された剛体は以下2行で値を設定するのがお約束
+                    var localInertia = new Ammo.btVector3(0, 0, 0);
+                    shpere.calculateLocalInertia(mass,localInertia);
+                    return new Ammo.btRigidBody(
+                        new Ammo.btRigidBodyConstructionInfo(
+                            mass, // 質量
+                            new Ammo.btDefaultMotionState(form),   // 初期状態
+                            shpere, // 球の形状
+                            localInertia // 慣性モーメント
+                        )
+                    );
+                }
 
-    const loader = new GLTFLoader();
+                // 初期化。ワールドを取得
+                var world = init();
+                // 地面の設定。大きさと位置を指定。（原点が重心となるため、Y軸を-1ずらすことで、Y=0に地面が設定される）
+                var ground = make_ground(
+                    new Ammo.btVector3(5, 1, 5), 
+                    new Ammo.btVector3(0, -1, 0)
+                );
+                // 地面をワールドに登録
+                world.addRigidBody(ground);
+                // 球の設定。半径１、重量１、位置は地面に対して、10高く設定
+                var sphere = make_sphere(1, 1, new Ammo.btVector3(0, 10, 0));
+                // 球をワールドに登録
+                world.addRigidBody(sphere);
 
-    loader.load('assets/three/test_model.glb', function(gltf) {
-	    scene.add(gltf.scene);
-    }, undefined, function(error) {
-	    console.error(error);
-    } );
- 
-    //ライティング
-    var directionalLight = new THREE.DirectionalLight( 0xffffff, 1 ); //平行光源（色、強度）
-    directionalLight.castShadow = true;
-    directionalLight.shadow.mapSize.width = 2048;
-    directionalLight.shadow.mapSize.height = 2048;
-    directionalLight.position.set(0,0,3);
-    scene.add( directionalLight );
- 
-    //レンダラー
-    var renderer = new THREE.WebGLRenderer();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.shadowMap.enabled = true;
-    renderer.setClearColor(new THREE.Color('white'));//背景色の設定
-    document.body.appendChild( renderer.domElement );
- 
-    //レンダリング
-    renderer.render( scene, camera );
- 
-    //キューブを回転させて再描画
-    function animate(){
-      requestAnimationFrame( animate );
-      renderer.render( scene, camera );
-    }
-    animate();
-  </script>
-</body>
+                // 物理エンジン実行後の座標を入れるためのオブジェクトを生成
+                var trans = new Ammo.btTransform();
 
+                // 60fpsで100フレーム分まわす
+                for (var i = 0; i < 100; i++) {
+                    // 1フレーム分演算
+                    world.stepSimulation(1/60, 0);
+                    // 演算後の球の位置がtransに入る
+                    sphere.getMotionState().getWorldTransform(trans);
+                    // 座標を出力
+                    console.log("sphere pos = " + 
+                        [trans.getOrigin().x().toFixed(2), 
+                         trans.getOrigin().y().toFixed(2), 
+                         trans.getOrigin().z().toFixed(2)]
+                    );
+                }
+
+            }, false);
+        </script>
+    </body>
 </html>
