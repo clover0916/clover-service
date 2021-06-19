@@ -10,10 +10,11 @@
 </head>
 
 <body>
-  <audio loop="loop" autoplay="autoplay">
+  <audio loop="loop" id="music">
     <source type="audio/mpeg" src="assets/audio/rain.mp3">
   </audio>
   <div id="part"></div>
+  <button>始める</button>
   <script>
     particlesJS('part',
     {
@@ -96,6 +97,13 @@
       },
       "retina_detect": true
     })
+  </script>
+  <script>
+    document.getElementById('music').addEventListener('click', audioPlay);
+    function audioPlay() {
+      document.getElementById('music').play();
+    document.removeEventListener('click', audioPlay);
+    }
   </script>
 </body>
 
