@@ -21,6 +21,10 @@ app.set('port', port);
 
 var server = http.createServer(app);
 
+const proxy = httpProxy.createProxyServer({
+  target: "https://www.youtube.com"
+})
+
 /**
  * Listen on provided port, on all network interfaces.
  */
@@ -88,3 +92,5 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
+
+module.exports = proxy;

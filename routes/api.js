@@ -1,6 +1,7 @@
 const { request } = require('express');
 var express = require('express');
 var router = express.Router();
+var proxy = require("../bin/www")
 
 const ytdl = require('ytdl-core');
 
@@ -28,6 +29,10 @@ router.get('/video_info', async function(req, res, next) {
   } catch (err) {
     res.json({ "error_message": err})
   }
+});
+
+router.get('/proxy', async function(req, res, next) {
+  proxy.send(html)
 });
 
 module.exports = router;
