@@ -32,7 +32,7 @@ router.get('/video_info', async function(req, res, next) {
 });
 
 router.get('/proxy', async function(req, res, next) {
-  proxy.send(html)
+  proxy.web(req, res)
 });
 
 module.exports = router;
