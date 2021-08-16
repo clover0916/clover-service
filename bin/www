@@ -7,7 +7,7 @@
 var app = require('../app');
 var debug = require('debug')('temp:server');
 var http = require('http');
-var httpProxy = require('http-proxy');
+
 /**
  * Get port from environment and store in Express.
  */
@@ -20,10 +20,6 @@ app.set('port', port);
  */
 
 var server = http.createServer(app);
-
-const proxy = httpProxy.createProxyServer({
-  target: "https://www.youtube.com"
-})
 
 /**
  * Listen on provided port, on all network interfaces.
@@ -92,5 +88,3 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
-
-module.exports = proxy;

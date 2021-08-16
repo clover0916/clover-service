@@ -1,10 +1,11 @@
 const { request } = require('express');
 var express = require('express');
 var router = express.Router();
-var proxy = require("../bin/www")
+const { createProxyMiddleware } = require('http-proxy-middleware');
 
 const ytdl = require('ytdl-core');
 
+router.use('/proxy', createProxyMiddleware({ target: 'http://www.youtube.com', changeOrigin: true }));
 /* GET users listing. */
 router.get('/get_video', async function(req, res, next) {
   try {
@@ -29,10 +30,6 @@ router.get('/video_info', async function(req, res, next) {
   } catch (err) {
     res.json({ "error_message": err})
   }
-});
-
-router.get('/proxy', async function(req, res, next) {
-  proxy.web(req, res)
 });
 
 module.exports = router;
