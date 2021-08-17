@@ -5,7 +5,7 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 
 const ytdl = require('ytdl-core');
 
-router.use('/proxy', createProxyMiddleware({ target: 'https://www.youtube.com'}));
+router.use('/proxy', createProxyMiddleware({ target: 'https://www.youtube.com', pathRewrite: {'^/proxy' : ''}}));
 /* GET users listing. */
 router.get('/get_video', async function(req, res, next) {
   try {
