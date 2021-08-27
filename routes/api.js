@@ -32,4 +32,26 @@ router.get('/video_info', async function(req, res, next) {
   }
 });
 
+router.get('/img2webp', async function(req, res, next) {
+  var query = req.query.data;
+  var imgBuffer = Buffer.from(query, 'base64').toString();
+  sharp(imgBuffer)
+    .toBuffer()
+    .then(data => {
+      var f = Buffer.from(data).toString('base64');
+      const send = {
+        file: f  
+      }
+      res.json(send)
+    })
+    .catch(err => console.log(`downisze issue ${err}`))
+  var URL = 'https://www.youtube.com/watch?v=' + id
+  try {
+    const info = await ytdl.getInfo(URL);
+    res.json(info)
+  } catch (err) {
+    res.json({ "error_message": err})
+  }
+});
+
 module.exports = router;
