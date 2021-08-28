@@ -2,7 +2,7 @@ const { request } = require('express');
 var express = require('express');
 var router = express.Router();
 const { createProxyMiddleware } = require('http-proxy-middleware');
-
+var multer = require('multer');
 const ytdl = require('ytdl-core');
 
 router.use('/proxy', createProxyMiddleware({ target: 'https://www.youtube.com', pathRewrite: {'^/proxy' : ''}}));
@@ -32,26 +32,10 @@ router.get('/video_info', async function(req, res, next) {
   }
 });
 
-router.get('/img2webp', async function(req, res, next) {
-  var query = req.query.data;
-  var imgBuffer = Buffer.from(query, 'base64').toString();
-  sharp(imgBuffer)
-    .toBuffer()
-    .then(data => {
-      var f = Buffer.from(data).toString('base64');
-      const send = {
-        file: f  
-      }
-      res.json(send)
-    })
-    .catch(err => console.log(`downisze issue ${err}`))
-  var URL = 'https://www.youtube.com/watch?v=' + id
-  try {
-    const info = await ytdl.getInfo(URL);
-    res.json(info)
-  } catch (err) {
-    res.json({ "error_message": err})
-  }
+router.get('/img2webp', multer({ dest: 'uploads/' }).array('files', 1), async function(req, res, next) {
+  console.log('--- req.files ---')
+  console.log(req.files)
+  res.send('Done')
 });
 
 module.exports = router;
