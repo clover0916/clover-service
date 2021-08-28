@@ -32,10 +32,10 @@ router.get('/video_info', async function(req, res, next) {
   }
 });
 
-router.get('/img2webp', multer({ dest: 'uploads/' }).array('files', 1), async function(req, res, next) {
+router.post('/img2webp', multer({ dest: '../public/assets/uploads/' }).array('files', 1), async function(req, res, next) {
   console.log('--- req.files ---')
   console.log(req.files)
-  res.send('Done')
+  res.send(req.file.originalname + 'ファイルのアップロードが完了しました。');
 });
 
 module.exports = router;
