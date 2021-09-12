@@ -39,13 +39,13 @@ router.post('/img2webp', multer({ dest: 'img2webp/original/' }).array('files', 1
   console.log(req.files)
   
   const imgName = req.files[0].originalname.split('.')[0];
-  sharp(`img2webp/original/${req.files[0].path}/${req.files[0].filename}`)
+  sharp(`${req.files[0].path}/${req.files[0].filename}`)
     .webp({
       quality: 100
     })
     .toFile(`img2webp/webp/${imgName}.webp`, (err) => { // 画像ファイル名.webpで出力
       if ( err ) console.error(err);
-      fs.unlinkSync(`img2webp/original/${req.files[0].path}/${req.files[0].filename}`);
+      fs.unlinkSync(`${req.files[0].path}/${req.files[0].filename}`);
       res.download(`img2webp/webp/${imgName}.webp`)
     });
   
