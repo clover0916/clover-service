@@ -42,7 +42,7 @@
     "express-subdomain": "^1.0.5",
     "three": "latest",
     "multer": "latest",
-    "http-proxy-middleware": "latest",
+    "sharp": "latest",
     "@fortawesome/fontawesome-free": "latest",
     "@material/button": "^10.0.0",
     "@material/drawer": "^10.0.0",
