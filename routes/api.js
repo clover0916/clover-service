@@ -47,10 +47,10 @@ router.post('/img2webp', multer({ dest: 'img2webp/original/' }).array('files', 1
     .toFile(path.resolve(`routes/img2webp/webp/${imgName}.webp`), async (err) => { // 画像ファイル名.webpで出力
       if ( err ) console.error(err);
       fs.unlinkSync(req.files[0].path);
-      const img = await fs.readFile(path.resolve(`img2webp/webp/${imgName}.webp`));
       const fileName = encodeURIComponent(`${imgName}.webp`);
       res.set({'Content-Disposition': `attachment; filename=${fileName}`});
-      res.status(200).send(img)
+      var filestream = fs.createReadStream(path.resolve(`img2webp/webp/${imgName}.webp`));
+      filestream.pipe(res);
       
     });
   
