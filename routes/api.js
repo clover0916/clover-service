@@ -5,6 +5,7 @@ var multer = require('multer');
 const ytdl = require('ytdl-core');
 const sharp = require('sharp');
 const fs = require('fs');
+const path = require('path');
 
 /* GET users listing. */
 router.get('/get_video', async function(req, res, next) {
@@ -43,7 +44,7 @@ router.post('/img2webp', multer({ dest: 'img2webp/original/' }).array('files', 1
     .webp({
       quality: 100
     })
-    .toFile(`img2webp/webp/${imgName}.webp`, (err) => { // 画像ファイル名.webpで出力
+    .toFile(path.resolve(`img2webp/webp/${imgName}.webp`), (err) => { // 画像ファイル名.webpで出力
       if ( err ) console.error(err);
       fs.unlinkSync(req.files[0].path);
       res.download(`img2webp/webp/${imgName}.webp`)
