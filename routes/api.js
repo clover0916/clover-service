@@ -45,7 +45,6 @@ router.post('/img2webp', multer({ dest: 'img2webp/original/' }).array('files', 1
     })
     .toFile(`img2webp/webp/${imgName}.webp`, (err) => { // 画像ファイル名.webpで出力
       if ( err ) console.error(err);
-      fs.unlinkSync(`${req.files[0].path}/${req.files[0].filename}`);
       res.download(`img2webp/webp/${imgName}.webp`)
     });
   
