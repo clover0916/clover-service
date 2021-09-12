@@ -1,11 +1,9 @@
 const { request } = require('express');
 var express = require('express');
 var router = express.Router();
-const { createProxyMiddleware } = require('http-proxy-middleware');
 var multer = require('multer');
 const ytdl = require('ytdl-core');
 
-router.use('/proxy', createProxyMiddleware({ target: 'https://www.youtube.com', pathRewrite: {'^/proxy' : ''}}));
 /* GET users listing. */
 router.get('/get_video', async function(req, res, next) {
   try {
