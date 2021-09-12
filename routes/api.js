@@ -37,7 +37,6 @@ router.post('/img2webp', multer({ dest: 'img2webp/original/' }).array('files', 1
   console.log(req.body)
   console.log('--- req.files ---')
   console.log(req.files)
-  res.send(req.files[0].originalname + 'ファイルのアップロードが完了しました。');
   
   const imgName = req.files[0].originalname.split('.')[0];
   sharp(`img2webp/original/${req.files[0].originalname}`)
