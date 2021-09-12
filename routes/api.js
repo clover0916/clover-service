@@ -49,7 +49,7 @@ router.post('/img2webp', multer({ dest: 'img2webp/original/' }).array('files', 1
       fs.unlinkSync(req.files[0].path);
       const fileName = encodeURIComponent(`${imgName}.webp`);
       res.set({'Content-Disposition': `attachment; filename=${fileName}`});
-      var filestream = fs.createReadStream(path.resolve(`img2webp/webp/${imgName}.webp`));
+      var filestream = fs.createReadStream(path.resolve(`routes/img2webp/webp/${imgName}.webp`));
       filestream.pipe(res);
       
     });
