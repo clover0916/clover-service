@@ -31,9 +31,11 @@ router.get('/video_info', async function(req, res, next) {
 });
 
 router.post('/img2webp', multer({ dest: './img2webp' }).array('files', 1), async function(req, res, next) {
+  console.log('--- req.body --')
+  console.log(req.body)
   console.log('--- req.files ---')
   console.log(req.files)
-  res.send(req.file.originalname + 'ファイルのアップロードが完了しました。');
+  res.send(req.files[0].originalname + 'ファイルのアップロードが完了しました。');
 });
 
 module.exports = router;
