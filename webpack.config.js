@@ -5,6 +5,8 @@ module.exports = {
   mode: 'production',
   entry: {
     app: ['./src/app.scss', './src/app.js'],
+    ytdl: './src/ytdl.js',
+    youtube: './src/youtube.js',
     commands: ['./src/commands.js', './src/commands.scss'],
     bot: ['./src/bot.js', './src/bot.scss'],
     index: './src/index.js',
