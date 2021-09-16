@@ -24,6 +24,7 @@ fetch('https://api.clover-service.online/video_info?id=' + file, { method: 'GET'
       .then(response => response.arrayBuffer())
       .then(videoData => {
         videoSourceBuffer.appendBuffer(videoData);
+        document.getElementById("play-text").innerHTML = "Play";
       });
   })
   .catch(err => {
