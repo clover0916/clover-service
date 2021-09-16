@@ -47,7 +47,7 @@ document.getElementById("play-button").onclick = function() {
     document.getElementById("play-text").innerHTML = "Stop";
     np = true;
   } else {
-    videoTag.stop()
+    videoTag.pause()
     document.getElementById("play-text").innerHTML = "Play";
     np = false;
   }
