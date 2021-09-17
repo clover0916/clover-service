@@ -1,6 +1,10 @@
 import { MDCTextField } from '@material/textfield';
+import {MDCMenu} from '@material/menu';
 
 const textField = new MDCTextField(document.querySelector('.mdc-text-field'));
+const menu = new MDCMenu(document.querySelector('.mdc-menu'));
+menu.open = true;
+list.singleSelection = true;
 
 document.getElementById('get_video').addEventListener('click', function() {
   document.getElementById("video_url").value = document.getElementById("video_url").value.replace('https://www.youtube.com/watch?v=', '')

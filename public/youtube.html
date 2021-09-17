@@ -6,7 +6,7 @@
   <title>Clover - Youtube</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="dist/app.css">
-  <link rel="stylesheet" href="/assets/css/youtube.css">
+  <link rel="stylesheet" href="assets/css/youtube.css">
 </head>
 
 <body class="mdc-typography">
@@ -146,7 +146,9 @@
           <div id="play-button">
             <p id="play-text">Loading</p>
           </div>
-
+          <div class="mdc-menu mdc-menu-surface" id="demo-menu">
+            <ul class="mdc-deprecated-list" role="menu" id="quality" aria-hidden="true" aria-orientation="vertical" tabindex="-1"></ul>
+          </div>
           <h3 class="mdc-typography--headline3 font-regular text-border-bottom" id="video_title"></h3>
           <p class="mdc-typography--body2 font-light" id="video_description"></p>
         </div>
@@ -155,7 +157,7 @@
       <p class="mdc-typography--caption footer-copy">Copyright ©2020 Clover_Midori All Rights Reserved</p>
     </footer>
   </div>
-  <script src="/assets/youtube.js" async></script>
+  <script src="assets/youtube.js" async></script>
   <script src="dist/youtube.js" async></script>
   <script src="dist/app.js" async></script>
 </body>
