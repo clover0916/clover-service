@@ -17,19 +17,19 @@ fetch('https://api.clover-service.online/video_info?id=' + file, { method: 'GET'
     document.getElementById('video_description').innerHTML = data.videoDetails.description;
     const videoSourceBuffer = myMediaSource.addSourceBuffer(`${data.formats[0].mimeType}; codecs="${data.formats[0].codecs}"`);
 
-    data.formats.forEach(function(dat, i) {
+    data.formats.forEach((dat, index) => {
       var ui = document.getElementById('quality');
       var li = document.createElement("li");
       li.classList.add("mdc-deprecated-list-item")
-      if (i === 0) li.setAttribute('tabindex', "0");
+      if (index === 0) li.setAttribute('tabindex', "0");
       ui.appendChild(li);
       var spam = document.createElement("spam");
       spam.classList.add('mdc-deprecated-list-item__ripple')
       li.appendChild(spam)
       var spam = document.createElement("spam");
-      if(!dat[i].?qualityLabel) return; 
-      spam.innerHTML = dat[i].qualityLabel
-      spam.classList.add('mdc-deprecated-list-item__text')
+      console.log(dat[index])
+      //spam.innerHTML = dat[i].qualityLabel
+      //spam.classList.add('mdc-deprecated-list-item__text')
     })
     // 2. download and add our audio/video to the SourceBuffers
 
