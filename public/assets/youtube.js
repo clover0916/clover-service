@@ -71,11 +71,11 @@ document.getElementById("play-button").onclick = function() {
 };
 
 document.getElementById('fullscreen').onclick = function() {
-  if (elem.requestFullscreen) {
-    elem.requestFullscreen();
-  } else if (elem.webkitRequestFullscreen) { /* Safari */
-    elem.webkitRequestFullscreen();
-  } else if (elem.msRequestFullscreen) { /* IE11 */
-    elem.msRequestFullscreen();
+  if (videoTag.requestFullscreen) {
+    videoTag.requestFullscreen();
+  } else if (videoTag.webkitRequestFullscreen) { /* Safari */
+    videoTag.webkitRequestFullscreen();
+  } else if (videoTag.msRequestFullscreen) { /* IE11 */
+    videoTag.msRequestFullscreen();
   }
 }
