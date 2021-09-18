@@ -27,7 +27,6 @@ fetch('https://api.clover-service.online/video_info?id=' + file, { method: 'GET'
       spam.classList.add('mdc-deprecated-list-item__ripple')
       li.appendChild(spam)
       var spam = document.createElement("spam");
-      if(!dat.qualityLabel) return; 
       spam.innerHTML = dat.qualityLabel
       spam.classList.add('mdc-deprecated-list-item__text')
     })
