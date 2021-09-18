@@ -158,20 +158,21 @@
           </button>
         </div>
         <div>
-        <div class="mdc-touch-target-wrapper">
-          <button class="mdc-icon-button mdc-icon-button--touch material-icons mdc-card__action--icon--unbounded" data-mdc-ripple-is-unbounded="true" >
-            <div class="mdc-icon-button__ripple"></div>
-              settings
-            <div class="mdc-icon-button__touch"></div>
-          </button>
-        </div>
-        </div>
-        <div class="mdc-menu mdc-menu-surface" id="demo-menu">
-          <ul class="mdc-deprecated-list" role="menu" id="quality" aria-hidden="true" aria-orientation="vertical" tabindex="-1"></ul>
-        </div>
-        <h3 class="mdc-typography--headline3 font-regular text-border-bottom" id="video_title"></h3>
-        <p class="mdc-typography--body2 font-light" id="video_description"></p>
-      </div>
+          <div id="demo-menu" class="mdc-menu-surface--anchor">
+            <div class="mdc-touch-target-wrapper">
+              <button class="mdc-icon-button mdc-icon-button--touch material-icons mdc-card__action--icon--unbounded" data-mdc-ripple-is-unbounded="true" id="menu-button">
+                <div class="mdc-icon-button__ripple"></div>
+                settings
+                <div class="mdc-icon-button__touch"></div>
+              </button>
+            </div>
+             <div class="mdc-menu mdc-menu-surface">
+               <ul class="mdc-deprecated-list" role="menu" id="quality" aria-hidden="true" aria-orientation="vertical" tabindex="-1"></ul>
+             </div>
+             <h3 class="mdc-typography--headline3 font-regular text-border-bottom" id="video_title"></h3>
+             <p class="mdc-typography--body2 font-light" id="video_description"></p>
+             </div>
+          </div>
     </main>
     <footer>
       <p class="mdc-typography--caption footer-copy">Copyright ©2020 Clover_Midori All Rights Reserved</p>

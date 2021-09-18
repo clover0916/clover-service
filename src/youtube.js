@@ -14,3 +14,8 @@ document.getElementById('get_video').addEventListener('click', function() {
   //submit()でフォームの内容を送信
   document.myform.submit();
 })
+
+document.getElementById('menu-button').onclick = function() {
+  menu.open = !menu.open
+  menu.setAnchorElement(document.getElementById('demo-menu'));
+}
