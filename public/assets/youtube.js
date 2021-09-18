@@ -39,6 +39,7 @@ fetch('https://api.clover-service.online/video_info?id=' + file, { method: 'GET'
       .then(response => response.arrayBuffer())
       .then(videoData => {
         videoSourceBuffer.appendBuffer(videoData);
+        if (videoTag.canPlayType(data.formats[0].mimeType)) return document.getElementById("play-text").innerHTML = "Not Supported Codec";
         document.getElementById("play-text").innerHTML = "Play";
       });
   })
