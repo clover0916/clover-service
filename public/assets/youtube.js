@@ -27,9 +27,9 @@ fetch('https://api.clover-service.online/video_info?id=' + file, { method: 'GET'
       spam.classList.add('mdc-deprecated-list-item__ripple')
       li.appendChild(spam)
       var spam = document.createElement("spam");
-      console.log(dat[index])
-      //spam.innerHTML = dat[i].qualityLabel
-      //spam.classList.add('mdc-deprecated-list-item__text')
+      if(!dat.qualityLabel) return; 
+      spam.innerHTML = dat.qualityLabel
+      spam.classList.add('mdc-deprecated-list-item__text')
     })
     // 2. download and add our audio/video to the SourceBuffers
 
