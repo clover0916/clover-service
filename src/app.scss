@@ -19,7 +19,6 @@
 @use "@material/notched-outline/mdc-notched-outline";
 @use "@material/textfield";
 @use "@material/drawer";
-@use "@material/list";
 @use "@material/mdc-list";
 @use "@material/menu-surface/mdc-menu-surface";
 @use "@material/menu/mdc-menu";
@@ -33,7 +32,6 @@
 @include drawer.core-styles;
 @include drawer.dismissible-core-styles;
 @include drawer.modal-core-styles;
-@include list.core-styles;
 @include linear-progress.core-styles;
 
 * {
