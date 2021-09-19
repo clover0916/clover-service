@@ -26,7 +26,7 @@ const selector = '.mdc-button, .mdc-icon-button, .mdc-card__primary-action';
 const ripples = [].map.call(document.querySelectorAll(selector), function(el) {
   return new MDCRipple(el);
 });
-const dialog_list = new MDCList(document.querySelector('.demo-dialog .demo-list'));
+const dialog_list = new MDCList(document.querySelector('.mdc-dialog .mdc-deprecated-list'));
 
 dialog.listen('MDCDialog:opened', () => {
   dialog_list.layout();
