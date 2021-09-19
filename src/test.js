@@ -26,11 +26,6 @@ const selector = '.mdc-button, .mdc-icon-button, .mdc-card__primary-action';
 const ripples = [].map.call(document.querySelectorAll(selector), function(el) {
   return new MDCRipple(el);
 });
-const dialog_list = new MDCList(document.querySelector('.mdc-dialog .mdc-deprecated-list'));
-
-dialog.listen('MDCDialog:opened', () => {
-  dialog_list.layout();
-});
 
 document.getElementById('demo-icon').onclick = function() {
   snackbar.open();
@@ -58,6 +53,10 @@ window.WebFontConfig = {
 
 const listEl = document.querySelector('.mdc-drawer .mdc-deprecated-list');
 const mainContentEl = document.querySelector('.main-content');
+
+dialog.listen('MDCDialog:opened', () => {
+  dialog_list.layout();
+});
 
 dialog.listen('MDCDialog:opened', function() {
   // Assuming contentElement references a common parent element with the rest of the page's content
