@@ -11,7 +11,9 @@
 @use "@material/line-ripple/mdc-line-ripple";
 @use "@material/notched-outline/mdc-notched-outline";
 @use "@material/textfield";
+@use "@material/textfield/icon";
 
+@include icon.icon-core-styles;
 @include textfield.core-styles;
 @include card.core-styles;
 @include drawer.core-styles;

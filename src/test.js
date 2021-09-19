@@ -5,7 +5,9 @@ import {MDCDrawer} from "@material/drawer";
 import {MDCIconButtonToggle} from '@material/icon-button';
 import {MDCSnackbar} from '@material/snackbar';
 import { MDCTextField } from '@material/textfield';
+import {MDCTextFieldIcon} from '@material/textfield/icon';
 
+const icon = new MDCTextFieldIcon(document.querySelector('.mdc-text-field-icon'));
 const textField = new MDCTextField(document.querySelector('.mdc-text-field'));
 const snackbar = new MDCSnackbar(document.querySelector('.mdc-snackbar'));
 const topAppBarElement = document.querySelector('.mdc-top-app-bar');
