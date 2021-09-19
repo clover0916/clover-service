@@ -3,7 +3,8 @@ import { MDCRipple } from '@material/ripple';
 import {MDCList} from "@material/list";
 import {MDCDrawer} from "@material/drawer";
 
-const topAppBar = new MDCTopAppBar(document.querySelector('.mdc-top-app-bar'));
+const topAppBarElement = document.querySelector('.mdc-top-app-bar');
+const topAppBar = new MDCTopAppBar(topAppBarElement);
 const drawer = MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
 const list = MDCList.attachTo(document.querySelector('.mdc-deprecated-list'));
 list.wrapFocus = true;
@@ -22,6 +23,6 @@ document.body.addEventListener('MDCDrawer:closed', () => {
   mainContentEl.querySelector('input, button').focus();
 });
 
-topAppBar.addEventListener('MDCTopAppBar:nav', () => {
+topAppBarElement.addEventListener('MDCTopAppBar:nav', () => {
   drawer.open = true;
 })
