@@ -4,6 +4,8 @@
 @use "@material/list";
 @use "@material/layout-grid/mdc-layout-grid";
 @use "@material/card";
+@use "@material/typography/mdc-typography";
+@use "@material/button/styles";
 
 @include card.core-styles;
 @include drawer.core-styles;
@@ -15,4 +17,8 @@
 * {
   margin: 0px;
   padding: 0px;
+}
+
+html.wf-active * {
+  --mdc-typography-font-family: "Roboto", "Noto Sans JP", sans-serif;
 }
