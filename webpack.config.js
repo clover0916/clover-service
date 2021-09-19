@@ -11,7 +11,7 @@ module.exports = {
     bot: ['./src/bot.js', './src/bot.scss'],
     index: './src/index.js',
     error: ['./src/error.js', './src/error.scss'],
-    test: './src/test.scss',
+    test: ['./src/test.scss', './src/test.js'],
   },
   output: {
     path: path.join(__dirname, 'public', 'dist'),

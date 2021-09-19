@@ -3,17 +3,12 @@
   <head>
     <title>Clover - テスト</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="dist/style.css">
+    <link rel="stylesheet" href="dist/test.css">
   </head>
-  <body class="mdc-typography">
-    <form name="helpform2">
-      <textarea cols="100" rows="15" name="helpformTxt2">
-        <span style="padding:10px 40px;border:1px solid #000;">表示テスト</span>
-      </textarea>
-      <input type="button" value="プレビュー" onclick="help2()">
-    </form>
-    <div id="help_body_2"></div>
-    <script type="text/javascript">function help2(){document.getElementById("help_body_2").innerHTML=document.helpform2.helpformTxt2.value;}</script>
-    <script src="dist/main.js" async></script>
+  <body>
+    <button class="foo-button mdc-button">
+      <div class="mdc-button__ripple"></div>
+      <span class="mdc-button__label">Button</span>
+    </button>
   </body>
 </html>
