@@ -25,6 +25,7 @@
 @use "@material/menu/mdc-menu";
 @use "@material/animation";
 @use "@material/linear-progress";
+@use "@material/ripple";
 
 @include icon-button.core-styles;
 @include card.core-styles;
