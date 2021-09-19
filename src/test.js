@@ -22,6 +22,6 @@ document.body.addEventListener('MDCDrawer:closed', () => {
   mainContentEl.querySelector('input, button').focus();
 });
 
-topAppBarElement.addEventListener('MDCTopAppBar:nav', () => {
+topAppBar.addEventListener('MDCTopAppBar:nav', () => {
   drawer.open = true;
 })
