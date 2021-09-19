@@ -6,6 +6,7 @@
 @use "@material/card";
 @use "@material/typography/mdc-typography";
 @use "@material/button/styles";
+@use "@material/snackbar/mdc-snackbar";
 
 @include card.core-styles;
 @include drawer.core-styles;

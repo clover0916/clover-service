@@ -3,7 +3,9 @@ import { MDCRipple } from '@material/ripple';
 import {MDCList} from "@material/list";
 import {MDCDrawer} from "@material/drawer";
 import {MDCIconButtonToggle} from '@material/icon-button';
+import {MDCSnackbar} from '@material/snackbar';
 
+const snackbar = new MDCSnackbar(document.querySelector('.mdc-snackbar'));
 const topAppBarElement = document.querySelector('.mdc-top-app-bar');
 const topAppBar = new MDCTopAppBar(topAppBarElement);
 const drawer = MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
@@ -19,6 +21,9 @@ const ripples = [].map.call(document.querySelectorAll(selector), function(el) {
   return new MDCRipple(el);
 });
 
+document.getElementById('demo-icon').onclick = function() {
+  snackbar.open();
+}
 window.WebFontConfig = {
   google: { families: ['Roboto', 'Noto+Sans+JP', 'Material+Icons'] },
   typekit: { id: 'pbk7rhd' },
