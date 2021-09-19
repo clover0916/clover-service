@@ -54,9 +54,12 @@
           <span class="mdc-top-app-bar__title">Clover</span>
         </section>
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-          <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Search">
-            <div class="mdc-icon-button__ripple"></div>search
-          </button>
+          <div class="mdc-text-field mdc-text-field--with-leading-icon">
+            <i class="material-icons mdc-text-field__icon">search</i>
+            <input class="mdc-text-field__input" id="text-field-hero-input">
+            <div class="mdc-line-ripple"></div>
+            <label for="text-field-hero-input" class="mdc-floating-label">Search</label>
+          </div>
         </section>
       </div>
     </header>

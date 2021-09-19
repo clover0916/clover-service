@@ -7,7 +7,12 @@
 @use "@material/typography/mdc-typography";
 @use "@material/button/styles";
 @use "@material/snackbar/mdc-snackbar";
+@use "@material/floating-label/mdc-floating-label";
+@use "@material/line-ripple/mdc-line-ripple";
+@use "@material/notched-outline/mdc-notched-outline";
+@use "@material/textfield";
 
+@include textfield.core-styles;
 @include card.core-styles;
 @include drawer.core-styles;
 @include drawer.dismissible-core-styles;
