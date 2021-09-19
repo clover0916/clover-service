@@ -19,3 +19,7 @@ listEl.addEventListener('click', (event) => {
 document.body.addEventListener('MDCDrawer:closed', () => {
   mainContentEl.querySelector('input, button').focus();
 });
+
+topAppBarElement.addEventListener('MDCTopAppBar:nav', () => {
+  drawer.open = true;
+})
