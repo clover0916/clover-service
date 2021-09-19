@@ -37,7 +37,7 @@ const drawer = MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
 const linearProgress = new MDCLinearProgress(document.querySelector('.mdc-linear-progress'));
 
 list.wrapFocus = true;
-iconButtonRipple.unbounded = true;
+//iconButtonRipple.unbounded = true;
 
 const selector = '.mdc-button, .mdc-icon-button, .mdc-card__primary-action';
 const ripples = [].map.call(document.querySelectorAll(selector), function(el) {
