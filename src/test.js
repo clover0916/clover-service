@@ -6,7 +6,9 @@ import {MDCIconButtonToggle} from '@material/icon-button';
 import {MDCSnackbar} from '@material/snackbar';
 import { MDCTextField } from '@material/textfield';
 //import {MDCTextFieldIcon} from '@material/textfield/icon';
+import { MDCDialog } from '@material/dialog';
 
+const dialog = new MDCDialog(document.querySelector('.mdc-dialog'));
 //const icon = new MDCTextFieldIcon(document.querySelector('.mdc-text-field-icon'));
 const textField = new MDCTextField(document.querySelector('.mdc-text-field'));
 const snackbar = new MDCSnackbar(document.querySelector('.mdc-snackbar'));
@@ -28,6 +30,11 @@ const ripples = [].map.call(document.querySelectorAll(selector), function(el) {
 document.getElementById('demo-icon').onclick = function() {
   snackbar.open();
 }
+
+document.getElementById('search').onclick = function() {
+  dialog.open()
+}
+
 window.WebFontConfig = {
   google: { families: ['Roboto', 'Noto+Sans+JP', 'Material+Icons'] },
   typekit: { id: 'pbk7rhd' },
@@ -46,6 +53,14 @@ window.WebFontConfig = {
 
 const listEl = document.querySelector('.mdc-drawer .mdc-deprecated-list');
 const mainContentEl = document.querySelector('.main-content');
+
+dialog.listen('MDCDialog:opened', function() {
+  // Assuming contentElement references a common parent element with the rest of the page's content
+  mainContentEl.setAttribute('aria-hidden', 'true');
+});
+dialog.listen('MDCDialog:closing', function() {
+  mainContentEl.removeAttribute('aria-hidden');
+});
 
 listEl.addEventListener('click', (event) => {
   drawer.open = false;
