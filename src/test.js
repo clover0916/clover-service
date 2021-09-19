@@ -49,3 +49,21 @@ document.body.addEventListener('MDCDrawer:closed', () => {
 topAppBarElement.addEventListener('MDCTopAppBar:nav', () => {
   drawer.open = true;
 })
+
+document.getElementById('share').onclick = function() {
+  if (navigator.share) {
+  const shareData = {
+    title: document.getElementById('share').title,
+    text: document.getElementById('share').dataset.text,
+    url: document.getElementById('share').dataset.url,
+  }
+  navigator.share(shareData).then(() => {
+      console.log('Successful share');
+    })
+    .catch((error) => {
+      console.log('Error sharing', error);
+    });
+  } else {
+    alert('このブラウザではシェアできません、他の最新のブラウザを使用してください。');
+  }
+}
