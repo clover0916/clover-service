@@ -9,17 +9,6 @@
 </head>
 
 <body>
-  <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
-    <div class="mdc-top-app-bar__row">
-      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-        <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" aria-label="Open navigation menu" id="drawer-open"><div class="mdc-icon-button__ripple"></div>menu</button>
-        <span class="mdc-top-app-bar__title">Clover</span>
-      </section>
-      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-        <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Search"><div class="mdc-icon-button__ripple"></div>search</button>
-      </section>
-    </div>
-  </header>
   <aside class="mdc-drawer mdc-drawer--modal">
     <div class="mdc-drawer__content">
       <nav class="mdc-deprecated-list">
@@ -42,9 +31,24 @@
     </div>
   </aside>
   <div class="mdc-drawer-scrim"></div>
-  <main class="mdc-top-app-bar--fixed-adjust main-content">
+  
+  <div class="main-content">
+    <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+    <div class="mdc-top-app-bar__row">
+      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+        <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" aria-label="Open navigation menu" id="drawer-open"><div class="mdc-icon-button__ripple"></div>menu</button>
+        <span class="mdc-top-app-bar__title">Clover</span>
+      </section>
+      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+        <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Search"><div class="mdc-icon-button__ripple"></div>search</button>
+      </section>
+    </div>
+  </header>
+
+  <main class="mdc-top-app-bar--fixed-adjust">
     App content
   </main>
+  </div>
   <script src="dist/test.js" async></script>
 </body>
 
