@@ -1,6 +1,6 @@
 import {MDCTopAppBar} from '@material/top-app-bar';
 import { MDCRipple } from '@material/ripple';
-import {MDC０} from "@material/list";
+import {MDCList} from "@material/list";
 import {MDCDrawer} from "@material/drawer";
 import {MDCIconButtonToggle} from '@material/icon-button';
 import {MDCSnackbar} from '@material/snackbar';
