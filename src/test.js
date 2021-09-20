@@ -1,6 +1,6 @@
 import {MDCTopAppBar} from '@material/top-app-bar';
 import { MDCRipple } from '@material/ripple';
-import {MDCList} from "@material/list";
+import {MDC０} from "@material/list";
 import {MDCDrawer} from "@material/drawer";
 import {MDCIconButtonToggle} from '@material/icon-button';
 import {MDCSnackbar} from '@material/snackbar';
@@ -17,8 +17,9 @@ const topAppBarElement = document.querySelector('.mdc-top-app-bar');
 const topAppBar = new MDCTopAppBar(topAppBarElement);
 const drawer = MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
 const iconToggle = new MDCIconButtonToggle(document.querySelector('.demo-icon'));
-const list = MDCList.attachTo(document.querySelector('.mdc-deprecated-list'));
-list.wrapFocus = true;
+const list = new MDCList(document.querySelector('.mdc-deprecated-list'))
+const listEls = MDCList.attachTo(document.querySelector('.mdc-deprecated-list'));
+listEls.wrapFocus = true;
 //Ripple
 const listItemRipples = list.listElements.map((listItemEl) => new MDCRipple(listItemEl));
 const iconButtonRipple = new MDCRipple(document.querySelector('.mdc-icon-button'));
