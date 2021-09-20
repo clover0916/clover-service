@@ -53,7 +53,7 @@ window.WebFontConfig = {
 })();
 
 const listEl = document.querySelector('.mdc-drawer .mdc-deprecated-list');
-const dialog_list = document.querySelector('.mdc-dialog .mdc-deprecated-list');
+const dialog_list = new MDCList(ddocument.querySelector('.mdc-dialog .mdc-deprecated-list'));
 const mainContentEl = document.querySelector('.main-content');
 
 dialog.listen('MDCDialog:opened', function() {
