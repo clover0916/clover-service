@@ -52,15 +52,12 @@ window.WebFontConfig = {
   s.parentNode.insertBefore(wf, s);
 })();
 
-const listEl = document.querySelector('.mdc-drawer .mdc-deprecated-list');
 const mainContentEl = document.querySelector('.main-content');
 
-dialogEl.listen('MDCDialog:opened', () => {
-  dialog_list.layout();
-});
 
 dialogEl.listen('MDCDialog:opened', function() {
   // Assuming contentElement references a common parent element with the rest of the page's content
+  dialog_list.layout();
   mainContentEl.setAttribute('aria-hidden', 'true');
 });
 dialogEl.listen('MDCDialog:closing', function() {
