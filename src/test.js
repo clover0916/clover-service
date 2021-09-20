@@ -11,7 +11,7 @@ import { MDCDialog } from '@material/dialog';
 const dialogEl = document.querySelector('.mdc-dialog')
 const dialog = new MDCDialog(dialogEl);
 //const icon = new MDCTextFieldIcon(document.querySelector('.mdc-text-field-icon'));
-const textField = new MDCTextField(document.querySelector('.mdc-text-field'));
+//const textField = new MDCTextField(document.querySelector('.mdc-text-field'));
 const snackbar = new MDCSnackbar(document.querySelector('.mdc-snackbar'));
 const topAppBarElement = document.querySelector('.mdc-top-app-bar');
 const topAppBar = new MDCTopAppBar(topAppBarElement);
@@ -52,8 +52,8 @@ window.WebFontConfig = {
   s.parentNode.insertBefore(wf, s);
 })();
 
+const listEl = document.querySelector('.mdc-drawer .mdc-deprecated-list');
 const mainContentEl = document.querySelector('.main-content');
-
 
 dialogEl.listen('MDCDialog:opened', function() {
   // Assuming contentElement references a common parent element with the rest of the page's content
