@@ -8,7 +8,8 @@ import { MDCTextField } from '@material/textfield';
 //import {MDCTextFieldIcon} from '@material/textfield/icon';
 import { MDCDialog } from '@material/dialog';
 
-const dialog = new MDCDialog(document.querySelector('.mdc-dialog'));
+const dialogEl = document.querySelector('.mdc-dialog')
+const dialog = new MDCDialog(dialogEl);
 //const icon = new MDCTextFieldIcon(document.querySelector('.mdc-text-field-icon'));
 const textField = new MDCTextField(document.querySelector('.mdc-text-field'));
 const snackbar = new MDCSnackbar(document.querySelector('.mdc-snackbar'));
@@ -54,15 +55,15 @@ window.WebFontConfig = {
 const listEl = document.querySelector('.mdc-drawer .mdc-deprecated-list');
 const mainContentEl = document.querySelector('.main-content');
 
-dialog.listen('MDCDialog:opened', () => {
+dialogEl.listen('MDCDialog:opened', () => {
   dialog_list.layout();
 });
 
-dialog.listen('MDCDialog:opened', function() {
+dialogEl.listen('MDCDialog:opened', function() {
   // Assuming contentElement references a common parent element with the rest of the page's content
   mainContentEl.setAttribute('aria-hidden', 'true');
 });
-dialog.listen('MDCDialog:closing', function() {
+dialogEl.listen('MDCDialog:closing', function() {
   mainContentEl.removeAttribute('aria-hidden');
 });
 
