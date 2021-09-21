@@ -20,8 +20,12 @@ const iconToggle = new MDCIconButtonToggle(document.querySelector('.demo-icon'))
 const list = new MDCList(document.querySelector('.mdc-deprecated-list'))
 const listEls = MDCList.attachTo(document.querySelector('.mdc-deprecated-list'));
 listEls.wrapFocus = true;
+const listEl = document.querySelector('.mdc-drawer .mdc-deprecated-list');
+const dialog_list = new MDCList(document.querySelector('.mdc-dialog .mdc-deprecated-list'));
 //Ripple
-const listItemRipples = list.listElements.map((listItemEl) => new MDCRipple(listItemEl));
+
+const mainContentEl = document.querySelector('.main-content');
+const listItemRipples = listEls.listElements.map((listItemEl) => new MDCRipple(listItemEl));
 const iconButtonRipple = new MDCRipple(document.querySelector('.mdc-icon-button'));
 iconButtonRipple.unbounded = true;
 const selector = '.mdc-button, .mdc-icon-button, .mdc-card__primary-action';
@@ -52,10 +56,6 @@ window.WebFontConfig = {
   var s = document.getElementsByTagName('script')[0];
   s.parentNode.insertBefore(wf, s);
 })();
-
-const listEl = document.querySelector('.mdc-drawer .mdc-deprecated-list');
-const dialog_list = new MDCList(document.querySelector('.mdc-dialog .mdc-deprecated-list'));
-const mainContentEl = document.querySelector('.main-content');
 
 dialog.listen('MDCDialog:opened', function() {
   // Assuming contentElement references a common parent element with the rest of the page's content
