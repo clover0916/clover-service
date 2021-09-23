@@ -74,10 +74,11 @@ html.wf-active * {
 
 .title {
   margin: 0;
-  padding: 16px
+  padding: 16px;
   text-align: center;
   backdrop-filter: blur(4px);
-  border-radius: 8px
+  border-radius: 8px;
+  color: white;
 }
 
 .title-anm {
