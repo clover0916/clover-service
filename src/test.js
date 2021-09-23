@@ -17,10 +17,9 @@ const topAppBarElement = document.querySelector('.mdc-top-app-bar');
 const topAppBar = new MDCTopAppBar(topAppBarElement);
 const drawer = MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
 const iconToggle = new MDCIconButtonToggle(document.querySelector('.demo-icon'));
-const listEls = MDCList.attachTo(document.querySelector('.mdc-deprecated-list'));
-listEls.wrapFocus = true;
+const list = MDCList.attachTo(document.querySelector('.mdc-deprecated-list'));
+list.wrapFocus = true;
 const listEl = document.querySelector('.mdc-drawer .mdc-deprecated-list');
-const dialog_list = new MDCList(document.querySelector('.mdc-dialog .mdc-deprecated-list'));
 //Ripple
 
 const mainContentEl = document.querySelector('.main-content');
