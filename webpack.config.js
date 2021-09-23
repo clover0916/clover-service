@@ -7,7 +7,7 @@ module.exports = {
     app: ['./src/app.scss', './src/app.js'],
     ytdl: './src/ytdl.js',
     youtube: './src/youtube.js',
-    commands: ['./src/commands.js', './src/commands.scss'],
+    commands: './src/commands.js',
     bot: ['./src/bot.js', './src/bot.scss'],
     index: './src/index.js',
     error: ['./src/error.js', './src/error.scss'],
