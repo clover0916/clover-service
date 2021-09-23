@@ -25,6 +25,7 @@ const listEl = document.querySelector('.mdc-drawer .mdc-deprecated-list');
 const mainContentEl = document.querySelector('.main-content');
 const iconButtonRipple = new MDCRipple(document.querySelector('.mdc-icon-button'));
 iconButtonRipple.unbounded = true;
+const listItemRipples = list.listElements.map((listItemEl) => new MDCRipple(listItemEl));
 const selector = '.mdc-button, .mdc-icon-button, .mdc-card__primary-action';
 const ripples = [].map.call(document.querySelectorAll(selector), function(el) {
   return new MDCRipple(el);
@@ -56,7 +57,6 @@ window.WebFontConfig = {
 
 dialog.listen('MDCDialog:opened', function() {
   // Assuming contentElement references a common parent element with the rest of the page's content
-  dialog_list.layout();
   mainContentEl.setAttribute('aria-hidden', 'true');
 });
 
