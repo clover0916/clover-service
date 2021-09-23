@@ -74,8 +74,10 @@ html.wf-active * {
 
 .title {
   margin: 0;
+  height: 100%;
   width: 100%;
   text-align: center;
+  backdrop-filter: blur(2px);
 }
 
 .title-anm {
@@ -92,4 +94,9 @@ html.wf-active * {
     transform: translateY(0);
     opacity: 1;
   }
+}
+
+.title-main {
+  font-family: "futura-pt", sans-serif;
+  font-weight: 300;
 }
