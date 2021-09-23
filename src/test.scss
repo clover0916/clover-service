@@ -63,14 +63,14 @@ html.wf-active * {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  background-image: "https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/2.jpg";
+  background-image: url("https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/2.jpg");
   backdrop-filter: blur(5px);
 }
 
 .title {
   margin: 0;
   position: absolute;
-  top: calc(50% - 5em);
+  top: 50%;
   width: 100%;
   text-align: center;
 }
