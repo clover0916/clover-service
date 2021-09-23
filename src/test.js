@@ -62,8 +62,7 @@ topAppBarElement.addEventListener('MDCTopAppBar:nav', () => {
   drawer.open = true;
 })
 
-document.querySelectorAll('#share').forEach(share => {
-  onclick = function() {
+document.getElementById('share').onclick = function() {
     if (navigator.share) {
       const shareData = {
         title: document.getElementById('share').title,
@@ -80,7 +79,7 @@ document.querySelectorAll('#share').forEach(share => {
       alert('このブラウザではシェアできません、他の最新のブラウザを使用してください。');
     }
   }
-})
+
 var scrollAnimationElm = document.querySelector('.main');
 var scrollAnimationFunc = function() {
   var triggerMargin = 500;
