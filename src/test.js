@@ -1,9 +1,9 @@
-import {MDCTopAppBar} from '@material/top-app-bar';
+import { MDCTopAppBar } from '@material/top-app-bar';
 import { MDCRipple } from '@material/ripple';
-import {MDCList} from "@material/list";
-import {MDCDrawer} from "@material/drawer";
-import {MDCIconButtonToggle} from '@material/icon-button';
-import {MDCSnackbar} from '@material/snackbar';
+import { MDCList } from "@material/list";
+import { MDCDrawer } from "@material/drawer";
+import { MDCIconButtonToggle } from '@material/icon-button';
+import { MDCSnackbar } from '@material/snackbar';
 import { MDCTextField } from '@material/textfield';
 //import {MDCTextFieldIcon} from '@material/textfield/icon';
 import '@fortawesome/fontawesome-free/js/brands.js'
@@ -62,24 +62,25 @@ topAppBarElement.addEventListener('MDCTopAppBar:nav', () => {
   drawer.open = true;
 })
 
-document.getElementById('share').onclick = function() {
-  if (navigator.share) {
-  const shareData = {
-    title: document.getElementById('share').title,
-    text: document.getElementById('share').dataset.text,
-    url: document.getElementById('share').dataset.url,
+document.querySelectorAll('#share').forEach(share => {
+  onclick = function() {
+    if (navigator.share) {
+      const shareData = {
+        title: document.getElementById('share').title,
+        text: document.getElementById('share').dataset.text,
+        url: document.getElementById('share').dataset.url,
+      }
+      navigator.share(shareData).then(() => {
+          console.log('Successful share');
+        })
+        .catch((error) => {
+          console.log('Error sharing', error);
+        });
+    } else {
+      alert('このブラウザではシェアできません、他の最新のブラウザを使用してください。');
+    }
   }
-  navigator.share(shareData).then(() => {
-      console.log('Successful share');
-    })
-    .catch((error) => {
-      console.log('Error sharing', error);
-    });
-  } else {
-    alert('このブラウザではシェアできません、他の最新のブラウザを使用してください。');
-  }
-}
-
+})
 var scrollAnimationElm = document.querySelector('.main');
 var scrollAnimationFunc = function() {
   var triggerMargin = 500;
