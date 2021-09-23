@@ -15,6 +15,7 @@
 @use "@material/notched-outline/mdc-notched-outline";
 @use "@material/textfield";
 @use "@material/textfield/icon";
+@use "@material/animation";
 
 @include icon.icon-core-styles;
 @include textfield.core-styles;
@@ -39,4 +40,52 @@ html.wf-active * {
 
 .demo-card__primary {
   padding-bottom: 16px
+}
+
+.mdc-top-app-bar {
+  // fill-color($color) is defined in the top-app-bar namespace
+  @include top-app-bar.fill-color(#FFFFFF);
+  @include top-app-bar.ink-color(#435167);
+  @include top-app-bar.icon-ink-color(#435167);
+  transition: all .5s ease;
+}
+
+.mdc-top-app-bar.top {
+  @include top-app-bar.ink-color(#FFFFFF);
+  @include top-app-bar.icon-ink-color(#FFFFFF);
+  backdrop-filter: blur(2px);
+  background-color: rgba(255, 255, 255, 0);
+  transform: none;
+}
+
+.full {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-image: "https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/2.jpg";
+  backdrop-filter: blur(5px);
+}
+
+.title {
+  margin: 0;
+  position: absolute;
+  top: calc(50% - 5em);
+  width: 100%;
+  text-align: center;
+}
+
+.title-anm {
+  animation: fade-in 750ms animation.$deceleration-curve-timing-function;
+}
+
+@keyframes fade-in {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }

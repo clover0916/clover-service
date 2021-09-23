@@ -79,3 +79,16 @@ document.getElementById('share').onclick = function() {
     alert('このブラウザではシェアできません、他の最新のブラウザを使用してください。');
   }
 }
+
+var scrollAnimationElm = document.querySelector('.main');
+var scrollAnimationFunc = function() {
+  var triggerMargin = 500;
+  if (window.innerHeight > scrollAnimationElm.getBoundingClientRect().top + triggerMargin) {
+    topAppBarElement.classList.remove('top');
+  } else {
+    topAppBarElement.classList.add('top');
+  }
+}
+
+window.addEventListener('load', scrollAnimationFunc);
+window.addEventListener('scroll', scrollAnimationFunc);
