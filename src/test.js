@@ -6,6 +6,8 @@ import {MDCIconButtonToggle} from '@material/icon-button';
 import {MDCSnackbar} from '@material/snackbar';
 import { MDCTextField } from '@material/textfield';
 //import {MDCTextFieldIcon} from '@material/textfield/icon';
+import '@fortawesome/fontawesome-free/js/brands.js'
+import '@fortawesome/fontawesome-free/js/fontawesome.js'
 
 //const icon = new MDCTextFieldIcon(document.querySelector('.mdc-text-field-icon'));
 //const textField = new MDCTextField(document.querySelector('.mdc-text-field'));
