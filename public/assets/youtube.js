@@ -9,7 +9,7 @@ const file = getQueryVariable('id')
 // 1. add source buffers
 
 // for the audio SourceBuffer
-fetch('https://api.clover-service.online/video_info?id=' + file, { method: 'GET' })
+fetch('https://api.clover-midori.net/video_info?id=' + file, { method: 'GET' })
   .then(response => response.json())
   .then(data => {
     videoTag.poster = data.videoDetails.thumbnails[data.videoDetails.thumbnails.length - 1].url
@@ -35,7 +35,7 @@ fetch('https://api.clover-service.online/video_info?id=' + file, { method: 'GET'
     // 2. download and add our audio/video to the SourceBuffers
 
     // the same for the video SourceBuffer
-    fetch("https://api.clover-service.online/get_video?id=" + file, { method: 'GET' })
+    fetch("https://api.clover-midori.net/get_video?id=" + file, { method: 'GET' })
       .then(response => response.arrayBuffer())
       .then(videoData => {
         videoSourceBuffer.appendBuffer(videoData);
