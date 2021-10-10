@@ -11,25 +11,9 @@ const path = require('path');
 router.get('/get_video', async function(req, res, next) {
   try {
     var url = req.query.id;
-    var URL = 'https://www.youtube.com/watch?v=' + url 
-    const video = ytdl(url,{filter: (format) => format.container === 'mp4' });
+    var URL = 'https://www.youtube.com/watch?v=' + url
+    const video = ytdl(url, { filter: (format) => format.container === 'mp4' });
     const info = await ytdl.getInfo(URL);
-    const videoSize = video.size;
-    res.writeHead(206, headers);
-    // Parse Range
-    // Example: "bytes=32324-"
-    const CHUNK_SIZE = 10 ** 6; // 1MB
-    const start = Number(range.replace(/\D/g, ""));
-    const end = Math.min(start + CHUNK_SIZE, videoSize - 1);
-    
-    // Create headers
-    const contentLength = end - start + 1;
-    const headers = {
-      "Content-Range": `bytes ${start}-${end}/${videoSize}`,
-      "Accept-Ranges": "bytes",
-      "Content-Length": contentLength,
-      "Content-Type": "video/mp4",
-    };
     video.pipe(res);
   } catch (err) {
     res.send("Too many request.")
@@ -43,7 +27,7 @@ router.get('/video_info', async function(req, res, next) {
     const info = await ytdl.getInfo(URL);
     res.json(info)
   } catch (err) {
-    res.json({ "error_message": err})
+    res.json({ "error_message": err })
   }
 });
 
@@ -52,22 +36,22 @@ router.post('/img2webp', multer({ dest: 'img2webp/original/' }).array('files', 1
   console.log(req.body)
   console.log('--- req.files ---')
   console.log(req.files)
-  
+
   const imgName = req.files[0].originalname.split('.')[0];
   sharp(req.files[0].path)
     .webp({
       quality: 100
     })
     .toFile(path.resolve(`routes/img2webp/webp/${imgName}.webp`), async (err) => { // 画像ファイル名.webpで出力
-      if ( err ) console.error(err);
+      if (err) console.error(err);
       fs.unlinkSync(req.files[0].path);
       const fileName = encodeURIComponent(`${imgName}.webp`);
-      res.set({'Content-Disposition': `attachment; filename=${fileName}`});
+      res.set({ 'Content-Disposition': `attachment; filename=${fileName}` });
       var filestream = fs.createReadStream(path.resolve(`routes/img2webp/webp/${imgName}.webp`));
       filestream.pipe(res);
-      
+
     });
-  
+
 });
 
 module.exports = router;
