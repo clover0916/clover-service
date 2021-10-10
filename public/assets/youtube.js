@@ -1,10 +1,7 @@
 const videoTag = document.getElementById("my-video");
-const myMediaSource = new MediaSource();
-const url = URL.createObjectURL(myMediaSource);
-videoTag.src = url;
-var np;
-
 const file = getQueryVariable('id')
+videoTag.src = "https://api.clover-midori.net/get_video?id=" + file;
+var np;
 
 // 1. add source buffers
 
@@ -35,13 +32,8 @@ fetch('https://api.clover-midori.net/video_info?id=' + file, { method: 'GET' })
     // 2. download and add our audio/video to the SourceBuffers
 
     // the same for the video SourceBuffer
-    fetch("https://api.clover-midori.net/get_video?id=" + file, { method: 'GET' })
-      .then(response => response.arrayBuffer())
-      .then(videoData => {
-        videoSourceBuffer.appendBuffer(videoData);
-        if (!videoTag.canPlayType(data.formats[0].mimeType)) return document.getElementById("play-text").innerHTML = "Not Supported Codec";
-        document.getElementById("play-text").innerHTML = "Play";
-      });
+    if (!videoTag.canPlayType(data.formats[0].mimeType)) return document.getElementById("play-text").innerHTML = "Not Supported Codec";
+    document.getElementById("play-text").innerHTML = "Play";
   })
   .catch(err => {
     console.error(err);
