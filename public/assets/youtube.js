@@ -12,7 +12,7 @@ fetch('https://api.clover-midori.net/video_info?id=' + file, { method: 'GET' })
     videoTag.poster = data.videoDetails.thumbnails[data.videoDetails.thumbnails.length - 1].url
     document.getElementById('video_title').innerHTML = data.videoDetails.title;
     document.getElementById('video_description').innerHTML = data.videoDetails.description;
-    const videoSourceBuffer = myMediaSource.addSourceBuffer(`${data.formats[0].mimeType}; codecs="${data.formats[0].codecs}"`);
+    videoTag.type = data.formats[0].mimeType;
 
     data.formats.forEach((dat, index) => {
       var ui = document.getElementById('quality');
