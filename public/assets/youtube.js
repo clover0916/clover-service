@@ -3,6 +3,7 @@ var mediaSource = new MediaSource();
 mediaSource.addEventListener('sourceopen', onSourceOpen.bind(this, video));
 video.src = window.URL.createObjectURL(mediaSource);
 var file = getQueryVariable('id');
+var np = false;
 
 function onSourceOpen(videoTag, e) {
   var mediaSource = e.target;
@@ -117,24 +118,24 @@ function getQueryVariable(variable) {
 }
 document.getElementById("play-button").onclick = function() {
   if (!np) {
-    videoTag.play()
+    video.play()
     document.getElementById("play-text").innerHTML = "Stop";
     np = true;
   } else {
-    videoTag.pause()
+    video.pause()
     document.getElementById("play-text").innerHTML = "Play";
     np = false;
   }
 };
 
 document.getElementById('fullscreen').onclick = function() {
-  if (videoTag.requestFullscreen) {
-    videoTag.requestFullscreen();
-  } else if (videoTag.webkitRequestFullscreen) {
+  if (video.requestFullscreen) {
+    video.requestFullscreen();
+  } else if (video.webkitRequestFullscreen) {
     /* Safari */
-    videoTag.webkitRequestFullscreen();
-  } else if (videoTag.msRequestFullscreen) {
+    video.webkitRequestFullscreen();
+  } else if (video.msRequestFullscreen) {
     /* IE11 */
-    videoTag.msRequestFullscreen();
+    video.msRequestFullscreen();
   }
 }
