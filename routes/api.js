@@ -14,8 +14,22 @@ router.get('/get_video', async function(req, res, next) {
     var URL = 'https://www.youtube.com/watch?v=' + url 
     const video = ytdl(url,{filter: (format) => format.container === 'mp4' });
     const info = await ytdl.getInfo(URL);
-    var title = encodeURIComponent(info.videoDetails.title + '.mp4')    
-    res.header('Content-Disposition', 'attachment; filename*=UTF-8\'' + title + '\'');
+    const videoSize = video.size;
+    res.writeHead(206, headers);
+    // Parse Range
+    // Example: "bytes=32324-"
+    const CHUNK_SIZE = 10 ** 6; // 1MB
+    const start = Number(range.replace(/\D/g, ""));
+    const end = Math.min(start + CHUNK_SIZE, videoSize - 1);
+    
+    // Create headers
+    const contentLength = end - start + 1;
+    const headers = {
+      "Content-Range": `bytes ${start}-${end}/${videoSize}`,
+      "Accept-Ranges": "bytes",
+      "Content-Length": contentLength,
+      "Content-Type": "video/mp4",
+    };
     video.pipe(res);
   } catch (err) {
     res.send("Too many request.")
