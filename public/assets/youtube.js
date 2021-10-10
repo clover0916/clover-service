@@ -1,38 +1,36 @@
 var video = document.getElementById("my-video");
-var mediaSource = new MediaSource();
-mediaSource.addEventListener('sourceopen', onSourceOpen.bind(this, video));
-video.src = window.URL.createObjectURL(mediaSource);
 var file = getQueryVariable('id');
-var np = false;
 
-function onSourceOpen(videoTag, e) {
-  var mediaSource = e.target;
-  // 不要な状況でsourceopenイベントが発生するときを省く。sourceBufferが必要。
-  if (mediaSource.sourceBuffers.length > 0)
-    return;
-  // メディアソースにaddSourceBufferメソッドを用いてsourceBufferを作る。印字はコーデック情報である。
-  // サンプルコードでsourceBufferはwebmコーデックでエンコードされたデータが取得できるようになる。
-  fetch('https://api.clover-midori.net/video_info?id=' + file, { method: 'GET' })
-    .then(response => response.json())
-    .then(info => {
-      var sourceBuffer = mediaSource.addSourceBuffer(`${info.formats[0].mimeType}; codecs="${info.formats[0].codecs}"`);
-      var initSegment = GetInitializationSegment();
-      mediaSource.endOfStream("network");
-      sourceBuffer.appendBuffer(initSegment);
-      document.getElementById("play-text").innerHTML = "Play";
-    })
-}
+fetch('https://api.clover-midori.net/video_info?id=' + file, { method: 'GET' })
+  .then(response => response.json())
+  .then(info => {
+    var mimeCodec = `${info.formats[0].mimeType}; codecs="${info.formats[0].codecs}"`
 
-function GetInitializationSegment() {
-  fetch('https://api.clover-midori.net/get_video?id=' + file, { method: 'GET' })
-    .then(response => response.arrayBuffer())
-    .then(buffer => {
-      return buffer;
-    })
-    .catch(err => {
-      console.error(err);
-    });
-}
+    if ('MediaSource' in window && MediaSource.isTypeSupported(mimeCodec)) {
+      var mediaSource = new MediaSource;
+      //console.log(mediaSource.readyState); // closed
+      video.src = URL.createObjectURL(mediaSource);
+      mediaSource.addEventListener('sourceopen', sourceOpen);
+    } else {
+      console.error('Unsupported MIME type or codec: ', mimeCodec);
+    }
+    function sourceOpen(_) {
+      //console.log(this.readyState); // open
+      var mediaSource = this;
+      var sourceBuffer = mediaSource.addSourceBuffer(mimeCodec);
+      fetch('https://api.clover-midori.net/get_video?id=' + file, { method: 'GET' })
+        .then(response => response.arrayBuffer())
+        .then(buffer => {
+          sourceBuffer.addEventListener('updateend', function(_) {
+            mediaSource.endOfStream();
+            document.getElementById("play-text").innerHTML = "Not Supported";
+            document.getElementById("play-button").disabled = true;
+            //console.log(mediaSource.readyState); // ended
+          });
+          sourceBuffer.appendBuffer(buffer);
+        });
+    };
+  })
 
 function getQueryVariable(variable) {
   var query = window.location.search.substring(1);
