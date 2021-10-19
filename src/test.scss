@@ -60,10 +60,8 @@ html.wf-active * {
 }
 
 .full {
-  position: relative;
   width: 100%;
   min-height: 100vh;
-  
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -76,6 +74,10 @@ html.wf-active * {
   margin: 0;
   text-align: center;
   color: white;
+  position: absolute;
+  left: 30%;
+  top: 200px;
+  z-index: 1;
 }
 
 .title-anm {
@@ -106,5 +108,4 @@ html.wf-active * {
 .title-video {
     width: 100%;
     position: relative;
-    z-index: -100;
 }
