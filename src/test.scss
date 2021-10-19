@@ -64,7 +64,6 @@ html.wf-active * {
   width: 100%;
   min-height: 100vh;
   
-  background-image: url("https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -77,6 +76,7 @@ html.wf-active * {
   margin: 0;
   text-align: center;
   color: white;
+  position: absolute;
 }
 
 .title-anm {
@@ -105,11 +105,7 @@ html.wf-active * {
 }
 
 .title-video {
-    left: 0; /* ADD */
-    margin: 0;
-    min-height: 100%;
-    min-width: 100%;
-    position: fixed;
-    top: 0; /* ADD */
+    width: 100%;
+    position: relative;
     z-index: -100;
 }
