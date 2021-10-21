@@ -17,6 +17,7 @@
 @use "@material/textfield";
 @use "@material/textfield/icon";
 @use "@material/animation";
+@use "@material/elevation/mdc-elevation";
 
 @include icon.icon-core-styles;
 @include textfield.core-styles;
