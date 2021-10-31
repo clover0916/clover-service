@@ -19,6 +19,7 @@
 @use "@material/animation";
 @use "@material/elevation/mdc-elevation";
 
+
 @include icon.icon-core-styles;
 @include textfield.core-styles;
 @include card.core-styles;
@@ -31,6 +32,11 @@
 * {
   margin: 0px;
   padding: 0px;
+}
+
+html {
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 html.wf-active * {
