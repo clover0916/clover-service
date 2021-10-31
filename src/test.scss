@@ -109,3 +109,15 @@ html.wf-active * {
   width: 100%;
   object-fit: cover;
 }
+
+footer {
+  /*footerの装飾*/
+  background-color: #2E2E2E; 
+  color: #fff;
+  padding: 15px;
+  align-items: center;
+}
+
+.footer-copy {
+  text-align: right;
+}
