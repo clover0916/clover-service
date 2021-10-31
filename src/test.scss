@@ -69,11 +69,10 @@ html.wf-active * {
 
 .title {
   display: absolute;
-  margin: 0;
   text-align: center;
   color: white;
-  left: 30%;
-  top: 200px;
+  margin-left: auto;
+  margin-right: auto;
   z-index: 10;
 }
 
