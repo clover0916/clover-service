@@ -65,21 +65,19 @@ html.wf-active * {
   width: 100%;
   min-height: 100vh;
   position: relative;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .title {
+  display: absolute;
   margin: 0;
   text-align: center;
   color: white;
   left: 30%;
   top: 200px;
-  z-index: 1;
+  z-index: 10;
 }
 
 .title-anm {
