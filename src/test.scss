@@ -34,11 +34,6 @@
   padding: 0px;
 }
 
-html {
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-
 html.wf-active * {
   --mdc-typography-font-family: "Roboto", "Noto Sans JP", sans-serif;
 }
@@ -113,20 +108,8 @@ html.wf-active * {
 }
 
 .title-video {
-  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
 }
-
-@media (aspect-ratio: 16/9), (min-aspect-ratio: 16/9) {
-    .title-video {
-      width: 100%;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-  }
-  @media (max-aspect-ratio: 16/9) {
-    .title-video {
-      height: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-  }
