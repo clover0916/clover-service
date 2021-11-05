@@ -75,10 +75,6 @@ html.wf-active * {
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
-  opacity: 0;
-}
-
-.title.wf-active {
   animation: fade-in 750ms animation.$deceleration-curve-timing-function;
 }
 
