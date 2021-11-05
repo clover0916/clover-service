@@ -1,6 +1,4 @@
-@use "@material/theme" with (
-  $primary: #2e7d32
-);
+@use "@material/theme"with ($primary: #2e7d32);
 @use "@material/icon-button";
 @use "@material/top-app-bar/mdc-top-app-bar";
 @use "@material/top-app-bar";
@@ -37,6 +35,7 @@
 html.wf-active * {
   --mdc-typography-font-family: "Roboto", "Noto Sans JP", sans-serif;
 }
+
 .demo-card-padding {
   padding: 16px;
 }
@@ -75,10 +74,9 @@ html.wf-active * {
   z-index: 1;
   top: 50%;
   left: 50%;
-  transform:translate(-50%,-50%);
 }
 
-.title-anm {
+.title.wf-active {
   animation: fade-in 750ms animation.$deceleration-curve-timing-function;
 }
 
@@ -112,7 +110,7 @@ html.wf-active * {
 
 footer {
   /*footerの装飾*/
-  background-color: #2E2E2E; 
+  background-color: #2E2E2E;
   color: #fff;
   padding: 15px;
   align-items: center;
