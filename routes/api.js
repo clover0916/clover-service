@@ -16,7 +16,7 @@ router.get('/get_video', async function(req, res, next) {
     const info = await ytdl.getInfo(URL);
     video.pipe(res);
   } catch (err) {
-    res.send("Too many request.")
+    res.send(JSON.stringify(err))
   }
 });
 
