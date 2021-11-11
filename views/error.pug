@@ -1,14 +1,12 @@
 doctype html
 html
   head
-    title ページが見つかりませんでした
+    title=message
     link(rel='stylesheet', href='./dist/error.css')
   body.mdc-typography.gradation
     .error
-      h1.mdc-typography--headline1
-        | 404 Not Found
-      h2.mdc-typography--subtitle1
-        | お探しのページは見つかりませんでした
+      h1.mdc-typography--headline1 = message
+      h2.mdc-typography--subtitle1 = error.status
       .mdc-touch-target-wrapper
         button.mdc-button.mdc-button--raised.mdc-button--touch(onclick="location.href='./index.html'")
           .mdc-button__ripple

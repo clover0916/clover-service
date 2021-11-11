@@ -1,6 +1,4 @@
-@use "@material/theme" with (
-  $primary: #2e7d32
-);
+@use "@material/theme"with ($primary: #2e7d32);
 @use "@material/icon-button";
 @use "@material/top-app-bar/mdc-top-app-bar";
 @use "@material/top-app-bar";
@@ -17,6 +15,8 @@
 @use "@material/textfield";
 @use "@material/textfield/icon";
 @use "@material/animation";
+@use "@material/elevation/mdc-elevation";
+
 
 @include icon.icon-core-styles;
 @include textfield.core-styles;
@@ -35,6 +35,7 @@
 html.wf-active * {
   --mdc-typography-font-family: "Roboto", "Noto Sans JP", sans-serif;
 }
+
 .demo-card-padding {
   padding: 16px;
 }
@@ -61,26 +62,19 @@ html.wf-active * {
 
 .full {
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   position: relative;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .title {
-  margin: 0;
+  position: absolute;
   text-align: center;
   color: white;
-  left: 30%;
-  top: 200px;
+  margin: 0;
   z-index: 1;
-}
-
-.title-anm {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
   animation: fade-in 750ms animation.$deceleration-curve-timing-function;
 }
 
@@ -107,9 +101,19 @@ html.wf-active * {
 
 .title-video {
   position: absolute;
-  width: auto;
   height: 100%;
-  top: 0%;
-  left: 50%;
-  transform: translate(-50%, 0%);
+  width: 100%;
+  object-fit: cover;
+}
+
+footer {
+  /*footerの装飾*/
+  background-color: #2E2E2E;
+  color: #fff;
+  padding: 15px;
+  align-items: center;
+}
+
+.footer-copy {
+  text-align: right;
 }
