@@ -4,7 +4,7 @@ var id = getQueryVariable('id');
 fetch('https://api.clover-midori.net/video_info?id=' + id, { method: 'GET' })
   .then(response => response.json())
   .then(info => {
-    if(info.error_message) return alert('Error');
+    if(info.error_message) return alert(JSON.stringify(info.error_message));
     var mimeCodec = `${info.formats[0].mimeType}; codecs="${info.formats[0].codecs}"`
 
     if ('MediaSource' in window && MediaSource.isTypeSupported(mimeCodec)) {
