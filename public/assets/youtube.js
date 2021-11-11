@@ -1,10 +1,10 @@
 var video = document.getElementById("my-video");
-var file = getQueryVariable('id');
+var id = getQueryVariable('id');
 
-fetch('https://api.clover-midori.net/video_info?id=' + file, { method: 'GET' })
+fetch('https://api.clover-midori.net/video_info?id=' + id, { method: 'GET' })
   .then(response => response.json())
   .then(info => {
-    if(info.error_message.statusCode === 410) return alert('Error');
+    if(info.error_message) return alert('Error');
     var mimeCodec = `${info.formats[0].mimeType}; codecs="${info.formats[0].codecs}"`
 
     if ('MediaSource' in window && MediaSource.isTypeSupported(mimeCodec)) {
@@ -13,7 +13,8 @@ fetch('https://api.clover-midori.net/video_info?id=' + file, { method: 'GET' })
       video.src = URL.createObjectURL(mediaSource);
       mediaSource.addEventListener('sourceopen', sourceOpen);
     } else {
-      console.error('Unsupported MIME type or codec: ', mimeCodec);
+      document.getElementById("play-text").innerHTML = "Not Supported";
+      document.getElementById("play-button").disabled = true;
     }
     function sourceOpen(_) {
       //console.log(this.readyState); // open
@@ -24,8 +25,6 @@ fetch('https://api.clover-midori.net/video_info?id=' + file, { method: 'GET' })
         .then(buffer => {
           sourceBuffer.addEventListener('updateend', function(_) {
             mediaSource.endOfStream();
-            document.getElementById("play-text").innerHTML = "Not Supported";
-            document.getElementById("play-button").disabled = true;
             //console.log(mediaSource.readyState); // ended
           });
           sourceBuffer.appendBuffer(buffer);
