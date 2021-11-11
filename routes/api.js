@@ -17,6 +17,7 @@ router.get('/get_video', async function(req, res, next) {
     video.pipe(res);
   } catch (err) {
     res.send(JSON.stringify(err))
+    return;
   }
 });
 
@@ -28,6 +29,7 @@ router.get('/video_info', async function(req, res, next) {
     res.json(info)
   } catch (err) {
     res.json({ "error_message": err })
+    return;
   }
 });
 
@@ -49,7 +51,6 @@ router.post('/img2webp', multer({ dest: 'img2webp/original/' }).array('files', 1
       res.set({ 'Content-Disposition': `attachment; filename=${fileName}` });
       var filestream = fs.createReadStream(path.resolve(`routes/img2webp/webp/${imgName}.webp`));
       filestream.pipe(res);
-
     });
 
 });
