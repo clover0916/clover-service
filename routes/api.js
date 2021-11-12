@@ -28,7 +28,7 @@ router.get('/video_info', async function(req, res, next) {
     const info = await ytdl.getInfo(URL);
     res.json(info)
   } catch (err) {
-    res.end(JSON.stringify(err))
+    res.end(`{"error": ${err}}`)
     return;
   }
 });
