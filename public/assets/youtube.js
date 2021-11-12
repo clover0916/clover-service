@@ -26,7 +26,7 @@ fetch('https://api.clover-midori.net/video_info?id=' + id, { method: 'GET' })
         .then(buffer => {
           sourceBuffer.addEventListener('updateend', function(_) {
             //mediaSource.endOfStream();
-            document.getElementById("play-text").innerHTML = "Not Supported";
+            document.getElementById("play-text").innerHTML = "Play";
             //console.log(mediaSource.readyState); // ended
           });
           sourceBuffer.appendBuffer(buffer);
