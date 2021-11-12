@@ -1,6 +1,6 @@
 var video = document.getElementById("my-video");
 var id = getQueryVariable('id');
-
+var np;
 fetch('https://api.clover-midori.net/video_info?id=' + id, { method: 'GET' })
   .then(response => response.json())
   .then(info => {
@@ -10,7 +10,6 @@ fetch('https://api.clover-midori.net/video_info?id=' + id, { method: 'GET' })
     if ('MediaSource' in window && MediaSource.isTypeSupported(mimeCodec)) {
       var mediaSource = new MediaSource;
       console.log(mediaSource.readyState); // closed
-      video.src = URL.createObjectURL(mediaSource);
       mediaSource.addEventListener('sourceopen', sourceOpen);
     } else {
       document.getElementById("play-text").innerHTML = "Not Supported";
