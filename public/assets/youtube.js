@@ -9,6 +9,8 @@ fetch('https://api.clover-midori.net/video_info?id=' + id, { method: 'GET' })
 
     if ('MediaSource' in window && MediaSource.isTypeSupported(mimeCodec)) {
       var mediaSource = new MediaSource;
+      const url = URL.createObjectURL(mediaSource);
+      video.src = url;
       console.log(mediaSource.readyState); // closed
       mediaSource.addEventListener('sourceopen', sourceOpen);
     } else {
