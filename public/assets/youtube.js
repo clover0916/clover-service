@@ -20,7 +20,7 @@ fetch('https://api.clover-midori.net/video_info?id=' + id, { method: 'GET' })
       //console.log(this.readyState); // open
       var mediaSource = this;
       var sourceBuffer = mediaSource.addSourceBuffer(mimeCodec);
-      fetch('https://api.clover-midori.net/get_video?id=' + file, { method: 'GET' })
+      fetch('https://api.clover-midori.net/get_video?id=' + id, { method: 'GET' })
         .then(response => response.arrayBuffer())
         .then(buffer => {
           sourceBuffer.addEventListener('updateend', function(_) {
@@ -30,6 +30,9 @@ fetch('https://api.clover-midori.net/video_info?id=' + id, { method: 'GET' })
           sourceBuffer.appendBuffer(buffer);
         });
     };
+  })
+  .catch(err => {
+    alert('エラーが発生しました')
   })
 
 function getQueryVariable(variable) {
