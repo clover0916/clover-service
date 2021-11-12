@@ -5,12 +5,11 @@ fetch('https://api.clover-midori.net/video_info?id=' + id, { method: 'GET' })
   .then(response => response.json())
   .then(info => {
     if(info.error_message) return alert(JSON.stringify(info.error_message));
-    console.log(JSON.stringify(info.formats))
     var mimeCodec = `${info.formats[0].mimeType}; codecs="${info.formats[0].codecs}"`
 
     if ('MediaSource' in window && MediaSource.isTypeSupported(mimeCodec)) {
       var mediaSource = new MediaSource;
-      //console.log(mediaSource.readyState); // closed
+      console.log(mediaSource.readyState); // closed
       video.src = URL.createObjectURL(mediaSource);
       mediaSource.addEventListener('sourceopen', sourceOpen);
     } else {
