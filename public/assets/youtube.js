@@ -25,7 +25,6 @@ fetch('https://api.clover-midori.net/video_info?id=' + id, { method: 'GET' })
         .then(response => response.arrayBuffer())
         .then(buffer => {
           sourceBuffer.addEventListener('updateend', function(_) {
-            mediaSource.endOfStream();
             //console.log(mediaSource.readyState); // ended
           });
           sourceBuffer.appendBuffer(buffer);
