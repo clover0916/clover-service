@@ -12,10 +12,7 @@ router.get('/get_video', async function(req, res, next) {
   try {
     var url = req.query.id;
     var URL = 'https://www.youtube.com/watch?v=' + url
-    ytdl(url, { filter: (format) => format.container === 'mp4' }).pipe(fs.createWriteStream('video.mp4'));
-    var filestream = fs.createReadStream('video.mp4');
-    filestream.pipe(res);
-    fs.unlinkSync('video.mp4');
+    ytdl(url, { filter: (format) => format.container === 'mp4' }).pipe(res);
   } catch (err) {
     console.error(err)
     return;
