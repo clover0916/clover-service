@@ -12,7 +12,9 @@ router.get('/get_video', async function(req, res, next) {
   try {
     var url = req.query.id;
     var URL = 'https://www.youtube.com/watch?v=' + url
-    ytdl(url, { filter: (format) => format.container === 'mp4' }).pipe(res);
+    ytdl(url, { filter: (format) => format.container === 'mp4' })
+      .then(data => data.pipe(res))
+      .catch(error => res.send("error"))
   } catch (err) {
     console.error(err)
     return;
