@@ -42,7 +42,7 @@ router.post('/img2webp', multer({ dest: 'img2webp/original/' }).array('files', 1
     .webp({
       quality: 100
     })
-    .toFile(path.resolve(`routes/img2webp/webp/${imgName}.webp`), async (err) => { // 画像ファイル名.webpで出力
+    .toFile(path.resolve(`routes/img2webp/webp/${imgName}.webp`), async (err) => {
       if (err) console.error(err);
       fs.unlinkSync(req.files[0].path);
       const fileName = encodeURIComponent(`${imgName}.webp`);
