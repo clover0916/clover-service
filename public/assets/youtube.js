@@ -12,29 +12,25 @@ fetch('https://api.clover-midori.net/video_info?id=' + id, { method: 'GET' })
       const url = URL.createObjectURL(mediaSource);
       video.src = url;
       console.log(mediaSource.readyState); // closed
-      mediaSource.addEventListener('sourceopen', sourceOpen);
+      mediaSource.addEventListener("sourceopen", () => {
+        fetch('https://api.clover-midori.net/get_video?id=' + id, { method: 'GET' })
+          .then(response => response.arrayBuffer())
+          .then(buffer => {
+            var sourceBuffer = mediaSource.addSourceBuffer(mimeCodec);
+            sourceBuffer.addEventListener("updateend", () => {
+              media_source.endOfStream()
+              document.getElementById("play-text").innerHTML = "Play";
+            })
+            sourceBuffer.appendBuffer(buffer)
+          });
+      })
     } else {
       document.getElementById("play-text").innerHTML = "Not Supported";
       document.getElementById("play-button").disabled = true;
     }
-    function sourceOpen(_) {
-      //console.log(this.readyState); // open
-      var mediaSource = this;
-      var sourceBuffer = mediaSource.addSourceBuffer(mimeCodec);
-      fetch('https://api.clover-midori.net/get_video?id=' + id, { method: 'GET' })
-        .then(response => response.arrayBuffer())
-        .then(buffer => {
-          sourceBuffer.addEventListener('updateend', function(_) {
-            //mediaSource.endOfStream();
-            document.getElementById("play-text").innerHTML = "Play";
-            //console.log(mediaSource.readyState); // ended
-          });
-          sourceBuffer.appendBuffer(buffer);
-        });
-    };
   })
   .catch(err => {
-    alert('エラーが発生しました:' + err)
+    alert(err)
   })
 
 function getQueryVariable(variable) {
