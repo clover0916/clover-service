@@ -21,7 +21,7 @@ fetch('https://api.clover-midori.net/video_info?id=' + id, { method: 'GET' })
           .then(buffer => {
             var sourceBuffer = mediaSource.addSourceBuffer(mimeCodec);
             sourceBuffer.addEventListener("updateend", () => {
-              media_source.endOfStream()
+              mediaSource.endOfStream()
               document.getElementById("play-text").innerHTML = "Play";
             })
             sourceBuffer.appendBuffer(buffer)
