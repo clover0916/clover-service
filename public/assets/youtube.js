@@ -5,7 +5,7 @@ fetch('https://api.clover-midori.net/video_info?id=' + id, { method: 'GET' })
   .then(response => response.json())
   .then(info => {
     if(info.error) return alert('エラーが発生しました、一旦時間をおいてください');
-    var mimeCodec = `${info.formats[0].mimeType}; codecs="${info.formats[0].codecs}"`
+    var mimeCodec = `${info.formats[0].mimeType}`
     alert(mimeCodec)
     document.getElementById('video_title').innerHTML = info.player_response.videoDetails.title
     document.getElementById('video_description').innerHTML = info.player_response.videoDetails.shortDescription
