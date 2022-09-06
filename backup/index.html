@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script data-ad-client="ca-pub-7956959425998230" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <title>Clover - ホーム</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="dist/app.css">
+</head>
+
+<body class="mdc-typography">
+  <div class="mdc-dialog">
+    <div class="mdc-dialog__container">
+      <div class="mdc-dialog__surface" role="alertdialog" aria-modal="true" aria-labelledby="my-dialog-title" aria-describedby="my-dialog-content">
+        <h2 class="mdc-dialog__title" id="my-dialog-title"></h2>
+        <div class="mdc-dialog__content" id="my-dialog-content"></div>
+        <div class="mdc-dialog__actions">
+          <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="cancel">
+            <div class="mdc-button__ripple"></div>
+            <span class="mdc-button__label">キャンセル</span>
+          </button>
+          <button type="button" class="mdc-button mdc-dialog__button" id="go-url">
+            <div class="mdc-button__ripple"></div>
+            <span class="mdc-button__label">進む</span>
+          </button>
+          <div class="mdc-circular-progress mdc-circular-progress--indeterminate hidden absolute" id="load" style="width:24px;height:24px;" role="progressbar" aria-label="Example Progress Bar" aria-valuemin="0" aria-valuemax="1">
+            <div class="mdc-circular-progress__determinate-container">
+              <svg class="mdc-circular-progress__determinate-circle-graphic" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <circle class="mdc-circular-progress__determinate-track" cx="12" cy="12" r="8.75" stroke-width="2.5" />
+                <circle class="mdc-circular-progress__determinate-circle" cx="12" cy="12" r="8.75" stroke-dasharray="54.978" stroke-dashoffset="54.978" stroke-width="2.5" />
+              </svg>
+            </div>
+            <div class="mdc-circular-progress__indeterminate-container">
+              <div class="mdc-circular-progress__spinner-layer">
+                <div class="mdc-circular-progress__circle-clipper mdc-circular-progress__circle-left">
+                  <svg class="mdc-circular-progress__indeterminate-circle-graphic" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="8.75" stroke-dasharray="54.978" stroke-dashoffset="27.489" stroke-width="2.5" />
+                  </svg>
+                </div>
+                <div class="mdc-circular-progress__gap-patch">
+                  <svg class="mdc-circular-progress__indeterminate-circle-graphic" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="8.75" stroke-dasharray="54.978" stroke-dashoffset="27.489" stroke-width="2" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mdc-dialog__scrim"></div>
+  </div>
+  <aside class="mdc-drawer mdc-drawer--modal">
+    <div class="mdc-drawer__content">
+      <nav class="mdc-list">
+        <a class="mdc-list-item mdc-list-item--activated" href="#" aria-current="page" tabindex="0">
+          <span class="mdc-list-item__ripple"></span>
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">home</i>
+          <span class="mdc-list-item__text">ホーム</span>
+        </a>
+        <a class="mdc-list-item" href="https://bot.clover-midori.net">
+          <span class="mdc-list-item__ripple"></span>
+          <i class="material-icons mdc-list-item__graphic fab fa-discord" aria-hidden="true"></i>
+          <span class="mdc-list-item__text">Discord Bot</span>
+        </a>
+        <a class="mdc-list-item" href="https://test.clover-midori.net">
+          <span class="mdc-list-item__ripple"></span>
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">code</i>
+          <span class="mdc-list-item__text">テストページ</span>
+        </a>
+        <hr class="mdc-list-divider">
+        <h6 class="mdc-list-group__subheader">Links</h6>
+        <a class="mdc-list-item" href="https://www.youtube.com/channel/UCilaQUf08HPnwRBFGeKH9_w">
+          <span class="mdc-list-item__ripple"></span>
+          <i class="fab fa-youtube material-icons mdc-list-item__graphic" aria-hidden="true"></i>
+          <span class="mdc-list-item__text">クローバーみどり</span>
+        </a>
+        <a class="mdc-list-item" href="https://twitter.com/Clover_0916">
+          <span class="mdc-list-item__ripple"></span>
+          <i class="material-icons mdc-list-item__graphic fab fa-twitter" aria-hidden="true"></i>
+          <span class="mdc-list-item__text">@Clover_0916</span>
+        </a>
+        <a class="mdc-list-item" href="discord.gg/Y7vng5T">
+          <span class="mdc-list-item__ripple"></span>
+          <i class="material-icons mdc-list-item__graphic fab fa-discord" aria-hidden="true"></i>
+          <span class="mdc-list-item__text">Cloverのサーバー</span>
+        </a>
+        <a class="mdc-list-item" href="blog.clover-midori.net">
+          <span class="mdc-list-item__ripple"></span>
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">web</i>
+          <span class="mdc-list-item__text">Blog</span>
+        </a>
+      </nav>
+    </div>
+  </aside>
+  <div class="mdc-drawer-scrim"></div>
+  <div class="main-content">
+    <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+      <div role="progressbar" class="mdc-linear-progress mdc-linear-progress--indeterminate" aria-label="Example Progress Bar" aria-valuemin="0" aria-valuemax="1" aria-valuenow="0">
+        <div class="mdc-linear-progress__buffer">
+          <div class="mdc-linear-progress__buffer-bar"></div>
+          <div class="mdc-linear-progress__buffer-dots"></div>
+        </div>
+        <div class="mdc-linear-progress__bar mdc-linear-progress__primary-bar">
+          <span class="mdc-linear-progress__bar-inner"></span>
+        </div>
+        <div class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar">
+          <span class="mdc-linear-progress__bar-inner"></span>
+        </div>
+      </div>
+      <div class="mdc-top-app-bar__row">
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+          <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" aria-label="Open navigation menu">menu</button>
+          <span class="mdc-top-app-bar__title" style="padding-left: 6px" onclick="location.href='./index.html'">Clover</span>
+        </section>
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+          <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Search">search</button>
+        </section>
+      </div>
+    </header>
+    <div class="full gradation-orange text-white">
+      <div class="title title-anm">
+        <h1 class="mdc-typography--headline1 font-light futura-pt">Clover</h1>
+        <p class="mdc-typography--subtitle1">
+          あなたとってに最高のサービスを
+        </p>
+      </div>
+      <div class="title-button title-fade">
+        <div class="mdc-touch-target-wrapper">
+          <button class="mdc-button mdc-button--raised mdc-button--touch mdc-button-white" onclick="location.href='#service'">
+            <span class="mdc-button__ripple"></span>
+            <span class="mdc-button__label">下に行く</span>
+            <span class="mdc-button__touch"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <main class="mdc-layout-grid main">
+      <h4 class="mdc-typography--headline4 font-regular text-border-bottom">Cloverとは</h4>
+      <div class="mdc-layout-grid">
+        <p class="mdc-typography--body1 font-light">
+          Clover_Midoriが運営しているサービスです。
+        </p>
+        <p class="mdc-typography--body1 font-light">
+          こんなこと、あんなことを実現させます！！
+        </p>
+      </div>
+      <h4 class="mdc-typography--headline4 font-regular text-border-bottom" id="service">サービス</h4>
+      <div class="mdc-layout-grid">
+        <p class="mdc-typography--body2 font-light">
+          どんどん増えていきます
+        </p>
+        <div class="mdc-layout-grid">
+          <div class="mdc-layout-grid__inner">
+            <div class="mdc-layout-grid__cell">
+              <div class="mdc-card mdc-card--outlined">
+                <div class="mdc-card__primary-action" tabindex="0">
+                  <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('./assets/bot_icon.png');background-size: cover;background-repeat: no-repeat;background-position: center;"></div>
+                  <div class="mdc-card-fixed">
+                    <h2 class="mdc-typography--headline6">Clover Bot</h2>
+                    <h3 class="text-gray mdc-typography mdc-typography--subtitle2">Discord Bot</h3>
+                  </div>
+                  <div class="side-padding mdc-typography--body2 text-gray">
+                    Discordで使える高機能なBot
+                  </div>
+                </div>
+                <div class="mdc-card__actions">
+                  <div class="mdc-card__action-buttons">
+                    <button class="mdc-button mdc-card__action mdc-card__action--button" id="redirect" data-url="https://bot.clover-midori.net/invite"> <span class="mdc-button__ripple"></span>導入する</button>
+                    <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="location.href='https://bot.clover-midori.net'"> <span class="mdc-button__ripple"></span>詳細</button>
+                  </div>
+                  <div class="mdc-card__action-icons">
+                    <div id="demo-menu" class="mdc-menu-surface--anchor">
+                      <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded" title="More options" data-mdc-ripple-is-unbounded="true" id="menu-button">more_vert</button>
+                      <div class="mdc-menu mdc-menu-surface">
+                        <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical" tabindex="-1">
+                          <li class="mdc-list-item" role="menuitem" id="ss">
+                            <span class="mdc-list-item__ripple"></span>
+                            <span class="mdc-list-item__text">サポートサーバー</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mdc-layout-grid__cell">
+              <div class="mdc-card mdc-card--outlined">
+                <div class="mdc-card__primary-action" tabindex="0">
+                  <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('./assets/noimage.jpg');background-size: cover;background-repeat: no-repeat;background-position: center;"></div>
+                  <div class="mdc-card-fixed">
+                    <h2 class="mdc-typography--headline6">Not Found</h2>
+                    <h3 class="text-gray mdc-typography mdc-typography--subtitle2">Unknown</h3>
+                  </div>
+                  <div class="side-padding mdc-typography--body2 text-gray">
+                    404
+                  </div>
+                </div>
+                <div class="mdc-card__actions">
+                  <div class="mdc-card__action-buttons">
+                    <button class="mdc-button mdc-card__action mdc-card__action--button" disabled> <span class="mdc-button__ripple"></span>Disabled</button>
+                    <button class="mdc-button mdc-card__action mdc-card__action--button" disabled> <span class="mdc-button__ripple"></span>Disabled</button>
+                  </div>
+                  <div class="mdc-card__action-icons">
+                    <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded" title="More options" data-mdc-ripple-is-unbounded="true" id="menu-button">more_vert</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mdc-layout-grid__cell">
+              <div class="mdc-card mdc-card--outlined">
+                <div class="mdc-card__primary-action" tabindex="0">
+                  <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('./assets/noimage.jpg');background-size: cover;background-repeat: no-repeat;background-position: center;"></div>
+                  <div class="mdc-card-fixed">
+                    <h2 class="mdc-typography--headline6">Not Found</h2>
+                    <h3 class="text-gray mdc-typography mdc-typography--subtitle2">Unknown</h3>
+                  </div>
+                  <div class="side-padding mdc-typography--body2 text-gray">
+                    404
+                  </div>
+                </div>
+                <div class="mdc-card__actions">
+                  <div class="mdc-card__action-buttons">
+                    <button class="mdc-button mdc-card__action mdc-card__action--button" disabled> <span class="mdc-button__ripple"></span>Disabled</button>
+                    <button class="mdc-button mdc-card__action mdc-card__action--button" disabled> <span class="mdc-button__ripple"></span>Disabled</button>
+                  </div>
+                  <div class="mdc-card__action-icons">
+                    <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded" title="More options" data-mdc-ripple-is-unbounded="true" id="menu-button">more_vert</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h4 class="mdc-typography--headline4 font-regular text-border-bottom" id="service">その他</h4>
+      <div class="mdc-layout-grid">
+        <p class="mdc-typography--body2 font-light">
+          いろいろふえるお
+        </p>
+        <div class="mdc-layout-grid">
+          <div class="mdc-layout-grid__inner">
+            <div class="mdc-layout-grid__cell">
+              <div class="mdc-card mdc-card--outlined">
+                <div class="mdc-card__primary-action" tabindex="0">
+                  <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('./assets/test.jpg');background-size: cover;background-repeat: no-repeat;background-position: center;"></div>
+                  <div class="mdc-card-fixed">
+                    <h2 class="mdc-typography--headline6">テストサイト</h2>
+                    <h3 class="text-gray mdc-typography mdc-typography--subtitle2">テストサイト</h3>
+                  </div>
+                  <div class="side-padding mdc-typography--body2 text-gray">
+                    色々おいてるところ(今は少ない())
+                  </div>
+                  <div class="mdc-card__ripple"></div>
+                </div>
+                <div class="mdc-card__actions">
+                  <div class="mdc-card__action-buttons">
+                    <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="location.href='https://test.clover-midori.net'"><span class="mdc-button__ripple"></span>見る</button>
+                  </div>
+                  <div class="mdc-card__action-icons">
+                    <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Share"><div class="mdc-icon-button__ripple"></div>share</button>
+                    <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="More options"><div class="mdc-icon-button__ripple"></div>more_vert</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mdc-layout-grid__cell">
+              <div class="mdc-card mdc-card--outlined">
+                <div class="mdc-card__primary-action" tabindex="0">
+                  <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('./assets/noimage.jpg');background-size: cover;background-repeat: no-repeat;background-position: center;"></div>
+                  <div class="mdc-card-fixed">
+                    <h2 class="mdc-typography--headline6">Not Found</h2>
+                    <h3 class="text-gray mdc-typography mdc-typography--subtitle2">Unknown</h3>
+                  </div>
+                  <div class="side-padding mdc-typography--body2 text-gray">
+                    404
+                  </div>
+                </div>
+                <div class="mdc-card__actions">
+                  <div class="mdc-card__action-buttons">
+                    <button class="mdc-button mdc-card__action mdc-card__action--button" disabled> <span class="mdc-button__ripple"></span>Disabled</button>
+                    <button class="mdc-button mdc-card__action mdc-card__action--button" disabled> <span class="mdc-button__ripple"></span>Disabled</button>
+                  </div>
+                  <div class="mdc-card__action-icons">
+                    <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded" title="More options" data-mdc-ripple-is-unbounded="true" id="menu-button">more_vert</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mdc-layout-grid__cell">
+              <div class="mdc-card mdc-card--outlined">
+                <div class="mdc-card__primary-action" tabindex="0">
+                  <div class="mdc-card__media mdc-card__media--16-9" style="background-image: url('./assets/noimage.jpg');background-size: cover;background-repeat: no-repeat;background-position: center;"></div>
+                  <div class="mdc-card-fixed">
+                    <h2 class="mdc-typography--headline6">Not Found</h2>
+                    <h3 class="text-gray mdc-typography mdc-typography--subtitle2">Unknown</h3>
+                  </div>
+                  <div class="side-padding mdc-typography--body2 text-gray">
+                    404
+                  </div>
+                </div>
+                <div class="mdc-card__actions">
+                  <div class="mdc-card__action-buttons">
+                    <button class="mdc-button mdc-card__action mdc-card__action--button" disabled> <span class="mdc-button__ripple"></span>Disabled</button>
+                    <button class="mdc-button mdc-card__action mdc-card__action--button" disabled> <span class="mdc-button__ripple"></span>Disabled</button>
+                  </div>
+                  <div class="mdc-card__action-icons">
+                    <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded" title="More options" data-mdc-ripple-is-unbounded="true" id="menu-button">more_vert</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p class="mdc-typography--caption footer-copy">Copyright ©2020 Clover_Midori All Rights Reserved</p>
+    </footer>
+  </div>
+  <script src="dist/app.js" async></script>
+  <script src="dist/index.js" async></script>
+</body>
+
+</html>
